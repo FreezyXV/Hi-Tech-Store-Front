@@ -7,11 +7,11 @@ dotenv.config();
 export default defineConfig({
   plugins: [react()],
   server: {
-    // Configure server options here if needed
+
   },
   build: {
     rollupOptions: {
-      external: ['react-toastify'], // Exclude react-toastify from the bundle
+      external: ['react-toastify', 'react-toastify/dist/ReactToastify.css'],
     },
   },
   define: {
