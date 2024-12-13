@@ -7,7 +7,17 @@ dotenv.config();
 export default defineConfig({
   plugins: [react()],
   server: {
-    // No proxy needed if calling API directly from axiosInstance
-    // If you want a proxy, you can add it back here.
+    // Configure server options here if needed
+  },
+  build: {
+    rollupOptions: {
+      external: ['react-toastify'], // Exclude react-toastify from the bundle
+    },
+  },
+  define: {
+    'process.env': {
+      VITE_API_URL: JSON.stringify(process.env.VITE_API_URL),
+      VITE_STRIPE_PUBLISHABLE_KEY: JSON.stringify(process.env.VITE_STRIPE_PUBLISHABLE_KEY),
+    },
   },
 });
