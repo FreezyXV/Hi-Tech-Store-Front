@@ -1,0 +1,464 @@
+/* home.css */
+@import url("https://use.typekit.net/csk6jjx.css");
+@import url("/node_modules/slick-carousel/slick/slick.css");
+@import url("/node_modules/slick-carousel/slick/slick-theme.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.body {
+/* min-height: 100vw; */
+  display: flex;
+  flex-direction: column;
+  min-height: 70vw;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  }
+
+.home-page {
+  font-family: "muli", sans-serif;
+  font-style: normal;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+
+}
+
+.hero-section {
+  text-align: center;
+  padding: 50px 0;
+  background: linear-gradient(135deg, #ffffff 10%, #1f2937 100%);
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+  margin: 0;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-family: "muli", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.categories-section h2 {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.categories-section {
+  justify-content: center;
+  gap: 30px;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-bottom: 20px;
+  justify-items: center;
+  row-gap: 20px;
+}
+
+.category-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  border: #222 solid;
+  text-decoration: none; /* Remove underline from links */
+  width: 95%;
+}
+
+.category-card:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.category-card h3 {
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333; /* Set to your desired color (black/gray) */
+  text-decoration: none; /* Ensure text-decoration is removed */
+}
+
+.category-card a {
+  text-decoration: none; /* Remove underline for all links */
+  color: inherit; /* Inherit the color from parent (h3 in this case) */
+}
+
+.category-card:hover h3 {
+  color: #222; /* Slightly darker text on hover for better visual feedback */
+}
+
+
+.category-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.category-image img:hover {
+  transform: scale(1.03);
+}
+
+
+
+.luxury-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  color: #e0e0e0;
+  overflow: hidden;
+  margin-bottom: -500px;
+  height: 1600px;
+}
+
+.luxury-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+  z-index: 2; /* Place it above the image, but below text */
+}
+
+
+
+.banner-content {
+  position: relative;
+  z-index: 2; /* Ensure content stays above the image */
+  max-width: 40%; /* Restrict width of text content */
+  color: #e0e0e0;
+  margin: 300px 10px 50px 100px;
+  padding: 20px; /* Space around text for readability */
+}
+
+.banner-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit; /* Copy the background image */
+  filter: blur(8px); /* Apply blur to background */
+  opacity: 0.7; /* Optional: adjust opacity for effect strength */
+  z-index: -1; /* Place it behind the text */
+  border-radius: 8px; /* Optional: rounded corners for a soft look */
+}
+
+.banner-content h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #e0e0e0;
+  margin-bottom: 10px; /* Add space between title and subtitle */
+}
+
+.banner-content h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fcfcfc;
+}
+
+
+
+.explore-button {
+  display: inline-block;
+  padding: 12px 25px;
+  color: #ffffff;
+  background: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.explore-button:hover {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+/* Full-Screen Background Image Styling */
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+
+}
+
+.banner-image img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover; /* Ensures the image covers the entire area */
+}
+
+/* Position the slider dots overlay on top of the image */
+.luxury-banner-slider .slick-dots {
+  position: absolute;
+  bottom: 50px; /* Position near the bottom of the banner */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+
+  display: flex;
+  gap: 10px; /* Add space between dots */
+}
+
+/* Change the color and size of the active dot */
+.luxury-banner-slider .slick-dots .slick-active button:before {
+  color: #ffffff; /* Custom color for the dots */
+  opacity: 1; /* Fully opaque for active */
+  background-color: #ffffff; /* Transparent interior */
+}
+
+
+/* Style the dots as circles with transparent interior */
+.luxury-banner-slider .slick-dots li button:before {
+  content: ''; /* Use an empty content for custom dot styling */
+  display: inline-block;
+  width: 16px; /* Diameter of the dot */
+  height: 16px;
+  border: 2px solid #ffffff; /* Gold border for the dots */
+  border-radius: 50%; /* Make the dot circular */
+  background-color: transparent; /* Transparent interior */
+  opacity: 0.5; /* Slightly transparent for inactive dots */
+  transition: all 0.3s ease; /* Smooth transition for dot state changes */
+}
+
+.icon-container { 
+margin-right: 15px;
+}
+
+@media (max-width: 2200px) {
+  .luxury-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #e0e0e0;
+
+    overflow: hidden;
+    margin-bottom: -800px;
+    height: 1500px;
+  }
+  .banner-image {
+    width: 100%;
+    height: 100%;
+  }
+  .banner-image img {
+    width: 100%;
+    height: 50%;
+}
+.banner-content {
+  
+  position: relative;
+  z-index: 2; 
+  max-width: 100%; 
+  color: #e0e0e0;
+  margin: 250px 50px 250px 200px;
+  padding: 40px; 
+}
+
+
+}
+
+@media screen and (max-width: 1900px) {
+  .body {
+    min-height: 100vh;
+  }
+  
+  }
+
+@media (max-width: 1350px) {
+  .body {
+    min-height: 100vh;
+    }
+
+  .luxury-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #e0e0e0;
+
+    overflow: hidden;
+    margin-bottom: -800px;
+    height: 1300px;
+  }
+  .banner-image {
+    width: 100%;
+    height: 60%;
+  }
+  .banner-image img {
+    width: 100%;
+    height: 70%;
+}
+.banner-content {
+  
+  position: relative;
+  z-index: 2; 
+  max-width: 100%; 
+  color: #e0e0e0;
+  margin: 150px 50px 150px 50px;
+  padding: 40px; 
+}
+
+
+
+}
+
+
+@media (max-width: 1024px) {
+  .banner-content h1 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #e0e0e0;
+    margin-bottom: 10px; 
+  }
+  
+  .banner-content h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fcfcfc;
+    width: 300px;
+  }
+
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .luxury-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #e0e0e0;
+
+    overflow: hidden;
+    margin-bottom: -800px;
+    height: 1100px;
+  }
+  .banner-image {
+    width: 100%;
+    height: 95%;
+  }
+  .banner-image img {
+    width: 100%;
+    height: 30%;
+}
+.banner-content {
+  
+  position: relative;
+  z-index: 2; 
+  max-width: 100%; 
+  color: #e0e0e0;
+  margin: 100px 0px 0px 0px;
+  padding: 40px; 
+}
+
+.banner-content h1 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #e0e0e0;
+  margin-bottom: 10px; 
+}
+
+.banner-content h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fcfcfc;
+  width: 300px;
+}
+.luxury-banner-slider {
+  width: 100%;
+  height: 30%;
+}
+.slick-dots li button{
+  display: none;
+}
+.explore-button {
+  display: none;
+}
+}
+
+@media (max-width: 550px) {
+  .luxury-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #e0e0e0;
+
+    overflow: hidden;
+    margin-bottom: -800px;
+    height: 1000px;
+  }
+  .banner-image {
+    width: 100%;
+    height: 70%;
+  }
+  .banner-image img {
+    width: 100%;
+    height: 30%;
+}
+.banner-content {
+  
+  position: relative;
+  z-index: 2; 
+  max-width: 100%; 
+  color: #e0e0e0;
+  margin: 0px 0px 0px 0px;
+  padding: 40px; 
+}
+
+.banner-content h1 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #e0e0e0;
+  margin-bottom: 10px; 
+}
+
+.banner-content h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fcfcfc;
+  width: 300px;
+}
+.luxury-banner-slider {
+  width: 100%;
+  height: 30%;
+}
+.slick-dots li button{
+  display: none;
+}
+.explore-button {
+  display: none;
+}
+}

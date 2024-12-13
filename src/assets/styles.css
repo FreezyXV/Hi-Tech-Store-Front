@@ -1,0 +1,267 @@
+@import url("https://use.typekit.net/csk6jjx.css");
+
+.body {
+  display: flex;
+  flex-direction: column;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+    min-height: 100vh;
+  }
+
+  /* html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+} */
+
+
+/* Main content should fill the available space */
+.main-content {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+}
+  
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-family: "muli", sans-serif;
+font-weight: 400;
+font-style: normal;
+  }
+  
+  
+
+  
+  .header {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: #fff;
+  }
+  
+  .header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: "muli", sans-serif;
+font-style: normal;
+  }
+  
+  .product-list, .brand-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    text-decoration: none;
+  }
+  
+  .product-card, .brand-card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: #222 solid;
+    text-decoration: none;
+  }
+  
+  .product-card:hover, .brand-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-card img, .brand-card img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  .button {
+    background-color: #0070c9;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #005bb5;
+  }
+  
+/* Brand Grid */
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Brand Card */
+.brand-card {
+  text-align: center;
+  padding: 30px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Brand Image */
+.brand-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* Ensure square shape */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.brand-card:hover .brand-image {
+  transform: scale(1.03);
+}
+
+/* Brand Title */
+.page-title {
+  text-align: center;
+  font-size: 38px;
+  margin: 20px;
+  color: #1f2937;
+  font-family: "muli", sans-serif;
+font-weight: 300;
+
+}
+
+.brand-card h2 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #444;
+  margin-top: 10px;
+  font-family: "muli", sans-serif;
+  text-transform: uppercase;
+}
+
+/* Button Styling */
+.button {
+  background-color: #0070c9;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #005bb5;
+}
+
+
+  /* Model Card */
+.model-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.model-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+
+  margin: 20px 70px 20px 70px;
+  transition: transform 0.3s ease;
+  border: #222 solid;
+}
+
+.model-card:hover {
+  transform: scale(1.01);
+
+}
+
+/* Model Image */
+.model-image {
+  width: 350px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  margin-right: 30px;
+}
+
+.model-image:hover {
+  transform: scale(1.02);
+}
+
+/* Model Details */
+.model-details {
+  flex: 1;
+}
+
+.model-details h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+  
+}
+
+.model-details p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 16px;
+}
+
+p.model-price {
+  color: #e53935;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.searchLogo {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .model-card {
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+  }
+  
+  .model-card:hover {
+    transform: scale(1.01);
+  }
+  
+  /* Model Image */
+  .model-image {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    margin-bottom: 5px;
+    margin-right: 0px;
+  }
+  
+  .model-image:hover {
+    transform: scale(1.01);
+  }
+
+  .page-title {
+    font-size: 30px;
+  }
+}
