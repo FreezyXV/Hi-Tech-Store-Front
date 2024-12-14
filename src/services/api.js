@@ -1,13 +1,20 @@
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5002";
+// Determine the API URL based on environment variables
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  import.meta.env.VITE_API_URL_VERCEL ||
+  "http://localhost:5002";
 
+// Function to retrieve the token from localStorage
 const getToken = () => localStorage.getItem("authToken");
 
+// Create an axios instance with the base URL
 const axiosInstance = axios.create({
-  baseURL: `${API_URL}/api`,
+  baseURL: `${API_URL}/api`, // Add /api prefix to the base URL
 });
 
+// Interceptor to attach Authorization token to every request
 axiosInstance.interceptors.request.use(
   (config) => {
     const token = getToken();
@@ -19,6 +26,7 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
+// Function to handle API errors
 const handleApiError = (error) => {
   if (error.response) {
     const status = error.response.status;
@@ -26,13 +34,17 @@ const handleApiError = (error) => {
       error.response.data?.message ||
       error.response.data?.error ||
       "An error occurred";
+
     if (status >= 400 && status < 500) {
+      // Client-side errors
       throw new Error(message);
     } else if (status >= 500) {
+      // Server-side errors
       console.error("Server error:", error.response.data);
       throw new Error("Server error occurred. Please try again later.");
     }
   } else {
+    // Network errors
     console.error("Network error:", error.message);
     throw new Error("Network error occurred. Please check your connection.");
   }
