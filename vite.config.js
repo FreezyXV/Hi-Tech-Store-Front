@@ -13,7 +13,7 @@ export default defineConfig({
   define: {
     "process.env": {
       VITE_API_URL: JSON.stringify(
-        process.env.VITE_API_URL_VERCEL || process.env.VITE_API_URL
+        process.env.VITE_API_URL_LOCAL || process.env.VITE_API_URL
       ),
       VITE_STRIPE_PUBLISHABLE_KEY: JSON.stringify(
         process.env.VITE_STRIPE_PUBLISHABLE_KEY
