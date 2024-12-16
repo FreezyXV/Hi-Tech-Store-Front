@@ -1,6 +1,6 @@
 {
-  "name": "frontnew",
-  "homepage": "https://FreezyXV.github.io/Hi-Tech-Store-Front",
+  "name": "hi-tech-store-front",
+  "homepage": "https://FreezyXV.github.io/Hi-Tech-Store-Front/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,19 +8,19 @@
     "dev": "vite",
     "test": "jest",
     "build": "vite build",
+    "build:gh-pages": "vite build --mode gh-pages",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build:gh-pages",
+    "deploy:gh-pages": "npm run predeploy && gh-pages -d dist",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@ngrok/ngrok": "^1.4.1",
     "@react-spring/web": "^9.7.5",
     "@reduxjs/toolkit": "^2.2.7",
     "@stripe/react-stripe-js": "^3.0.0",
     "@stripe/stripe-js": "^5.2.0",
     "axios": "^1.7.3",
-    "dotenv": "^16.4.5",
     "framer-motion": "^11.11.9",
     "normalizr": "^3.6.2",
     "react": "^18.3.1",
