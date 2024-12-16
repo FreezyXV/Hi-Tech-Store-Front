@@ -1,10 +1,8 @@
+// api.js
 import axios from "axios";
 
 // Determine the API URL based on environment variables
-const API_URL =
-
-  "https://hi-tech-store-back.onrender.com" ||
-  "http://localhost:5002";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5002";
 
 // Function to retrieve the token from localStorage
 const getToken = () => localStorage.getItem("authToken");
@@ -49,6 +47,9 @@ const handleApiError = (error) => {
     throw new Error("Network error occurred. Please check your connection.");
   }
 };
+
+export { axiosInstance, handleApiError };
+
 
 // Fetch categories
 export const fetchCategories = async () => {
