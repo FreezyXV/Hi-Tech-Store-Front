@@ -7,9 +7,11 @@ export default defineConfig(({ mode }) => {
   let base = "/"; // Par défaut pour Vercel
 
   if (mode === "gh-pages") {
-    // Remplacez 'Hi-Tech-Store-Front' par le nom exact de votre dépôt si nécessaire
+    // Chemin de base pour GitHub Pages
     base = "/Hi-Tech-Store-Front/";
   }
+
+  console.log(`Build mode: ${mode}, Base path: ${base}`); // Ajouté pour le diagnostic
 
   return {
     plugins: [react()],
