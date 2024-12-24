@@ -6,12 +6,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
+  padding: 20px;
   margin-top: 19px;
   background-color: #f5f5f5;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   position: absolute;
-  top: 70%;
+  top: 85%;
   left: 0;
   right: 0;
   width: 100vw;
@@ -86,7 +86,7 @@
 }
 
 img.item-image {
-  width: 400px;
+  width: 300px;
   border-radius: 8px;
   margin-bottom: 10px;
 }
@@ -100,14 +100,14 @@ img.item-image {
 
 .item-name {
   font-family: "muli", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: #333;
 }
 
 .item-action {
   font-family: "muli", sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   color: #252525;
   text-transform: uppercase;
   font-weight: normal;

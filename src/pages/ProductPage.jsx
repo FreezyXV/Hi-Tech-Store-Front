@@ -409,7 +409,7 @@ const ProductPage = () => {
                 </div>
               </div>
             </div>
-            <div className="variant-selector">
+            <div className="variant-selector-main">
               <h2>{model ? model.name : "Unknown Model"}</h2>
               <p className="product-price">Price: {price} €</p>
               <p className="product-stock">Stock: {stock}</p>
