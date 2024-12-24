@@ -15,17 +15,14 @@
   display: flex;
   flex-direction: column;
   min-height: 70vw;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+
   }
 
 .home-page {
   font-family: "muli", sans-serif;
   font-style: normal;
   background-color: #fff;
-  margin: 0;
-  padding: 0;
+
 
 }
 
@@ -84,7 +81,7 @@ font-style: normal;
   position: relative;
   border: #222 solid;
   text-decoration: none; /* Remove underline from links */
-  width: 95%;
+  width: 90%;
 }
 
 .category-card:hover {
@@ -185,7 +182,11 @@ font-style: normal;
   color: #fcfcfc;
 }
 
-
+.slick-next {
+  right: 0px;
+  display: none;
+  visibility: hidden;
+}
 
 .explore-button {
   display: inline-block;
@@ -460,5 +461,9 @@ margin-right: 15px;
 }
 .explore-button {
   display: none;
+}
+
+.category-card {
+  max-width: 70%;
 }
 }

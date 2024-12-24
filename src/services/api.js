@@ -2,7 +2,10 @@
 import axios from "axios";
 
 // Determine the API URL based on environment variables
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5002";
+const API_URL = 
+  import.meta.env.VITE_API_URL_LOCAL ?? 
+  import.meta.env.VITE_API_URL ?? 
+  "http://localhost:5002";
 console.log(`API_URL: ${API_URL}`); // Ajouté pour le diagnostic
 
 // Function to retrieve the token from localStorage

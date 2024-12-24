@@ -68,6 +68,10 @@ width: 30%;
     flex-grow: 1;
 }
 
+.image-container {
+width: 90%;
+}
+
 .item-name {
     font-weight: 600;
     font-size: 1.1em;

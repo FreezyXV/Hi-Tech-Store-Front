@@ -14,20 +14,20 @@
 
 .login {
     box-sizing: border-box;
-    margin-top: 200px;
+    margin-top: 100px;
     padding: 0;
 }
 
 .register {
     box-sizing: border-box;
-    margin-top: 200px;
+    margin-top: 100px;
     padding: 0;
 
 }
 
 .auth-container {
 
-width: 600px;
+max-width: 500px;
     padding: 2rem;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -35,7 +35,6 @@ width: 600px;
     font-family: 'Muli', sans-serif;
     animation: fadeIn 0.6s ease-in-out;
     border: #222 solid;
-
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -95,12 +94,12 @@ width: 600px;
 
 .auth-button:hover {
     background-color: rgb(3, 114, 242);
-    transform: scale(1.03);
+    transform: scale(1.01);
     color: #ffffff;
 }
 
 .auth-button:active {
-    transform: scale(1.03);
+    transform: scale(1.01);
 }
 
 .auth-form {
@@ -174,17 +173,21 @@ width: 600px;
 
 .register p, a{
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 12px;
     font-family: 'Muli', sans-serif;
     text-decoration: none;
     color: black;
 }
 .auth-container p, a {
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 12px;
     font-family: 'Muli', sans-serif;
     text-decoration: none;
     color: black;
+}
+
+ p, a:hover {
+    color: #007bff;
 }
 
 .wishlist-container {

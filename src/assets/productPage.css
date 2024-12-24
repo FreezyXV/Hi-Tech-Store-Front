@@ -7,6 +7,12 @@ h3 {
   font-weight: 600;
 }
 
+.product-page-wrapper {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 30px;
+}
+
 .product-page {
   display: flex;
   flex-direction: column;
@@ -125,6 +131,19 @@ font-weight: 400;
 font-style: normal;
 }
 
+.variant-selector-main {
+  flex: 1;
+  position: sticky;
+
+  overflow-y: auto;
+  font-family: "muli", sans-serif;
+font-weight: 400;
+font-style: normal;
+border: #222 solid;
+border-radius: 10px;
+padding: 20px;
+}
+
 .variant-selector {
   flex: 1;
   position: sticky;
@@ -133,6 +152,7 @@ font-style: normal;
   font-family: "muli", sans-serif;
 font-weight: 400;
 font-style: normal;
+border: none;
 
 }
 
@@ -156,9 +176,8 @@ font-style: normal;
 .attribute-option {
   display: block;
   width: 100%;
-  padding: 25px;
+  padding: 15px;
   margin-bottom: 20px;
-  font-size: 18px;
   background-color: #ffffff;
   border: 2px solid #e1e1e1;
   border-radius: 10px;
@@ -168,15 +187,21 @@ font-style: normal;
 font-weight: 400;
 }
 
-.attribute-option:hover {
-  transform: scale(1.01);
+.attribute-option {
+  text-align: left;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+max-width: 100%;
+
 }
 
 .attribute-option:hover:not(.unavailable) {
   border-color: rgb(3, 114, 242);
   background-color: #fff;
   color: #1f2937;
-  transform: scale(1.01);
+  transform: scale(1);
 }
 
 .attribute-option.selected {
@@ -204,8 +229,8 @@ font-weight: 400;
 .add-to-cart-btn {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
-  padding: 25px 20px;
-  font-size: 28px;
+  padding: 15px 15px;
+  font-size: 20px;
   width: 100%;
   font-family: "muli", sans-serif;
   border: none;
@@ -247,7 +272,7 @@ textarea {
   border: #222 solid;
   border-radius: 10px;
   width: 100%;
-  height: 50px;
+  margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
   padding-top: 15px;
@@ -281,8 +306,7 @@ textarea {
   width: 100%;
   transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s;
   padding: 20px 20px;
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 20px;
   border-radius: 10px;
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
