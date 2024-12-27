@@ -168,17 +168,17 @@ const Account = () => {
           {user.orders && user.orders.length > 0 ? (
             user.orders.map((order) => (
               <div key={order._id} className="order-card">
-                <p>
+                <p className="order-info">
                   <strong>Order ID:</strong> {order._id}
                 </p>
-                <p>
+                <p className="order-info">
                   <strong>Date:</strong>{" "}
                   {new Date(order.createdAt).toLocaleDateString()}
                 </p>
-                <p>
+                <p className="order-info">
                   <strong>Status:</strong> {order.status}
                 </p>
-                <p>
+                <p className="order-info">
                   <strong>Total:</strong> €
                   {order.totalAmount?.toFixed(2) || "N/A"}
                 </p>
@@ -205,9 +205,9 @@ const Account = () => {
                               alt={item.variant?.name || "Unknown Product"}
                             />
                             <div className="order-item-details">
-                              <p className="item-name">
+                              <h2 className="item-name">
                                 {item.variant?.name || "Unknown Product"}
-                              </p>
+                              </h2>
                               <p className="item-quantity">
                                 Quantity: {item.quantity || 1}
                               </p>
@@ -241,7 +241,7 @@ const Account = () => {
                     src={item.imageUrls || "https://via.placeholder.com/150"}
                     alt={item.name || "Wishlist Item"}
                   />
-                  <strong>{item.name || "Wishlist Item"}</strong>
+                  <h2 className="wishlist-item-name">{item.name || "Wishlist Item"}</h2>
                   <p className="wishlist-item-price">
                     €{item.price?.toFixed(2) || "N/A"}
                   </p>

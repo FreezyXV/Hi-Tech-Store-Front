@@ -1,5 +1,8 @@
 /* cart.css */
 @import url("https://use.typekit.net/csk6jjx.css");
+@import url('https://fonts.cdnfonts.com/css/formula-condensed');
+@import url('https://fonts.cdnfonts.com/css/freemono');
+@import url(https://db.onlinewebfonts.com/c/6e7d86fe1dd94be502d31a6743ffc3d1?family=Formula+Condensed+Light);
 
 * {
     box-sizing: border-box;
@@ -28,11 +31,10 @@ width: 95%;
 }
 
 h1 {
-    font-family: "muli", sans-serif;
     text-align: center;
-    font-size: 2.2em;
-    margin-bottom: 0px;
-    color: #003a77;
+    font-family: "Formula Condensed";
+    color: #ffc300;
+    font-size: 3rem;
     letter-spacing: 1px;
     margin-top: 30px;
 }
@@ -73,35 +75,37 @@ h1 {
 }
 
 .cart-item-details h2 {
-    font-family: "muli", sans-serif;
-    font-size: 1.4em;
+    font-family: "Formula Condensed";
+    color: #ffc300;
+    font-size: 26px;
     margin: 0;
-    color: #003a77;
-    font-weight: 600;
+
+    font-weight: 200;
 }
 
 .cart-item-details p {
-    font-family: "muli", sans-serif;
+    font-family: 'FreeMono', sans-serif;
     margin: 5px 0;
     color: #666;
     font-size: 0.95em;
 }
 
 .price, .item-total {
+    font-family: 'FreeMono', sans-serif;
     font-weight: bold;
     color: #555;
     font-size: 1.1em;
 }
 
 .quantity-control {
-    font-family: "muli", sans-serif;
+    font-family: 'FreeMono', sans-serif;
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
 .quantity-control input {
-    font-family: "muli", sans-serif;
+    font-family: 'FreeMono', sans-serif;
     width: 60px;
     padding: 5px;
     font-size: 1em;
@@ -143,10 +147,11 @@ h1 {
 }
 
 .cart-summary h2 {
-    font-family: "muli", sans-serif;
-    font-size: 1.8em;
+    font-family: "Formula Condensed";
+    color: #ffc300;
+    font-size: 40px;
     margin-bottom: 15px;
-    color: #003a77;
+
 }
 
 .cart-summary p {
@@ -165,12 +170,13 @@ h1 {
 }
 
 .place-order-btn {
+    font-family: "Formula Condensed Light";
     width: 100%;
     padding: 12px;
     font-size: 1.2em;
-    background-color: #007bff;
-    color: white;
-    border: none;
+    background-color: white;
+    color: rebeccapurple;
+    border-color: #ffc300;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -178,11 +184,12 @@ h1 {
 }
 
 .place-order-btn:hover {
-    background-color: #0069d9;
+    background-color: rebeccapurple;
+    color: white;
 }
 
 .item-total {
-    font-family: "muli", sans-serif;
+    font-family: "Formula Condensed Light";
     font-size: 1.3em;
     color: #222;
     margin-left: auto;
@@ -217,7 +224,7 @@ h1 {
 }
 
 .remove-button {
-    background-color: #003a77;
+    background-color: black;
     font-size: 16px;
     color: white;
     padding: 10px;
@@ -231,18 +238,18 @@ h1 {
 .checkoutButton {
     background-color: rgb(255, 255, 255);
     font-size: 16px;
-    color: rgb(3, 114, 242);
+    color: rebeccapurple;
     padding: 15px;
     width: 200px;
     border-radius: 5px;
     border-color: transparent;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
-    border: rgb(3, 114, 242) solid;
+    border: rebeccapurple solid;
 }
 
 .checkoutButton:hover {
     transform: scale(1.03);
-    background-color: rgb(3, 114, 242);
+    background-color: #ffc300;
     color: #ffffff;
 }
 
@@ -276,17 +283,21 @@ h1 {
     text-align: left;
     
     h3{
+        font-weight: 600;
         font-size: 18px;
+        font-family: 'FreeMono', sans-serif;
     }
     p {
+        font-weight: 200;
         font-size: 14px;
+        font-family: 'FreeMono', sans-serif;
     }
 }
 
 /* Responsive Styles for Large Screens */
 @media (max-width: 1280px) {
 .cartTitle {
-    margin-top: 0px;
+    margin-top: 30px;
 }
 
 .wrapper-productPage{

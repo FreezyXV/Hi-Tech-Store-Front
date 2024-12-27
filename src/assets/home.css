@@ -2,6 +2,8 @@
 @import url("https://use.typekit.net/csk6jjx.css");
 @import url("/node_modules/slick-carousel/slick/slick.css");
 @import url("/node_modules/slick-carousel/slick/slick-theme.css");
+@import url('https://fonts.cdnfonts.com/css/formula-condensed');
+
 
 * {
   box-sizing: border-box;
@@ -19,7 +21,7 @@
   }
 
 .home-page {
-  font-family: "muli", sans-serif;
+  font-family: "Formula Condensed", sans-serif;
   font-style: normal;
   background-color: #fff;
 
@@ -38,8 +40,8 @@
 .hero-section h1 {
   font-size: 3rem;
   margin-bottom: 10px;
-  font-family: "muli", sans-serif;
-font-weight: 700;
+  font-family: "Formula Condensed", sans-serif;
+  font-weight: 700;
 font-style: normal;
 
 }
@@ -53,9 +55,11 @@ font-style: normal;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
-  font-size: 2rem;
-  color: #003a77;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffc300;
   text-transform: uppercase;
+  font-family: "Formula Condensed", sans-serif;
 }
 
 .categories-section {
@@ -92,7 +96,8 @@ font-style: normal;
 .category-card h3 {
   margin: 10px 0;
   font-size: 20px;
-  font-weight: bold;
+font-weight: 300;
+  font-family: "Formula Condensed", sans-serif;
   text-align: center;
   text-transform: uppercase;
   color: #222; /* Set to your desired color (black/gray) */
@@ -105,7 +110,7 @@ font-style: normal;
 }
 
 .category-card:hover h3 {
-  color: #003a77; /* Slightly darker text on hover for better visual feedback */
+  color: rebeccapurple;
 }
 
 
@@ -140,7 +145,7 @@ font-style: normal;
   left: 0;
   width: 100%;
   height: 70%;
-  background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+  background: rgba(0, 0, 0, 0.381); /* Dark overlay */
   z-index: 2; /* Place it above the image, but below text */
 }
 
@@ -172,14 +177,16 @@ font-style: normal;
 .banner-content h1 {
   font-size: 2.5rem;
   font-weight: 300;
-  color: #e0e0e0;
+  color: #ffffff;
   margin-bottom: 10px; /* Add space between title and subtitle */
+  font-family: "Formula Condensed", sans-serif;
 }
 
 .banner-content h2 {
-  font-size: 4rem;
+  font-size: 7rem;
   font-weight: 700;
-  color: #fcfcfc;
+  color: rebeccapurple;
+  font-family: "Formula Condensed", sans-serif;
 }
 
 .slick-next {
@@ -192,12 +199,16 @@ font-style: normal;
   display: inline-block;
   padding: 12px 25px;
   color: #ffffff;
-  background: #003a77;
+  background: black;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
+  text-align: left;
+  font-size: 1.2rem;
+  text-transform: uppercase;
   font-weight: bold;
   transition: background 0.3s ease, color 0.3s ease;
+  font-family: "Formula Condensed", sans-serif;
+  font-weight: 200;
   text-decoration: none;
 }
 
@@ -265,7 +276,7 @@ margin-right: 15px;
     position: relative;
     display: flex;
     align-items: center;
-    color: #e0e0e0;
+
 
     overflow: hidden;
     margin-bottom: -800px;
@@ -284,7 +295,7 @@ margin-right: 15px;
   position: relative;
   z-index: 2; 
   max-width: 100%; 
-  color: #e0e0e0;
+
   margin: 250px 50px 250px 200px;
   padding: 40px; 
 }
@@ -308,7 +319,7 @@ margin-right: 15px;
     position: relative;
     display: flex;
     align-items: center;
-    color: #e0e0e0;
+
 
     overflow: hidden;
     margin-bottom: -800px;
@@ -327,7 +338,7 @@ margin-right: 15px;
   position: relative;
   z-index: 2; 
   max-width: 100%; 
-  color: #e0e0e0;
+
   margin: 150px 50px 150px 50px;
   padding: 40px; 
 }
@@ -339,16 +350,16 @@ margin-right: 15px;
 
 @media (max-width: 1024px) {
   .banner-content h1 {
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: 300;
-    color: #e0e0e0;
+  
     margin-bottom: 10px; 
   }
   
   .banner-content h2 {
-    font-size: 1.4rem;
+    font-size: 4rem;
     font-weight: 700;
-    color: #fcfcfc;
+
     width: 300px;
   }
 
@@ -361,7 +372,7 @@ margin-right: 15px;
     position: relative;
     display: flex;
     align-items: center;
-    color: #e0e0e0;
+
 
     overflow: hidden;
     margin-bottom: -800px;
@@ -380,22 +391,22 @@ margin-right: 15px;
   position: relative;
   z-index: 2; 
   max-width: 100%; 
-  color: #e0e0e0;
+
   margin: 100px 0px 0px 0px;
   padding: 40px; 
 }
 
 .banner-content h1 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 300;
-  color: #e0e0e0;
+
   margin-bottom: 10px; 
 }
 
 .banner-content h2 {
-  font-size: 1.2rem;
+  font-size: 3rem;
   font-weight: 700;
-  color: #fcfcfc;
+
   width: 300px;
 }
 .luxury-banner-slider {
@@ -415,7 +426,7 @@ margin-right: 15px;
     position: relative;
     display: flex;
     align-items: center;
-    color: #e0e0e0;
+
 
     overflow: hidden;
     margin-bottom: -800px;
@@ -434,7 +445,7 @@ margin-right: 15px;
   position: relative;
   z-index: 2; 
   max-width: 100%; 
-  color: #e0e0e0;
+
   margin: 0px 0px 0px 0px;
   padding: 40px; 
 }
@@ -442,14 +453,14 @@ margin-right: 15px;
 .banner-content h1 {
   font-size: 1.5rem;
   font-weight: 300;
-  color: #e0e0e0;
+
   margin-bottom: 10px; 
 }
 
 .banner-content h2 {
-  font-size: 1.7rem;
+  font-size: 3rem;
   font-weight: 700;
-  color: #fcfcfc;
+
   width: 300px;
 }
 .luxury-banner-slider {

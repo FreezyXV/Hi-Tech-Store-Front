@@ -1,6 +1,9 @@
 /* Auth.css */
 @import url("https://use.typekit.net/csk6jjx.css");
 @import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;600&display=swap");
+@import url('https://fonts.cdnfonts.com/css/formula-condensed');
+@import url('https://fonts.cdnfonts.com/css/freemono');
+@import url(https://db.onlinewebfonts.com/c/6e7d86fe1dd94be502d31a6743ffc3d1?family=Formula+Condensed+Light);
 
 .body {
     
@@ -42,8 +45,9 @@ max-width: 500px;
 
 .auth-title, .account-title {
     text-align: center;
-    color: #003566;
-    font-size: 1.8rem;
+    font-family: "Formula Condensed";
+    color: #ffc300;
+    font-size: 3rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
 }
@@ -54,7 +58,8 @@ max-width: 500px;
 
 .auth-form .form-group label, .account-container .form-group label {
     display: block;
-    color: #003566;
+    color: black;
+    font-family: 'FreeMono', sans-serif;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -66,15 +71,16 @@ max-width: 500px;
     padding: 0.8rem;
     font-size: 1rem;
     border: 1px solid #ddd;
+    font-family: 'FreeMono', sans-serif;
     border-radius: 5px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     outline: none;
     background-color: #fafafa;
-    border: #003566 solid;
+    border: rebeccapurple solid;
 }
 
 .auth-form .form-group input:focus {
-    border-color: #007bff;
+    border-color: rebeccapurple;
     box-shadow: 0 0 6px rgba(0, 123, 255, 0.25);
 }
 
@@ -84,12 +90,13 @@ max-width: 500px;
     font-size: 1.3rem;
     font-weight: 600;
     background-color: #ffffff;
-    color: rgb(3, 114, 242);
+    color: rebeccapurple;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    border: rgb(3, 114, 242) solid;
+    border: rebeccapurple solid;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
+    font-family: "Formula Condensed Light";
 }
 
 .auth-button:hover {
@@ -118,16 +125,17 @@ max-width: 500px;
 .account-container{
     background-color: #ffffff;
     border: none;
-    width: 90%;
+    width: 100%;
     width: 600px;
     padding: 2rem;
+
     align-items: center;
     display: flex;
     flex-direction: column;
 }
 
 .account-container p{
-    font-family: 'Muli', sans-serif;
+    font-family: 'FreeMono', sans-serif;
     font-size: 16px;
     color: black;
 }
@@ -135,10 +143,11 @@ max-width: 500px;
 .account-title {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 1.8rem;
+    font-size: 3rem;
     font-weight: 600;
     margin-top: 30px;
-    font-family: 'Muli', sans-serif;
+    font-family: "Formula Condensed";
+    color: #ffc300;
 }
 
 .account-options {
@@ -153,17 +162,17 @@ max-width: 500px;
     margin: 0px 0px 20px;
     font-size: 1rem;
     background-color: #ffffff;
-    color: rgb(3, 114, 242);
+    color: rebeccapurple;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    border: rgb(3, 114, 242) solid;
+    border: rebeccapurple solid;
     width: 100%;
 }
 
 .account-button:hover {
-    background-color: rgb(3, 114, 242);
+    background-color: #ffc300;
     transform: translateY(-2px);
     color: #ffffff;
 }
@@ -182,7 +191,7 @@ max-width: 500px;
 .auth-container p, a {
     margin-top: 20px;
     font-size: 12px;
-    font-family: 'Muli', sans-serif;
+    font-family: 'FreeMono', sans-serif;
     text-decoration: none;
     color: black;
 }
@@ -197,9 +206,9 @@ max-width: 500px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: #ffffff;
-    font-family: 'Muli', sans-serif;
+    font-family: "Formula Condensed Light";
+    color: #ffc300;
     animation: fadeIn 0.6s ease-in-out;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -207,9 +216,10 @@ max-width: 500px;
 
 .wishlist-container h2 {
     margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+    font-size: 3rem;
     font-weight: bold;
-    color:#003566;
+    font-family: "Formula Condensed Light";
+    color: #ffc300;
 }
 
 .wishlist-container ul {
@@ -234,9 +244,15 @@ max-width: 500px;
     text-align: center;
 }
 
+.wishlist-item h2{
+    font-size: 24px;
+    font-family: "Formula Condensed Light";
+    color: #ffc300;
+}
+
 .wishlist-item img {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 5px;
     object-fit: cover;
     margin-bottom: 0.5rem;
@@ -252,6 +268,11 @@ max-width: 500px;
     color: #444;
 }
 
+.item-price, .item-quantity{
+    font-family: "Formula Condensed Light";
+    color: #222;
+}
+
 
 .ordershistory-container {
     width: 50%;
@@ -259,7 +280,8 @@ max-width: 500px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: #ffffff;
-    font-family: 'Muli', sans-serif;
+    font-family: "Formula Condensed Light";
+    color: #ffc300;
     animation: fadeIn 0.6s ease-in-out;
 
     display: flex;
@@ -269,8 +291,8 @@ max-width: 500px;
 
 .ordershistory-container h2 {
     margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    color: #003566
+    font-size: 3rem;
+    color: #ffc300;
 }
 
 .order-wishlist-containers {
@@ -299,8 +321,9 @@ h2 {
     color: #003566;
 }
 
-.order-card p{ 
+.order-info{ 
 color: black;
+font-family: 'FreeMono', sans-serif;
 }
 
 .order-items-list {
@@ -322,9 +345,19 @@ color: black;
     font-family: 'Muli', sans-serif;
 }
 
+.item-price p {
+    font-family: "Formula Condensed Light";
+    color: #222;
+}
+
+.item-quantity p {
+    font-family: "Formula Condensed Light";
+    color: #222;
+}
+
 .order-item img {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 5px;
     object-fit: cover;
     margin-bottom: 0.5rem;
@@ -334,20 +367,22 @@ color: black;
     text-align: center;
 }
 
-.order-item-details p {
-    margin: 0.2rem 0;
+.order-item-details h2 {
+    font-size: 24px;
+    font-family: "Formula Condensed Light";
+    color: #ffc300;
 }
 
 .toggle-order-details-btn {
     margin-top: 0.5rem;
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    background-color: #003566;
+    background-color: #222;
     color: white;
-    border: none;
+    border:  solid #222;
     border-radius: 5px;
     cursor: pointer;
-    font-family: 'Muli', sans-serif;
+    font-family: "Formula Condensed Light";
     transition: background-color 0.3s ease;
 }
 
@@ -356,7 +391,6 @@ color: black;
     color: black;
     border:  solid #222;
 }
-
 
 
 @keyframes fadeIn {
