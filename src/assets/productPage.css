@@ -118,7 +118,7 @@ h3 {
   font-family: "muli", sans-serif;
 font-weight: 400;
 font-style: normal;
-color: #003a77;
+color: #222;
 }
 
 .product-specs ul {
@@ -136,7 +136,7 @@ font-style: normal;
   font-family: "muli", sans-serif;
 font-weight: 400;
 font-style: normal;
-color: #003a77;
+color: #222;
 }
 
 .variant-selector-main {
@@ -175,7 +175,7 @@ padding: 10px;
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
-  color: #003a77;
+  color: #222;
 }
 
 .variant-options {
@@ -241,7 +241,7 @@ max-width: 100%;
 }
 
 .attribute-section h3 {
-  color: #003a77;
+  color: #222;
 }
 
 /* Add to Cart Button Styles */
@@ -262,7 +262,7 @@ max-width: 100%;
 }
 
 .add-to-cart-btn:hover {
-  transform: scale(1.01); /* Slight zoom effect on hover */
+  transform: scale(1.005); /* Slight zoom effect on hover */
   transition: transform 0.5s ease-in-out;
   background-color: #ffc300;
   color: white;
