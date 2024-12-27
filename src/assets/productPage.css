@@ -262,8 +262,8 @@ max-width: 100%;
 }
 
 .add-to-cart-btn:hover {
-  transform: scale(1.005); /* Slight zoom effect on hover */
-  transition: transform 0.5s ease-in-out;
+  transform: scale(1.002); /* Slight zoom effect on hover */
+  transition: 600ms;
   background-color: #ffc300;
   color: white;
 }
@@ -343,9 +343,10 @@ textarea {
 }
 
 .review-btn:hover {
+  transition: 500ms;
   color: white;
   background-color: #001d3d;
-  border: #001d3d solid;
+  border: #001d3d 3px solid;
 }
 
 .wishlist-btn {
