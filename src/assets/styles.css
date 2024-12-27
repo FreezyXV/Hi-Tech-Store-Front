@@ -5,7 +5,7 @@
   flex-direction: column;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #003a77;
     background-color: #fff;
     min-height: 100vh;
   }
@@ -48,6 +48,7 @@ font-style: normal;
     margin-bottom: 1rem;
     font-family: "muli", sans-serif;
 font-style: normal;
+color: #003a77;
   }
   
   .product-list, .brand-list {
@@ -64,7 +65,7 @@ font-style: normal;
     border-radius: 8px;
     text-align: center;
     transition: transform 0.3s;
-    border: #222 solid;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     text-decoration: none;
   }
   
@@ -134,12 +135,22 @@ font-style: normal;
   transform: scale(1.03);
 }
 
+.PageTile {
+  text-align: center;
+  font-size: 38px;
+  margin: 20px;
+  color: #003a77;
+  font-family: "muli", sans-serif;
+font-weight: 300;
+
+}
+
 /* Brand Title */
 .page-title {
   text-align: center;
   font-size: 38px;
   margin: 20px;
-  color: #1f2937;
+  color: #003a77;
   font-family: "muli", sans-serif;
 font-weight: 300;
 
@@ -148,7 +159,7 @@ font-weight: 300;
 .brand-card h2 {
   font-size: 24px;
   font-weight: 400;
-  color: #444;
+  color: #003a77;
   margin-top: 10px;
   font-family: "muli", sans-serif;
   text-transform: uppercase;
@@ -185,7 +196,7 @@ font-weight: 300;
 
   margin: 20px 70px 20px 70px;
   transition: transform 0.3s ease;
-  border: #222 solid;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .model-card:hover {

@@ -43,9 +43,10 @@ h3 {
   align-items: center;
   margin-bottom: 20px;
   width: 100%;
-  border: #000000 solid;
+  /* border: #001d3d solid; */
   border-radius: 10px;
   position: relative;
+
 }
 
 .product-image img {
@@ -53,6 +54,10 @@ h3 {
   height: auto;
   border-radius: 10px;
   
+}
+
+.image-container {
+  height: 100%;
 }
 
 .prev-image-btn, .next-image-btn {
@@ -98,7 +103,8 @@ h3 {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  border: #222 solid;
+  /* border: #22222212 solid; */
+
 }
 
 .product-specs {
@@ -112,6 +118,7 @@ h3 {
   font-family: "muli", sans-serif;
 font-weight: 400;
 font-style: normal;
+color: #003a77;
 }
 
 .product-specs ul {
@@ -124,11 +131,12 @@ font-style: normal;
 
 .product-specs ul li {
   padding: 5px 0;
-  font-size: 16px;
+  font-size: 12px;
   border-bottom: 1px solid #ddd;
   font-family: "muli", sans-serif;
 font-weight: 400;
 font-style: normal;
+color: #003a77;
 }
 
 .variant-selector-main {
@@ -139,9 +147,14 @@ font-style: normal;
   font-family: "muli", sans-serif;
 font-weight: 400;
 font-style: normal;
-border: #222 solid;
+/* border: #222 solid; */
 border-radius: 10px;
 padding: 20px;
+background-color: transparent;
+}
+
+.variant-selector-main h2 {
+  color: #003a77;
 }
 
 .variant-selector {
@@ -153,6 +166,8 @@ padding: 20px;
 font-weight: 400;
 font-style: normal;
 border: none;
+box-shadow: none;
+padding: 10px;
 
 }
 
@@ -160,7 +175,7 @@ border: none;
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
-  color: #08131f;
+  color: #003a77;
 }
 
 .variant-options {
@@ -179,7 +194,7 @@ border: none;
   padding: 15px;
   margin-bottom: 20px;
   background-color: #ffffff;
-  border: 2px solid #e1e1e1;
+  border: 2px solid #003a7721;
   border-radius: 10px;
   cursor: pointer;
   transition: border-color 0.3s, background-color 0.3s, color 0.3s;
@@ -225,11 +240,15 @@ max-width: 100%;
   background-color: #f0f0f0;
 }
 
+.attribute-section h3 {
+  color: #003a77;
+}
+
 /* Add to Cart Button Styles */
 .add-to-cart-btn {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
-  padding: 15px 15px;
+  padding: 10px 0px;
   font-size: 20px;
   width: 100%;
   font-family: "muli", sans-serif;
@@ -237,8 +256,7 @@ max-width: 100%;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.5s;
-  border: rgb(3, 114, 242) 3px solid;
-  margin-top: 20px;
+  border: #ffc300 3px solid;
 
   
 }
@@ -246,7 +264,7 @@ max-width: 100%;
 .add-to-cart-btn:hover {
   transform: scale(1.01); /* Slight zoom effect on hover */
   transition: transform 0.5s ease-in-out;
-  background-color: rgb(3, 114, 242);
+  background-color: #ffc300;
   color: white;
 }
 
@@ -256,6 +274,7 @@ max-width: 100%;
   font-size: 16px;
   margin-top: 10px;
   color: #050505;
+  color: green;
 }
 
 .reviews-section {
@@ -264,12 +283,21 @@ max-width: 100%;
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
-  border: #222 solid;
+
   position: relative;
+  color: #001d3d;
+}
+
+.reviews-section p {
+  font-size: 12px;
+}
+
+.reviews-section h3 {
+  font-size: 14px;
 }
 
 textarea {
-  border: #222 solid;
+  border: #2222224f solid;
   border-radius: 10px;
   width: 100%;
   margin-top: 10px;
@@ -285,7 +313,7 @@ textarea {
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 10px;
-  border: #222 solid;
+  border: 2px solid #e1e1e1;;
   position: relative;
 }
 
@@ -305,18 +333,19 @@ textarea {
 .review-btn {
   width: 100%;
   transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s;
-  padding: 20px 20px;
-  font-size: 20px;
+  padding: 15px 15px;
+  font-size: 18px;
   border-radius: 10px;
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-  border: #222 solid;
+  background-color: #ffffff;
+  color: #001d3d;
+  border: #0d0050 3px solid;
+  max-width: 300px;
 }
 
 .review-btn:hover {
-  transform: scale(1.01);
-  color: #000000;
-  background-color: rgb(255, 255, 255);
+  color: white;
+  background-color: #001d3d;
+  border: #001d3d solid;
 }
 
 .wishlist-btn {
@@ -331,8 +360,8 @@ textarea {
   background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
   border: #222 solid;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -353,8 +382,8 @@ textarea {
 }
 
 .wishlist-icon {
-  width: 50px; /* Set icon size */
-  height: 50px;
+  width: 40px; /* Set icon size */
+  height: 40px;
   display: block;
 }
 
@@ -369,8 +398,8 @@ textarea {
 }
 
 .star-icon {
-  width: 40px; /* Set star size */
-  height: 40px;
+  width: 25px; /* Set star size */
+  height: 25px;
   cursor: pointer; /* Change cursor to pointer */
   transition: transform 0.5s ease-in-out; /* Add hover effect */
 }
@@ -385,8 +414,8 @@ textarea {
   background-color: transparent; /* Semi-transparent background */
   border: #222 solid;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -473,11 +502,11 @@ width: 100%;
 .prev-image-btn,
 .next-image-btn {
   position: absolute;
-  background-color: black;
-  color: white;
+  background-color: dimgray;
+  color: rgb(0, 0, 0);
   font-size: 30px;
   padding: 40px;
-  border: #222 solid;
+border: none;
   cursor: pointer;
   z-index: 10;
 padding: 25px;
@@ -499,7 +528,7 @@ text-align: center;
   top: 50%;
   font-size: 40px;
   color: white;
-  border: #222 solid;
+
   transition: background-color 0.5s ease-in-out;
 }
 
@@ -528,7 +557,7 @@ text-align: center;
 .next-image-btn
  {
   position: absolute;
-  border: #222 solid;
+  border: none;
   cursor: pointer;
   z-index: 0;
   display: flex;
@@ -556,13 +585,20 @@ text-align: center;
 /* Left Arrow Button */
 .prev-image-btn
  {
-  left: -25px; /* Adjust this value to position the left arrow */
+  left: 20px; /* Adjust this value to position the left arrow */
   
 }
 
 /* Right Arrow Button */
 .next-image-btn {
-  right: -25px; /* Adjust this value to position the right arrow */
+  right: 20px; /* Adjust this value to position the right arrow */
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -639,21 +675,11 @@ transition: background-color 0.5s ease-in-out;
   }
 
   textarea {
-    height: 100px;
+    height: 70px;
     font-size: 20px;
     padding-top: 30px;
   }
 
-  .star-icon {
-    width: 50px; /* Set star size */
-    height: 50px;
-    cursor: pointer; /* Change cursor to pointer */
-    transition: transform 0.2s ease-in-out; /* Add hover effect */
-  }
-  
-  .star-icon:hover {
-    transform: scale(1.1); /* Slightly enlarge the star on hover */
-  }
   .delete-review-btn {
     position: absolute;
     top: -2px;
@@ -714,6 +740,18 @@ transition: background-color 0.5s ease-in-out;
   }
 }
 
+@media (max-width: 550px) {
+  .product-page-wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.product-page {
+  padding: 0px;
+}
+}
+
 
 @media (max-width: 550px) {
   .product-container {
@@ -733,17 +771,9 @@ transition: background-color 0.5s ease-in-out;
   }
 
   textarea {
-    height: 70px;
+    height: 50px;
   }
 
-  .star-icon {
-    width: 40px; /* Set star size */
-    height: 40px;
-  }
-  
-  .star-icon:hover {
-    transform: scale(1.08); /* Slightly enlarge the star on hover */
-  }
   .delete-review-btn {
     position: absolute;
     top: -2px;

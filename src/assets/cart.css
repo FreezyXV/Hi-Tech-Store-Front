@@ -16,6 +16,7 @@
     }
 
 .wrapper-productPage{
+    margin-bottom: 50px;
     display: flex;
     padding: 0px;
     gap: 20px;
@@ -31,7 +32,7 @@ h1 {
     text-align: center;
     font-size: 2.2em;
     margin-bottom: 0px;
-    color: #222;
+    color: #003a77;
     letter-spacing: 1px;
     margin-top: 30px;
 }
@@ -47,16 +48,16 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 5px 0px;
+
     border-radius: 10px;
-    background-color: #fff;
+
 }
 
 .cart-item-image {
     width: 50%;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+
     margin-right: 50px;
 }
 
@@ -68,13 +69,14 @@ h1 {
     align-items: center;
     align-items: flex-start;
     gap: 10px;
+    padding: 20px;
 }
 
 .cart-item-details h2 {
     font-family: "muli", sans-serif;
     font-size: 1.4em;
     margin: 0;
-    color: #333;
+    color: #003a77;
     font-weight: 600;
 }
 
@@ -119,6 +121,10 @@ h1 {
     transition: background-color 0.3s;
 }
 
+.cart-item button {
+    width: 100%;
+}
+
 .quantity-control button:hover {
     background-color: #ffffff;
 }
@@ -128,7 +134,7 @@ h1 {
     padding: 20px;
     border-radius: 10px;
     background-color: #fff;
-    border: #222 solid;
+ 
     width: 100%;
     height: 100%;
     display: flex;
@@ -140,13 +146,13 @@ h1 {
     font-family: "muli", sans-serif;
     font-size: 1.8em;
     margin-bottom: 15px;
-    color: #333;
+    color: #003a77;
 }
 
 .cart-summary p {
     font-family: "muli", sans-serif;
     font-size: 1.5em;
-    color: #000000;
+    color: #222;
     margin: 10px 0;
     font-weight: bold;
 }
@@ -178,7 +184,7 @@ h1 {
 .item-total {
     font-family: "muli", sans-serif;
     font-size: 1.3em;
-    color: #333;
+    color: #222;
     margin-left: auto;
     font-weight: 600;
 }
@@ -206,8 +212,12 @@ h1 {
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+.quantity-control label {
+    color: #222;
+}
+
 .remove-button {
-    background-color: rgb(0, 0, 0);
+    background-color: #003a77;
     font-size: 16px;
     color: white;
     padding: 10px;
@@ -215,7 +225,7 @@ h1 {
     border-radius: 7px;
     border-color: transparent;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
-    border: #222 solid;
+    border: #003a77 solid;
 }
 
 .checkoutButton {
@@ -250,15 +260,16 @@ h1 {
     margin: 20px 0px;
     padding: 30px;
     font-family: "muli", sans-serif;
-    color: #333;
+    color: #003a77;
     background-color: #ffffff;
     border-radius: 12px;
-    border: #222 solid;
+    border: none;
     display: flex;
     flex-direction: column;
     gap: 50px;
     height: 100%;
     justify-content: center;
+
 }
 
 .info-section {
@@ -297,13 +308,13 @@ width: 100%;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        border-bottom: #222 solid;
-        border-radius: 0px;
+
     }
 
     .cart-item-image {
 margin-right: 0px;
         height: auto;
+        width: 100%;
     }
 
     .cart-item-details {
@@ -342,14 +353,10 @@ align-items: center;
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        border-bottom: #222 solid;
-        border-radius: 0px;
+
     }
 
-    .cart-item-image {
-        width: 70%;
-        margin-right: 0px;
-    }
+
 
     .cart-summary {
         font-size: 0.9em;
