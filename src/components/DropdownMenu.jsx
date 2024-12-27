@@ -22,7 +22,7 @@ const DropdownMenu = ({
         onClick={onModelClick}
       >
         <div className="item-text">
-          <span className="item-name">Explore All</span>
+          <span className="exploreAll">Explore All</span>
         </div>
       </Link>
       <div className="dropdown-items">

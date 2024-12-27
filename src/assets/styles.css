@@ -1,4 +1,7 @@
 @import url("https://use.typekit.net/csk6jjx.css");
+@import url('https://fonts.cdnfonts.com/css/formula-condensed');
+@import url('https://fonts.cdnfonts.com/css/freemono');
+@import url(https://db.onlinewebfonts.com/c/6e7d86fe1dd94be502d31a6743ffc3d1?family=Formula+Condensed+Light);
 
 .body {
   display: flex;
@@ -46,9 +49,9 @@ font-style: normal;
   .header h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    font-family: "muli", sans-serif;
+    font-family: "Formula Condensed", sans-serif;
 font-style: normal;
-color: #003a77;
+color: #ffc300;
   }
   
   .product-list, .brand-list {
@@ -107,6 +110,7 @@ color: #003a77;
 .brand-card {
   text-align: center;
   padding: 30px;
+  border: #222 solid;
   border-radius: 15px;
   background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -138,9 +142,9 @@ color: #003a77;
 .PageTile {
   text-align: center;
   font-size: 38px;
-  margin: 20px;
-  color: #003a77;
-  font-family: "muli", sans-serif;
+  margin: 42px;
+  color: #ffc300;
+  font-family: "Formula Condensed", sans-serif;
 font-weight: 300;
 
 }
@@ -148,20 +152,21 @@ font-weight: 300;
 /* Brand Title */
 .page-title {
   text-align: center;
-  font-size: 38px;
+  font-size: 52px;
   margin: 20px;
-  color: #003a77;
-  font-family: "muli", sans-serif;
-font-weight: 300;
+  color: #ffc300;
+  font-family: "Formula Condensed", sans-serif;
+font-weight: 600;
 
 }
 
 .brand-card h2 {
   font-size: 24px;
-  font-weight: 400;
-  color: #003a77;
+  font-weight: 200;
+
   margin-top: 10px;
-  font-family: "muli", sans-serif;
+  color: #ffc300;
+  font-family: "Formula Condensed", sans-serif;
   text-transform: uppercase;
 }
 
@@ -224,16 +229,17 @@ font-weight: 300;
 
 .model-details h2 {
   margin: 0;
-  font-size: 22px;
-  color: #333;
-  font-weight: bold;
-  
+  font-size: 30px;
+  color: #ffc300;
+  font-family: "Formula Condensed Light", sans-serif;
+
 }
 
 .model-details p {
   margin: 5px 0;
   color: #666;
   font-size: 16px;
+  font-family: 'FreeMono', sans-serif;
 }
 
 p.model-price {

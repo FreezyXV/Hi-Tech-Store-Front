@@ -1,6 +1,22 @@
 /* Toast container */
+@font-face {
+    font-family: 'Formula Condensed Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('./Fonts/FormulaCondensed-Light.woff'), url('FormulaCondensed-Light.woff') format('woff');
+    }
+    
+  
+    @font-face {
+    font-family: 'Formula Condensed Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('./Fonts/FormulaCondensed-Bold.woff'), url('FormulaCondensed-Bold.woff') format('woff');
+    }
 .Toastify__toast-container {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Formula Condensed Light';
+    font-style: normal;
+    font-weight: normal;
     font-size: 16px;
     line-height: 1.5;
     z-index: 9999;

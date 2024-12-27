@@ -1,4 +1,7 @@
 @import url("https://use.typekit.net/csk6jjx.css");
+@import url('https://fonts.cdnfonts.com/css/formula-condensed');
+@import url('https://fonts.cdnfonts.com/css/freemono');
+@import url(https://db.onlinewebfonts.com/c/6e7d86fe1dd94be502d31a6743ffc3d1?family=Formula+Condensed+Light);
 
 .main-allproducts {
 display: flex;
@@ -13,17 +16,16 @@ margin-bottom: 50px;
 
 .page-title {
   text-align: center;
-  font-size: 2.5rem;
-  color: #1f2937;
-  font-family: "muli", sans-serif;
-  font-weight: 300;
+  font-family: "Formula Condensed";
+  color: #ffc300;
+  font-size: 52px;
+  font-weight: 600;
   margin-bottom: 30px;
 }
 
 .models-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
   align-items: center;
 }
 
@@ -45,13 +47,13 @@ margin-bottom: 50px;
 }
 
 .model-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Model Image */
 .model-image {
-  width: 150px;
+  width: 300px;
   height: auto;
   border-radius: 10px;
   margin-right: 20px;
@@ -59,7 +61,7 @@ margin-bottom: 50px;
 }
 
 .model-card:hover .model-image {
-  transform: scale(1.06);
+  transform: scale(1.01);
 }
 
 /* Model Details */
@@ -69,10 +71,9 @@ margin-bottom: 50px;
 
 .model-details h2 {
   margin: 0;
-  font-size: 22px;
-  color: #333;
-  font-weight: bold;
-  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  color: #ffc300;
+  font-family: "Formula Condensed Light";
 }
 
 .model-price {
