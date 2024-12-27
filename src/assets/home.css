@@ -54,7 +54,7 @@ font-style: normal;
   margin-top: 40px;
   margin-bottom: 40px;
   font-size: 2rem;
-  color: #333;
+  color: #003a77;
   text-transform: uppercase;
 }
 
@@ -75,11 +75,11 @@ font-style: normal;
   background-color: #fff;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
   position: relative;
-  border: #222 solid;
+
   text-decoration: none; /* Remove underline from links */
   width: 90%;
 }
@@ -95,7 +95,7 @@ font-style: normal;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
-  color: #333; /* Set to your desired color (black/gray) */
+  color: #003a77; /* Set to your desired color (black/gray) */
   text-decoration: none; /* Ensure text-decoration is removed */
 }
 
@@ -105,7 +105,7 @@ font-style: normal;
 }
 
 .category-card:hover h3 {
-  color: #222; /* Slightly darker text on hover for better visual feedback */
+  color: #003a77; /* Slightly darker text on hover for better visual feedback */
 }
 
 
@@ -192,7 +192,7 @@ font-style: normal;
   display: inline-block;
   padding: 12px 25px;
   color: #ffffff;
-  background: rgb(0, 0, 0);
+  background: #003a77;
   border: none;
   border-radius: 5px;
   font-size: 1rem;

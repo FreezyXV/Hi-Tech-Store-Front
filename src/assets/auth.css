@@ -26,15 +26,15 @@
 }
 
 .auth-container {
-
+margin-top: 50px;
 max-width: 500px;
     padding: 2rem;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
     border-radius: 10px;
     background-color: #ffffff;
     font-family: 'Muli', sans-serif;
     animation: fadeIn 0.6s ease-in-out;
-    border: #222 solid;
+
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -42,7 +42,7 @@ max-width: 500px;
 
 .auth-title, .account-title {
     text-align: center;
-    color: #333;
+    color: #003566;
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
@@ -54,7 +54,7 @@ max-width: 500px;
 
 .auth-form .form-group label, .account-container .form-group label {
     display: block;
-    color: #555;
+    color: #003566;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -70,7 +70,7 @@ max-width: 500px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     outline: none;
     background-color: #fafafa;
-    border: #222 solid;
+    border: #003566 solid;
 }
 
 .auth-form .form-group input:focus {
@@ -129,6 +129,7 @@ max-width: 500px;
 .account-container p{
     font-family: 'Muli', sans-serif;
     font-size: 16px;
+    color: black;
 }
 
 .account-title {
@@ -198,7 +199,7 @@ max-width: 500px;
     background-color: #ffffff;
     font-family: 'Muli', sans-serif;
     animation: fadeIn 0.6s ease-in-out;
-    border: 2px solid #222;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -208,7 +209,7 @@ max-width: 500px;
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     font-weight: bold;
-    color: #222;
+    color:#003566;
 }
 
 .wishlist-container ul {
@@ -222,14 +223,14 @@ max-width: 500px;
 }
 
 .wishlist-item {
-    border: 1px solid #ccc;
+
     border-radius: 10px;
     padding: 1rem;
     background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
     text-align: center;
 }
 
@@ -260,10 +261,16 @@ max-width: 500px;
     background-color: #ffffff;
     font-family: 'Muli', sans-serif;
     animation: fadeIn 0.6s ease-in-out;
-    border:  solid #222;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.ordershistory-container h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #003566
 }
 
 .order-wishlist-containers {
@@ -280,12 +287,20 @@ max-width: 500px;
     width: 100%;
     padding: 1rem;
     margin-bottom: 1rem;
-    border:  solid #222;
+
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: #f2f2f276;
     animation: fadeIn 0.5s ease-in-out;
     font-family: 'Muli', sans-serif;
 
+}
+
+h2 {
+    color: #003566;
+}
+
+.order-card p{ 
+color: black;
 }
 
 .order-items-list {
@@ -296,11 +311,11 @@ max-width: 500px;
 }
 
 .order-item {
-    border: 1px solid #ccc;
+
     border-radius: 10px;
     padding: 1rem;
     background-color: #f9f9f9;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -327,7 +342,7 @@ max-width: 500px;
     margin-top: 0.5rem;
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    background-color: #020202;
+    background-color: #003566;
     color: white;
     border: none;
     border-radius: 5px;
@@ -397,8 +412,6 @@ width: 90%;
         padding: 1rem;
         margin-top: 1.5rem;
         margin-bottom: 1rem;
-        border-bottom: 1px solid #222;
-        border-top: 1px solid #222;
         border-left: none;
         border-right: none;
         border-radius: 0px;
@@ -419,6 +432,6 @@ width: 90%;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
             outline: none;
             background-color: #fafafa;
-            border: #222 solid;
+            border: #003566 solid;
         }
 }

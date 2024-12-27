@@ -26,8 +26,8 @@ footer {
 .footer {
 
   font-family: "muli", sans-serif;
-  background-color: black;
-  color: #fff;
+  background-color: #ffffff;
+  color: #000000;
   transition: opacity 0.3s ease; /* Smooth appearance */
   opacity: 1;
   width: 100%;
@@ -39,7 +39,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0px 32px 0px 35px;
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 .footer-section {
@@ -50,7 +50,7 @@ footer {
 .footer-section h3 {
   font-family: "muli", sans-serif;
   margin-bottom: 15px;
-  color: #ffffff;
+  color: #000000;
   font-size: 18px;
   text-transform: uppercase;
   
@@ -60,7 +60,7 @@ footer {
 .footer-section ul,
 .footer-section a {
   font-family: "muli", sans-serif;
-  color: #bbb;
+  color: #000000;
   font-size: 14px;
 }
 
@@ -78,7 +78,7 @@ footer {
 
 .footer-section ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #000000;
   transition: color 0.3s ease;
 }
 
@@ -89,7 +89,7 @@ footer {
 
 .footer-section .social-icons a {
   margin-right: 15px;
-  color: #fff;
+  color: #000000;
   transition: color 0.3s ease;
 }
 
@@ -107,7 +107,7 @@ footer {
 .footer-bottom .legal-links a {
   font-family: "muli", sans-serif;
   margin-right: 15px;
-  color: #bbb;
+  color: #000000;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -115,6 +115,7 @@ footer {
 .footer-bottom .legal-links a:hover {
   color: rgb(3, 114, 242);
 }
+
 @media screen and (max-width: 1300px) {
   .footer {
     bottom: 0;
