@@ -11,26 +11,27 @@
         flex-direction: column;
         align-items: center;
     
-        height: 100vh;
+
         
 }
 
 .login {
     box-sizing: border-box;
-    margin-top: 100px;
+    margin-top: 50px;
     padding: 0;
+    min-height: 100vh;
 }
 
 .register {
     box-sizing: border-box;
-    margin-top: 100px;
+    margin-top: 50px;
     padding: 0;
-
+    min-height: 100vh;
 }
 
 .auth-container {
 margin-top: 50px;
-max-width: 500px;
+
     padding: 2rem;
 
     border-radius: 10px;
@@ -42,6 +43,7 @@ max-width: 500px;
     display: flex;
     flex-direction: column;
 }
+
 
 .auth-title, .account-title {
     text-align: center;
@@ -100,7 +102,7 @@ max-width: 500px;
 }
 
 .auth-button:hover {
-    background-color: rgb(3, 114, 242);
+    background-color: #ffc300;
     transform: scale(1.01);
     color: #ffffff;
 }
@@ -108,6 +110,10 @@ max-width: 500px;
 .auth-button:active {
     transform: scale(1.01);
 }
+
+
+
+
 
 .auth-form {
     display: flex;

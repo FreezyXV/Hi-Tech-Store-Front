@@ -56,6 +56,7 @@ const Login = () => {
               Login
             </button>
           </form>
+          <div>
           <p>
             <a href="/forgot-password" className="forgot-password-link">
               Forgot your password?
@@ -67,6 +68,8 @@ const Login = () => {
               Register
             </a>
           </p>
+          </div>
+
         </div>
       </div>
       <Footer />
