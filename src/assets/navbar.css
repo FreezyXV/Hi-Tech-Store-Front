@@ -372,9 +372,7 @@ border: none;
 
   }
 
-  .right-nav-buttons .navbar-icon-text {
-    display: none; 
-  }
+ 
 
   .right-nav-buttons img {
     display: block; /* Ensure logo images are displayed */
@@ -402,6 +400,7 @@ width: 100%;
   .navbar-home-text {
     display: flex;
     color: black;
+    font-size: 18px;
     font-family: "Formula Condensed Light";
     color: #222;
   }
