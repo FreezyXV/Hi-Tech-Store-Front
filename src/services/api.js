@@ -2,18 +2,18 @@
 import axios from "axios";
 
 // Determine the API URL based on environment variables
-const API_URL = 
-  import.meta.env.VITE_API_URL_LOCAL ?? 
-  import.meta.env.VITE_API_URL ?? 
+const API_URL =
+  import.meta.env.VITE_API_URL_LOCAL ??
+  import.meta.env.VITE_API_URL ??
   "http://localhost:5002";
-console.log(`API_URL: ${API_URL}`); // Ajouté pour le diagnostic
+console.log(`API_URL: ${API_URL}`);
 
 // Function to retrieve the token from localStorage
 const getToken = () => localStorage.getItem("authToken");
 
 // Create an axios instance with the base URL
 const axiosInstance = axios.create({
-  baseURL: `${API_URL}/api`, // Add /api prefix to the base URL
+  baseURL: `${API_URL}/api`,
 });
 
 // Interceptor to attach Authorization token to every request
@@ -53,9 +53,6 @@ const handleApiError = (error) => {
 };
 
 export { axiosInstance, handleApiError };
-
-
-
 
 // Fetch categories
 export const fetchCategories = async () => {

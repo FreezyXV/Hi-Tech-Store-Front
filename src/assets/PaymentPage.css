@@ -1,24 +1,25 @@
 @font-face {
-  font-family: 'Formula Condensed Light';
+  font-family: "Formula Condensed Light";
   font-style: normal;
   font-weight: normal;
-  src: local('./Fonts/FormulaCondensed-Light.woff'), url('FormulaCondensed-Light.woff') format('woff');
-  }
-  
+  src: local("./Fonts/FormulaCondensed-Light.woff"),
+    url("FormulaCondensed-Light.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Formula Condensed Bold';
+@font-face {
+  font-family: "Formula Condensed Bold";
   font-style: normal;
   font-weight: normal;
-  src: local('./Fonts/FormulaCondensed-Bold.woff'), url('FormulaCondensed-Bold.woff') format('woff');
-  }
+  src: local("./Fonts/FormulaCondensed-Bold.woff"),
+    url("FormulaCondensed-Bold.woff") format("woff");
+}
 
 .payment-method {
-margin-top: 20px;
+  margin-top: 20px;
   padding: 2rem;
   background-color: #ffffff;
 
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
 }
 
 .payment-method h2 {

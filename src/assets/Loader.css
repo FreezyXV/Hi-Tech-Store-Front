@@ -1,54 +1,47 @@
 /* src/assets/Loader.css */
+@import url("https://fonts.cdnfonts.com/css/formula-condensed");
+@import url("https://fonts.cdnfonts.com/css/freemono");
+@import url("https://db.onlinewebfonts.com/c/6e7d86fe1dd94be502d31a6743ffc3d1?family=Formula+Condensed+Light");
 
-/* Load any required fonts (if not already globally imported) */
-@import url('https://fonts.cdnfonts.com/css/formula-condensed');
-@import url('https://fonts.cdnfonts.com/css/freemono');
-@import url('https://db.onlinewebfonts.com/c/6e7d86fe1dd94be502d31a6743ffc3d1?family=Formula+Condensed+Light');
-
-/* Container that covers full viewport height */
 .loader-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #fff; /* Adjust if you prefer a different background color */
+  background-color: #fff;
 }
 
-/* Logo styling */
 .loader-logo {
-  width: 180px; /* Adjust for desktops */
+  width: 180px;
   margin-bottom: 20px;
 }
 
 /* Text styling */
 .loader-text {
   font-family: "Formula Condensed", sans-serif;
-  font-size: 10rem; /* Very large for desktops */
+  font-size: 10rem;
   color: #ffc300;
   margin-bottom: 20px;
   text-align: center;
 }
 
-/* Progress bar container */
 .progress-bar {
   width: 50%;
-  max-width: 400px; /* Helps limit the max size on large screens */
+  max-width: 400px;
   height: 10px;
-  background-color: #222; /* Dark bar background */
+  background-color: #222;
   overflow: hidden;
-  border-radius: 5px; /* Slight rounding, optional */
+  border-radius: 5px;
 }
 
-/* Fills the progress bar from 0% to 100% */
 .progress-fill {
   width: 0%;
   height: 100%;
   background-color: #ffc300;
-  animation: fillProgress 1s linear forwards; /* Adjust duration as needed */
+  animation: fillProgress 1s linear forwards;
 }
 
-/* Keyframes: animate from 0% width to 100% width */
 @keyframes fillProgress {
   0% {
     width: 0%;
@@ -58,37 +51,30 @@
   }
 }
 
-/* ========================
-   MEDIA QUERIES
-   Adjust for smaller screens
-======================== */
-
-/* Tablets and below */
 @media (max-width: 768px) {
   .loader-text {
-    font-size: 6rem; /* Scale down from 10rem */
+    font-size: 6rem;
   }
 
   .loader-logo {
-    width: 140px; /* Smaller logo */
+    width: 140px;
   }
 
   .progress-bar {
-    width: 80%; /* Make progress bar wider relative to screen */
+    width: 80%;
   }
 }
 
-/* Small phones and below */
 @media (max-width: 480px) {
   .loader-text {
-    font-size: 4rem; /* Further scaling */
+    font-size: 4rem;
   }
 
   .loader-logo {
-    width: 100px; /* Even smaller */
+    width: 100px;
   }
 
   .progress-bar {
-    width: 85%; /* Fill most of the screen width on tiny phones */
+    width: 85%;
   }
 }

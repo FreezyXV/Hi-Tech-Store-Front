@@ -1,452 +1,441 @@
 /* cart.css */
 @import url("https://use.typekit.net/csk6jjx.css");
-@import url('https://fonts.cdnfonts.com/css/formula-condensed');
-@import url('https://fonts.cdnfonts.com/css/freemono');
+@import url("https://fonts.cdnfonts.com/css/formula-condensed");
+@import url("https://fonts.cdnfonts.com/css/freemono");
 @import url(https://db.onlinewebfonts.com/c/6e7d86fe1dd94be502d31a6743ffc3d1?family=Formula+Condensed+Light);
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  .body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    height: 100vh;
-    }
+  height: 100vh;
+}
 
-.wrapper-productPage{
-    margin-bottom: 50px;
-    display: flex;
-    padding: 0px;
-    gap: 20px;
-    text-align: center;
-    font-family: "Muli", sans-serif;
-    background-color: #ffffff;
-    justify-content: center;
-width: 95%;
+.wrapper-productPage {
+  margin-bottom: 50px;
+  display: flex;
+  padding: 0px;
+  gap: 20px;
+  text-align: center;
+  font-family: "Muli", sans-serif;
+  background-color: #ffffff;
+  justify-content: center;
+  width: 95%;
 }
 
 h1 {
-    text-align: center;
-    font-family: "Formula Condensed";
-    color: #ffc300;
-    font-size: 3rem;
-    letter-spacing: 1px;
-    margin-top: 30px;
+  text-align: center;
+  font-family: "Formula Condensed";
+  color: #ffc300;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  margin-top: 30px;
 }
 
 .cart-items {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    border-radius: 10px;
-
+  border-radius: 10px;
 }
 
 .cart-item-image {
-    width: 50%;
-    object-fit: cover;
-    border-radius: 8px;
+  width: 50%;
+  object-fit: cover;
+  border-radius: 8px;
 
-    margin-right: 50px;
+  margin-right: 50px;
 }
 
 .cart-item-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: left;
-    align-items: center;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  align-items: center;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
 }
 
 .cart-item-details h2 {
-    font-family: "Formula Condensed";
-    color: #ffc300;
-    font-size: 26px;
-    margin: 0;
+  font-family: "Formula Condensed";
+  color: #ffc300;
+  font-size: 26px;
+  margin: 0;
 
-    font-weight: 200;
+  font-weight: 200;
 }
 
 .cart-item-details p {
-    font-family: 'FreeMono', sans-serif;
-    margin: 5px 0;
-    color: #666;
-    font-size: 0.95em;
+  font-family: "FreeMono", sans-serif;
+  margin: 5px 0;
+  color: #666;
+  font-size: 0.95em;
 }
 
-.price, .item-total {
-    font-family: 'FreeMono', sans-serif;
-    font-weight: bold;
-    color: #555;
-    font-size: 1.1em;
+.price,
+.item-total {
+  font-family: "FreeMono", sans-serif;
+  font-weight: bold;
+  color: #555;
+  font-size: 1.1em;
 }
 
 .quantity-control {
-    font-family: 'FreeMono', sans-serif;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  font-family: "FreeMono", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .quantity-control input {
-    font-family: 'FreeMono', sans-serif;
-    width: 60px;
-    padding: 5px;
-    font-size: 1em;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    text-align: center;
+  font-family: "FreeMono", sans-serif;
+  width: 60px;
+  padding: 5px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  text-align: center;
 }
 
 .quantity-control button {
-    background-color: #ffffff;
-    border: none;
-    padding: 6px 12px;
-    cursor: pointer;
-    font-size: 1.2em;
-    color: #333;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+  background-color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #333;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
 .cart-item button {
-    width: 100%;
+  width: 100%;
 }
 
 .quantity-control button:hover {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 .cart-summary {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
- 
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .cart-summary h2 {
-    font-family: "Formula Condensed";
-    color: #ffc300;
-    font-size: 40px;
-    margin-bottom: 15px;
-
+  font-family: "Formula Condensed";
+  color: #ffc300;
+  font-size: 40px;
+  margin-bottom: 15px;
 }
 
 .cart-summary p {
-    font-family: "muli", sans-serif;
-    font-size: 1.5em;
-    color: #222;
-    margin: 10px 0;
-    font-weight: bold;
+  font-family: "muli", sans-serif;
+  font-size: 1.5em;
+  color: #222;
+  margin: 10px 0;
+  font-weight: bold;
 }
 
 .cart-summaryMain {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .place-order-btn {
-    font-family: "Formula Condensed Light";
-    width: 100%;
-    padding: 12px;
-    font-size: 1.2em;
-    background-color: white;
-    color: rebeccapurple;
-    border-color: #ffc300;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.2);
+  font-family: "Formula Condensed Light";
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2em;
+  background-color: white;
+  color: rebeccapurple;
+  border-color: #ffc300;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.2);
 }
 
 .place-order-btn:hover {
-    background-color: rebeccapurple;
-    color: white;
+  background-color: rebeccapurple;
+  color: white;
 }
 
 .item-total {
-    font-family: "Formula Condensed Light";
-    font-size: 1.3em;
-    color: #222;
-    margin-left: auto;
-    font-weight: 600;
+  font-family: "Formula Condensed Light";
+  font-size: 1.3em;
+  color: #222;
+  margin-left: auto;
+  font-weight: 600;
 }
 
 .item-remove {
-    background: none;
-    border: none;
-    color: #ff4d4d;
-    font-size: 0.95em;
-    cursor: pointer;
-    transition: color 0.3s;
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
 .item-remove:hover {
-    color: #e63939;
+  color: #e63939;
 }
 
 .quantity-control input {
-    width: 60px;
-    padding: 8px;
-    font-size: 1em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  width: 60px;
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .quantity-control label {
-    color: #222;
+  color: #222;
 }
 
 .remove-button {
-    background-color: black;
-    font-size: 16px;
-    color: white;
-    padding: 10px;
-    width: 100px;
-    border-radius: 7px;
-    border-color: transparent;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    border: #003a77 solid;
+  background-color: black;
+  font-size: 16px;
+  color: white;
+  padding: 10px;
+  width: 100px;
+  border-radius: 7px;
+  border-color: transparent;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border: #003a77 solid;
 }
 
 .checkoutButton {
-    background-color: rgb(255, 255, 255);
-    font-size: 16px;
-    color: rebeccapurple;
-    padding: 15px;
-    width: 200px;
-    border-radius: 5px;
-    border-color: transparent;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    border: rebeccapurple solid;
+  background-color: rgb(255, 255, 255);
+  font-size: 16px;
+  color: rebeccapurple;
+  padding: 15px;
+  width: 200px;
+  border-radius: 5px;
+  border-color: transparent;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border: rebeccapurple solid;
 }
 
 .checkoutButton:hover {
-    transform: scale(1.03);
-    background-color: #ffc300;
-    color: #ffffff;
+  transform: scale(1.03);
+  background-color: #ffc300;
+  color: #ffffff;
 }
 
-
 .remove-button:hover {
-    transform: scale(1.03);
-    background-color: #ffffff;
-    color: rgb(255, 0, 0);
-    border-color: rgb(255, 0, 0);
+  transform: scale(1.03);
+  background-color: #ffffff;
+  color: rgb(255, 0, 0);
+  border-color: rgb(255, 0, 0);
 }
 
 /* Base Styles for Responsive Design */
 .cart-container {
-    width: 100%;
-    margin: 20px 0px;
-    padding: 30px;
-    font-family: "muli", sans-serif;
-    color: #003a77;
-    background-color: #ffffff;
-    border-radius: 12px;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    height: 100%;
-    justify-content: center;
-
+  width: 100%;
+  margin: 20px 0px;
+  padding: 30px;
+  font-family: "muli", sans-serif;
+  color: #003a77;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  height: 100%;
+  justify-content: center;
 }
 
 .info-section {
-    text-align: left;
-    
-    h3{
-        font-weight: 600;
-        font-size: 18px;
-        font-family: 'FreeMono', sans-serif;
-    }
-    p {
-        font-weight: 200;
-        font-size: 14px;
-        font-family: 'FreeMono', sans-serif;
-    }
+  text-align: left;
+
+  h3 {
+    font-weight: 600;
+    font-size: 18px;
+    font-family: "FreeMono", sans-serif;
+  }
+  p {
+    font-weight: 200;
+    font-size: 14px;
+    font-family: "FreeMono", sans-serif;
+  }
 }
 
-/* Responsive Styles for Large Screens */
 @media (max-width: 1280px) {
-.cartTitle {
+  .cartTitle {
     margin-top: 30px;
-}
+  }
 
-.wrapper-productPage{
+  .wrapper-productPage {
     display: flex;
-flex-direction: column;
-align-items: center;
+    flex-direction: column;
+    align-items: center;
     background-color: #ffffff;
     justify-content: center;
-width: 100%;
-}
+    width: 100%;
+  }
 
-    .cart-container {
-        padding: 20px;
-        margin: 20px 20px auto;
-        width: 90%;
-    }
+  .cart-container {
+    padding: 20px;
+    margin: 20px 20px auto;
+    width: 90%;
+  }
 
-    .cart-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+  .cart-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    }
+  .cart-item-image {
+    margin-right: 0px;
+    height: auto;
+    width: 100%;
+  }
 
-    .cart-item-image {
-margin-right: 0px;
-        height: auto;
-        width: 100%;
-    }
+  .cart-item-details {
+    margin-top: 15px;
+  }
 
-    .cart-item-details {
-        margin-top: 15px;
-    }
+  .quantity-control {
+    justify-content: center;
+  }
 
-    .quantity-control {
-        justify-content: center;
-    }
-
-    .cart-summary {
-        padding: 15px;
-        width: 90%;
-        margin-bottom: 20px;
-    }
+  .cart-summary {
+    padding: 15px;
+    width: 90%;
+    margin-bottom: 20px;
+  }
 }
 
 /* Responsive Styles for Tablets */
 @media (max-width: 768px) {
-    .wrapper-productPage{
-        display: flex;
-flex-direction: column;
-align-items: center;
-        background-color: #ffffff;
-        justify-content: center;
+  .wrapper-productPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    justify-content: center;
     width: 100%;
-    }
+  }
 
-    .cart-container {
-        padding: 15px;
-        width: 90%;
-    }
+  .cart-container {
+    padding: 15px;
+    width: 90%;
+  }
 
-    .cart-item {
-        padding: 10px;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+  .cart-item {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 
-    }
+  .cart-summary {
+    font-size: 0.9em;
+    width: 90%;
+  }
 
+  .checkoutButton {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+  }
 
-
-    .cart-summary {
-        font-size: 0.9em;
-        width: 90%;
-
-    }
-
-    .checkoutButton {
-        width: 100%;
-        padding: 10px;
-        font-size: 1em;
-    }
-
-    .info-section { 
-        margin-top: 20px;
-}
-.info-section h3{ 
+  .info-section {
+    margin-top: 20px;
+  }
+  .info-section h3 {
     font-weight: 500;
-}
-.info-section p{ 
+  }
+  .info-section p {
     font-weight: 300;
-}
+  }
 }
 
-/* Responsive Styles for Mobile Screens */
 @media (max-width: 550px) {
-    .cart-container {
-        padding: 10px;
-    }
+  .cart-container {
+    padding: 10px;
+  }
 
-    h1 {
-        font-size: 1.8rem;
-    }
+  h1 {
+    font-size: 1.8rem;
+  }
 
-    .cart-item {
-        padding: 10px;
-        gap: 10px;
-    }
+  .cart-item {
+    padding: 10px;
+    gap: 10px;
+  }
 
-    .cart-item-image {
-        width: 100%;
-    }
+  .cart-item-image {
+    width: 100%;
+  }
 
-    .cart-item-details {
-        margin-top: 10px;
-    }
+  .cart-item-details {
+    margin-top: 10px;
+  }
 
-    .cart-item-details h2 {
-        font-size: 1.2em;
-    }
+  .cart-item-details h2 {
+    font-size: 1.2em;
+  }
 
-    .cart-item-details p {
-        font-size: 0.9em;
-    }
+  .cart-item-details p {
+    font-size: 0.9em;
+  }
 
-    .quantity-control input {
-        width: 50px;
-        padding: 5px;
-        font-size: 0.9em;
-    }
+  .quantity-control input {
+    width: 50px;
+    padding: 5px;
+    font-size: 0.9em;
+  }
 
-    .remove-button {
-        width: auto;
-        padding: 8px;
-        font-size: 0.9em;
-    }
+  .remove-button {
+    width: auto;
+    padding: 8px;
+    font-size: 0.9em;
+  }
 
-    .cart-summary {
-        font-size: 0.85em;
-    }
+  .cart-summary {
+    font-size: 0.85em;
+  }
 
-    .checkoutButton {
-        padding: 10px;
-        font-size: 0.9em;
-        width: 100%;
-    }
+  .checkoutButton {
+    padding: 10px;
+    font-size: 0.9em;
+    width: 100%;
+  }
 }
 
-/* Ensure Buttons and Input Fields are Always Usable */
-.cart-item button, .quantity-control input {
-    max-width: 100%;
+.cart-item button,
+.quantity-control input {
+  max-width: 100%;
 }

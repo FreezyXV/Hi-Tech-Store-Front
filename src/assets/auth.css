@@ -1,477 +1,469 @@
 /* Auth.css */
 @import url("https://use.typekit.net/csk6jjx.css");
 @import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;600&display=swap");
-@import url('https://fonts.cdnfonts.com/css/formula-condensed');
-@import url('https://fonts.cdnfonts.com/css/freemono');
+@import url("https://fonts.cdnfonts.com/css/formula-condensed");
+@import url("https://fonts.cdnfonts.com/css/freemono");
 @import url(https://db.onlinewebfonts.com/c/6e7d86fe1dd94be502d31a6743ffc3d1?family=Formula+Condensed+Light);
 
 .body {
-    
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    
-
-        
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login {
-    box-sizing: border-box;
-    margin-top: 50px;
-    padding: 0;
-    min-height: 100vh;
+  box-sizing: border-box;
+  margin-top: 50px;
+  padding: 0;
+  min-height: 100vh;
 }
 
 .register {
-    box-sizing: border-box;
-    margin-top: 50px;
-    padding: 0;
-    min-height: 100vh;
+  box-sizing: border-box;
+  margin-top: 50px;
+  padding: 0;
+  min-height: 100vh;
 }
 
 .auth-container {
-margin-top: 50px;
+  margin-top: 50px;
 
-    padding: 2rem;
+  padding: 2rem;
 
-    border-radius: 10px;
-    background-color: #ffffff;
-    font-family: 'Muli', sans-serif;
-    animation: fadeIn 0.6s ease-in-out;
+  border-radius: 10px;
+  background-color: #ffffff;
+  font-family: "Muli", sans-serif;
+  animation: fadeIn 0.6s ease-in-out;
 
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-title,
+.account-title {
+  text-align: center;
+  font-family: "Formula Condensed";
+  color: #ffc300;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.auth-form .form-group,
+.account-container .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.auth-form .form-group label,
+.account-container .form-group label {
+  display: block;
+  color: black;
+  font-family: "FreeMono", sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.auth-form .form-group input,
+.account-container .form-group input {
+  width: 400px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  font-family: "FreeMono", sans-serif;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  background-color: #fafafa;
+  border: rebeccapurple solid;
+}
+
+.auth-form .form-group input:focus {
+  border-color: rebeccapurple;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.25);
+}
+
+.auth-button {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: rebeccapurple;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: rebeccapurple solid;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  font-family: "Formula Condensed Light";
+}
+
+.auth-button:hover {
+  background-color: #ffc300;
+  transform: scale(1.01);
+  color: #ffffff;
+}
+
+.auth-button:active {
+  transform: scale(1.01);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error {
+  color: #d9534f;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.account-container {
+  background-color: #ffffff;
+  border: none;
+  width: 100%;
+  width: 600px;
+  padding: 2rem;
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.account-container p {
+  font-family: "FreeMono", sans-serif;
+  font-size: 16px;
+  color: black;
+}
+
+.account-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 30px;
+  font-family: "Formula Condensed";
+  color: #ffc300;
+}
+
+.account-options {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account-button {
+  padding: 10px 20px;
+  margin: 0px 0px 20px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: rebeccapurple;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: rebeccapurple solid;
+  width: 100%;
+}
+
+.account-button:hover {
+  background-color: #ffc300;
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.account-button:active {
+  transform: translateY(0);
+}
+
+.register p,
+a {
+  margin-top: 20px;
+  font-size: 12px;
+  font-family: "Muli", sans-serif;
+  text-decoration: none;
+  color: black;
+}
+.auth-container p,
+a {
+  margin-top: 20px;
+  font-size: 12px;
+  font-family: "FreeMono", sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+p,
+a:hover {
+  color: #007bff;
+}
+
+.wishlist-container {
+  width: 50%;
+  padding: 2rem;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #ffffff;
+  font-family: "Formula Condensed Light";
+  color: #ffc300;
+  animation: fadeIn 0.6s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wishlist-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: "Formula Condensed Light";
+  color: #ffc300;
+}
+
+.wishlist-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.wishlist-item {
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.wishlist-item h2 {
+  font-size: 24px;
+  font-family: "Formula Condensed Light";
+  color: #ffc300;
+}
+
+.wishlist-item img {
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.wishlist-item strong {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.wishlist-item-price {
+  font-size: 1rem;
+  color: #444;
+}
+
+.item-price,
+.item-quantity {
+  font-family: "Formula Condensed Light";
+  color: #222;
+}
+
+.ordershistory-container {
+  width: 50%;
+  padding: 2rem;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #ffffff;
+  font-family: "Formula Condensed Light";
+  color: #ffc300;
+  animation: fadeIn 0.6s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ordershistory-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  color: #ffc300;
+}
+
+.order-wishlist-containers {
+  width: 90%;
+  display: flex;
+  gap: 100px;
+  justify-content: space-between;
+  margin-top: 2rem;
+  font-family: "Muli", sans-serif;
+  margin-bottom: 100px;
+}
+
+.order-card {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  border-radius: 10px;
+  background-color: #f2f2f276;
+  animation: fadeIn 0.5s ease-in-out;
+  font-family: "Muli", sans-serif;
+}
+
+h2 {
+  color: #003566;
+}
+
+.order-info {
+  color: black;
+  font-family: "FreeMono", sans-serif;
+}
+
+.order-items-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.order-item {
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Muli", sans-serif;
+}
+
+.item-price p {
+  font-family: "Formula Condensed Light";
+  color: #222;
+}
+
+.item-quantity p {
+  font-family: "Formula Condensed Light";
+  color: #222;
+}
+
+.order-item img {
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.order-item-details {
+  text-align: center;
+}
+
+.order-item-details h2 {
+  font-size: 24px;
+  font-family: "Formula Condensed Light";
+  color: #ffc300;
+}
+
+.toggle-order-details-btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #222;
+  color: white;
+  border: solid #222;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Formula Condensed Light";
+  transition: background-color 0.3s ease;
+}
+
+.toggle-order-details-btn:hover {
+  background-color: #ffffff;
+  color: black;
+  border: solid #222;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1300px) {
+  .account-container {
+    margin: 20px 20px;
+    width: 90%;
+  }
+  .register {
+    margin: 20px 20px;
+  }
+
+  .login {
+    margin: 20px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .order-wishlist-containers {
+    width: 90%;
     display: flex;
-    flex-direction: column;
-}
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin-top: 2rem;
+    font-family: "Muli", sans-serif;
+    margin-bottom: 100px;
+  }
 
+  .wishlist-container {
+    width: 100%;
+  }
 
-.auth-title, .account-title {
-    text-align: center;
-    font-family: "Formula Condensed";
-    color: #ffc300;
-    font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
+  .ordershistory-container {
+    width: 100%;
+  }
 
-.auth-form .form-group, .account-container .form-group {
-    margin-bottom: 1.2rem;
-}
+  .order-card {
+    width: 120%;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+    background-color: #ffffff;
+    animation: fadeIn 0.5s ease-in-out;
+    font-family: "Muli", sans-serif;
+  }
 
-.auth-form .form-group label, .account-container .form-group label {
-    display: block;
-    color: black;
-    font-family: 'FreeMono', sans-serif;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    
-}
-
-.auth-form .form-group input, .account-container .form-group input {
-    width: 400px;
+  .auth-container {
+    width: 100%;
+  }
+  .auth-form .form-group input,
+  .account-container .form-group input {
+    width: 100%;
     padding: 0.8rem;
     font-size: 1rem;
     border: 1px solid #ddd;
-    font-family: 'FreeMono', sans-serif;
     border-radius: 5px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     outline: none;
     background-color: #fafafa;
-    border: rebeccapurple solid;
-}
-
-.auth-form .form-group input:focus {
-    border-color: rebeccapurple;
-    box-shadow: 0 0 6px rgba(0, 123, 255, 0.25);
-}
-
-.auth-button {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1.3rem;
-    font-weight: 600;
-    background-color: #ffffff;
-    color: rebeccapurple;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    border: rebeccapurple solid;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    font-family: "Formula Condensed Light";
-}
-
-.auth-button:hover {
-    background-color: #ffc300;
-    transform: scale(1.01);
-    color: #ffffff;
-}
-
-.auth-button:active {
-    transform: scale(1.01);
-}
-
-
-
-
-
-.auth-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.error {
-    color: #d9534f;
-    font-size: 0.9rem;
-    text-align: center;
-    margin-top: 0.5rem;
-}
-
-.account-container{
-    background-color: #ffffff;
-    border: none;
-    width: 100%;
-    width: 600px;
-    padding: 2rem;
-
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-
-.account-container p{
-    font-family: 'FreeMono', sans-serif;
-    font-size: 16px;
-    color: black;
-}
-
-.account-title {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 3rem;
-    font-weight: 600;
-    margin-top: 30px;
-    font-family: "Formula Condensed";
-    color: #ffc300;
-}
-
-.account-options {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.account-button {
-    padding: 10px 20px;
-    margin: 0px 0px 20px;
-    font-size: 1rem;
-    background-color: #ffffff;
-    color: rebeccapurple;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: rebeccapurple solid;
-    width: 100%;
-}
-
-.account-button:hover {
-    background-color: #ffc300;
-    transform: translateY(-2px);
-    color: #ffffff;
-}
-
-.account-button:active {
-    transform: translateY(0);
-}
-
-.register p, a{
-    margin-top: 20px;
-    font-size: 12px;
-    font-family: 'Muli', sans-serif;
-    text-decoration: none;
-    color: black;
-}
-.auth-container p, a {
-    margin-top: 20px;
-    font-size: 12px;
-    font-family: 'FreeMono', sans-serif;
-    text-decoration: none;
-    color: black;
-}
-
- p, a:hover {
-    color: #007bff;
-}
-
-.wishlist-container {
-    width: 50%;
-    padding: 2rem;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color: #ffffff;
-    font-family: "Formula Condensed Light";
-    color: #ffc300;
-    animation: fadeIn 0.6s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.wishlist-container h2 {
-    margin-bottom: 1.5rem;
-    font-size: 3rem;
-    font-weight: bold;
-    font-family: "Formula Condensed Light";
-    color: #ffc300;
-}
-
-.wishlist-container ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-.wishlist-item {
-
-    border-radius: 10px;
-    padding: 1rem;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    text-align: center;
-}
-
-.wishlist-item h2{
-    font-size: 24px;
-    font-family: "Formula Condensed Light";
-    color: #ffc300;
-}
-
-.wishlist-item img {
-    width: 120px;
-    height: 120px;
-    border-radius: 5px;
-    object-fit: cover;
-    margin-bottom: 0.5rem;
-}
-
-.wishlist-item strong {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.wishlist-item-price {
-    font-size: 1rem;
-    color: #444;
-}
-
-.item-price, .item-quantity{
-    font-family: "Formula Condensed Light";
-    color: #222;
-}
-
-
-.ordershistory-container {
-    width: 50%;
-    padding: 2rem;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color: #ffffff;
-    font-family: "Formula Condensed Light";
-    color: #ffc300;
-    animation: fadeIn 0.6s ease-in-out;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.ordershistory-container h2 {
-    margin-bottom: 1.5rem;
-    font-size: 3rem;
-    color: #ffc300;
-}
-
-.order-wishlist-containers {
-    width: 90%;
-    display: flex;
-    gap: 100px;
-    justify-content: space-between;
-    margin-top: 2rem;
-    font-family: 'Muli', sans-serif;
-    margin-bottom: 100px;
-}
-
-.order-card {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-
-    border-radius: 10px;
-    background-color: #f2f2f276;
-    animation: fadeIn 0.5s ease-in-out;
-    font-family: 'Muli', sans-serif;
-
-}
-
-h2 {
-    color: #003566;
-}
-
-.order-info{ 
-color: black;
-font-family: 'FreeMono', sans-serif;
-}
-
-.order-items-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.order-item {
-
-    border-radius: 10px;
-    padding: 1rem;
-    background-color: #f9f9f9;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Muli', sans-serif;
-}
-
-.item-price p {
-    font-family: "Formula Condensed Light";
-    color: #222;
-}
-
-.item-quantity p {
-    font-family: "Formula Condensed Light";
-    color: #222;
-}
-
-.order-item img {
-    width: 120px;
-    height: 120px;
-    border-radius: 5px;
-    object-fit: cover;
-    margin-bottom: 0.5rem;
-}
-
-.order-item-details {
-    text-align: center;
-}
-
-.order-item-details h2 {
-    font-size: 24px;
-    font-family: "Formula Condensed Light";
-    color: #ffc300;
-}
-
-.toggle-order-details-btn {
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: #222;
-    color: white;
-    border:  solid #222;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: "Formula Condensed Light";
-    transition: background-color 0.3s ease;
-}
-
-.toggle-order-details-btn:hover {
-    background-color: #ffffff;
-    color: black;
-    border:  solid #222;
-}
-
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 1300px) {
-    .account-container {
-margin: 20px 20px;
-width: 90%;
-    }
-    .register {
-        margin: 20px 20px;
-
-    }
-
-    .login {
-        margin: 20px 20px;
-
-    }
-}
-
-@media (max-width: 600px) {
-    .order-wishlist-containers {
-        width: 90%;
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column-reverse;
-        margin-top: 2rem;
-        font-family: 'Muli', sans-serif;
-        margin-bottom: 100px;
-    }
-
-    .wishlist-container {
-        width: 100%;
-    }
-
-    .ordershistory-container {
-        width: 100%;
-    }
-
-    .order-card {
-        width: 120%;
-        padding: 1rem;
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
-        border-left: none;
-        border-right: none;
-        border-radius: 0px;
-        background-color: #ffffff;
-        animation: fadeIn 0.5s ease-in-out;
-        font-family: 'Muli', sans-serif;
-    }
-
-    .auth-container {
-        width: 100%;
-        }
-        .auth-form .form-group input, .account-container .form-group input {
-            width: 100%;
-            padding: 0.8rem;
-            font-size: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            outline: none;
-            background-color: #fafafa;
-            border: #003566 solid;
-        }
+    border: #003566 solid;
+  }
 }

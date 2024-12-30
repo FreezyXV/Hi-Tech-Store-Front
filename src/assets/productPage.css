@@ -1,7 +1,7 @@
 /* General Layout Styles */
 @import url("https://use.typekit.net/csk6jjx.css");
-@import url('https://fonts.cdnfonts.com/css/formula-condensed');
-@import url('https://fonts.cdnfonts.com/css/freemono');
+@import url("https://fonts.cdnfonts.com/css/formula-condensed");
+@import url("https://fonts.cdnfonts.com/css/freemono");
 @import url(https://db.onlinewebfonts.com/c/6e7d86fe1dd94be502d31a6743ffc3d1?family=Formula+Condensed+Light);
 
 h3 {
@@ -38,31 +38,28 @@ h3 {
   flex: 2;
 }
 
-/* Product Image Styles */
 .product-image {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
   width: 100%;
-  /* border: #001d3d solid; */
   border-radius: 10px;
   position: relative;
-
 }
 
 .product-image img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  
 }
 
 .image-container {
   height: 100%;
 }
 
-.prev-image-btn, .next-image-btn {
+.prev-image-btn,
+.next-image-btn {
   background-color: rgba(255, 255, 255, 0.7);
   border: none;
   font-size: 24px;
@@ -87,7 +84,8 @@ h3 {
   right: 10px;
 }
 
-.prev-image-btn:hover, .next-image-btn:hover {
+.prev-image-btn:hover,
+.next-image-btn:hover {
   background-color: rgba(255, 255, 255, 1);
   transform: scale(1.03);
 }
@@ -97,16 +95,11 @@ h3 {
   outline-offset: 4px;
 }
 
-
-
-
-/* Specification and Variant Selector Styles */
-.product-specs, .variant-selector {
+.product-specs,
+.variant-selector {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  /* border: #22222212 solid; */
-
 }
 
 .product-specs {
@@ -118,27 +111,27 @@ h3 {
   margin-bottom: 10px;
   font-size: 24px;
   font-family: "Formula Condensed";
-font-weight: 400;
-font-style: normal;
-color: rebeccapurple;
+  font-weight: 400;
+  font-style: normal;
+  color: rebeccapurple;
 }
 
 .product-specs ul {
   list-style: none;
   padding: 0;
   font-family: "muli", sans-serif;
-font-weight: 400;
-font-style: normal;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .product-specs ul li {
   padding: 5px 0;
   font-size: 12px;
   border-bottom: 1px solid #ddd;
-  font-family: 'FreeMono', sans-serif;
-font-weight: 400;
-font-style: normal;
-color: #222;
+  font-family: "FreeMono", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #222;
 }
 
 .variant-selector-main {
@@ -146,19 +139,19 @@ color: #222;
   position: sticky;
 
   overflow-y: auto;
-  font-family: 'Formula Condensed', sans-serif;
-font-weight: 400;
-font-style: normal;
-/* border: #222 solid; */
-border-radius: 10px;
-padding: 20px;
-background-color: transparent;
+  font-family: "Formula Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  /* border: #222 solid; */
+  border-radius: 10px;
+  padding: 20px;
+  background-color: transparent;
 }
 
 .variant-selector-main h2 {
-  font-family: 'Formula Condensed', sans-serif;
-font-size: 40px;
-font-weight: 400;
+  font-family: "Formula Condensed", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
   color: #ffc300;
 }
 
@@ -168,12 +161,11 @@ font-weight: 400;
   max-height: 100vh;
   overflow-y: auto;
   font-family: "Formula Condensed Light";
-font-weight: 400;
-font-style: normal;
-border: none;
-box-shadow: none;
-padding: 10px;
-
+  font-weight: 400;
+  font-style: normal;
+  border: none;
+  box-shadow: none;
+  padding: 10px;
 }
 
 .product-price {
@@ -191,7 +183,6 @@ padding: 10px;
   margin-bottom: 10px;
 }
 
-
 /* Button Styles */
 .attribute-option {
   display: block;
@@ -203,8 +194,8 @@ padding: 10px;
   border-radius: 10px;
   cursor: pointer;
   transition: border-color 0.3s, background-color 0.3s, color 0.3s;
-  font-family: 'FreeMono', sans-serif;
-font-weight: 400;
+  font-family: "FreeMono", sans-serif;
+  font-weight: 400;
 }
 
 .attribute-option {
@@ -213,8 +204,7 @@ font-weight: 400;
   align-items: center;
   justify-content: center;
   display: flex;
-max-width: 100%;
-
+  max-width: 100%;
 }
 
 .attribute-option:hover:not(.unavailable) {
@@ -227,7 +217,7 @@ max-width: 100%;
 .attribute-option.selected {
   border-color: rebeccapurple;
   background-color: #ffffff;
-  color: white;;
+  color: white;
   color: #08131f;
   font-weight: bold;
 }
@@ -249,7 +239,6 @@ max-width: 100%;
   color: #222;
 }
 
-/* Add to Cart Button Styles */
 .add-to-cart-btn {
   background-color: #ffffff;
   color: rebeccapurple;
@@ -263,20 +252,17 @@ max-width: 100%;
   cursor: pointer;
   transition: background-color 0.5s;
   border: #ffc300 3px solid;
-
-  
 }
 
 .add-to-cart-btn:hover {
-  transform: scale(1.002); /* Slight zoom effect on hover */
+  transform: scale(1.002);
   transition: 600ms;
   background-color: #ffc300;
   color: white;
 }
 
-
 .product-stock {
-  font-family: 'FreeMono', sans-serif;
+  font-family: "FreeMono", sans-serif;
   font-size: 16px;
   margin-top: 10px;
   color: #050505;
@@ -310,30 +296,30 @@ textarea {
   margin-bottom: 10px;
   text-align: center;
   padding-top: 15px;
-  font-family: 'FreeMono', sans-serif;
+  font-family: "FreeMono", sans-serif;
   font-size: 16px;
 }
 
 .review {
-  font-family: 'FreeMono', sans-serif;
+  font-family: "FreeMono", sans-serif;
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 10px;
-  border: 2px solid #e1e1e1;;
+  border: 2px solid #e1e1e1;
   position: relative;
 }
 
 .review-title {
   font-size: 24px;
   font-family: "Formula Condensed Light";
-    font-weight: 400;
-    font-style: normal;
-    margin-bottom: 10px;
-    color: rebeccapurple;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 10px;
+  color: rebeccapurple;
 }
 
 .review p {
-  font-family: 'FreeMono', sans-serif;
+  font-family: "FreeMono", sans-serif;
   margin: 5px 0;
 }
 
@@ -366,7 +352,7 @@ textarea {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: rgb(255, 255, 255); /* Semi-transparent background */
+  background-color: rgb(255, 255, 255);
   border: rebeccapurple solid;
   border-radius: 50%;
   width: 40px;
@@ -381,46 +367,42 @@ textarea {
 }
 
 .wishlist-btn:hover {
-
   transform: scale(1.1);
 }
 
 .wishlist-btn.wishlist-active {
-
   color: #fff;
 }
 
 .wishlist-icon {
-  width: 40px; /* Set icon size */
+  width: 40px;
   height: 40px;
   display: block;
 }
-
-
 
 .star-rating {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px; /* Space between stars */
+  gap: 5px;
   margin: 10px 0;
 }
 
 .star-icon {
-  width: 25px; /* Set star size */
+  width: 25px;
   height: 25px;
-  cursor: pointer; /* Change cursor to pointer */
-  transition: transform 0.5s ease-in-out; /* Add hover effect */
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
 }
 
 .star-icon:hover {
-  transform: scale(1.1); /* Slightly enlarge the star on hover */
+  transform: scale(1.1);
 }
 .delete-review-btn {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: transparent; /* Semi-transparent background */
+  background-color: transparent;
   border: #222 solid;
   border-radius: 50%;
   width: 40px;
@@ -437,25 +419,23 @@ textarea {
 }
 
 .delete-review-btn:hover {
-  background-color: rgba(255, 255, 255, 0.9); /* Change on hover */
+  background-color: rgba(255, 255, 255, 0.9);
   transform: scale(1.1);
   color: white;
   border-color: rgba(255, 0, 0, 0.9);
 }
 
 .delete-icon {
-  width: 25px; /* Adjust the size of the icon */
+  width: 25px;
   height: 25px;
 }
 
 .delete-review-btn:hover .delete-icon {
-  transform: scale(1.1); /* Slight zoom effect on hover */
+  transform: scale(1.1);
   transition: transform 0.5s background-color 0.5s ease-in-out;
   border: rgba(255, 0, 0, 0.9);
 }
 
-
-/* Modal Background */
 .modal {
   position: fixed;
   top: 0;
@@ -469,7 +449,6 @@ textarea {
   z-index: 1000;
 }
 
-/* Modal Content */
 .modal-content {
   position: relative;
   display: inline-block;
@@ -477,17 +456,15 @@ textarea {
   max-height: 90%;
 }
 
-/* Modal Image */
 .modal-image {
   width: 100%;
   height: auto;
   border-radius: 20px;
 }
 
-/* Close Modal Button */
 .close-modal {
   position: absolute;
-width: 100%;
+  width: 100%;
   font-size: 40px;
   color: white;
   background-color: rgba(0, 0, 0, 0.8);
@@ -507,7 +484,6 @@ width: 100%;
   color: #000000;
 }
 
-/* Image Navigation Buttons (Left/Right) */
 .prev-image-btn,
 .next-image-btn {
   position: absolute;
@@ -515,14 +491,13 @@ width: 100%;
   color: rgb(0, 0, 0);
   font-size: 30px;
   padding: 40px;
-border: none;
+  border: none;
   cursor: pointer;
   z-index: 10;
-padding: 25px;
-text-align: center;
+  padding: 25px;
+  text-align: center;
 }
 
-/* Left Arrow Button */
 .prev-modal-image-btn {
   left: 20px;
   border-radius: 50%;
@@ -541,7 +516,6 @@ text-align: center;
   transition: background-color 0.5s ease-in-out;
 }
 
-/* Right Arrow Button */
 .next-modal-image-btn {
   position: absolute;
   right: 20px;
@@ -560,11 +534,8 @@ text-align: center;
   transition: background-color 0.5s ease-in-out;
 }
 
-
-/* Common styles for the arrow buttons */
 .prev-image-btn,
-.next-image-btn
- {
+.next-image-btn {
   position: absolute;
   border: none;
   cursor: pointer;
@@ -572,7 +543,7 @@ text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px; /* Optional, adjust the padding to space out the buttons */
+  padding: 10px;
   width: 50px;
   height: 50px;
 }
@@ -586,21 +557,18 @@ text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px; /* Optional, adjust the padding to space out the buttons */
+  padding: 10px;
   width: 70px;
   height: 70px;
 }
 
-/* Left Arrow Button */
-.prev-image-btn
- {
-  left: 20px; /* Adjust this value to position the left arrow */
-  
+.prev-image-btn {
+  left: 20px;
 }
 
 /* Right Arrow Button */
 .next-image-btn {
-  right: 20px; /* Adjust this value to position the right arrow */
+  right: 20px;
 }
 
 .review-form {
@@ -610,40 +578,36 @@ text-align: center;
   justify-content: center;
 }
 
-
 .prev-modal-image-btn {
-  left: 30px; /* Adjust this value to position the left arrow */
+  left: 30px;
   height: 100px;
   width: 100px;
 }
 
 /* Right Arrow Button */
 .next-modal-image-btn {
-  right: 30px; /* Adjust this value to position the right arrow */
+  right: 30px;
   height: 100px;
   width: 100px;
 }
 
 .prev-modal-image-btn:hover {
-background-color: #fff;
-transition: background-color 0.5s ease-in-out;
+  background-color: #fff;
+  transition: background-color 0.5s ease-in-out;
 }
 
-/* Right Arrow Button */
 .next-modal-image-btn:hover {
   background-color: #fff;
   transition: background-color 0.5s ease-in-out;
 }
 
-/* Arrow images */
 .arrow-image {
-  width: 50px; /* Adjust size */
-  height: 50px; /* Adjust size */
-  transition: transform 0.3s ease-in-out; /* Optional: Add transition for smooth hover effect */
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease-in-out;
   left: 5px;
 }
 
-/* Default state: white arrows */
 .prev-image-btn img,
 .prev-modal-image-btn img {
   content: url("../assets/logos/flecheGaucheBlanche1.png");
@@ -654,7 +618,6 @@ transition: background-color 0.5s ease-in-out;
   content: url("../assets/logos/flecheDroiteBlanche1.png");
 }
 
-/* Hover state: change to black arrows */
 .prev-image-btn:hover img,
 .prev-modal-image-btn:hover img {
   content: url("../assets/logos/flecheGaucheNoire1.png");
@@ -664,7 +627,6 @@ transition: background-color 0.5s ease-in-out;
 .next-modal-image-btn:hover img {
   content: url("../assets/logos/flecheDroiteNoire1.png");
 }
-
 
 @media (max-width: 1000px) {
   .product-container {
@@ -693,24 +655,24 @@ transition: background-color 0.5s ease-in-out;
     position: absolute;
     top: -2px;
     right: -2px;
-    background-color: transparent; /* Semi-transparent background */
+    background-color: transparent;
     border: #222 solid;
     border-radius: 0%;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     width: 50px;
     min-height: 104%;
-    transition: transform 0.5s  ease-in-out
+    transition: transform 0.5s ease-in-out;
   }
-  
+
   .delete-review-btn:hover {
-    border-color: rgba(255, 0, 0, 0.9); /* Change on hover */
+    border-color: rgba(255, 0, 0, 0.9);
     transform: scale(1);
-    transition: transform 0.5s background-color 0.5s ease-in-out
+    transition: transform 0.5s background-color 0.5s ease-in-out;
   }
-  
+
   .delete-icon {
-    width: 35px; /* Adjust the size of the icon */
+    width: 35px;
     height: 35px;
   }
   .close-modal {
@@ -726,8 +688,7 @@ transition: background-color 0.5s ease-in-out;
     width: 70px;
     top: 40%;
   }
-  
-  /* Right Arrow Button */
+
   .next-modal-image-btn {
     right: 10px;
     height: 70px;
@@ -735,7 +696,7 @@ transition: background-color 0.5s ease-in-out;
     top: 40%;
   }
   .arrow-image {
-    width: 40px; /* Adjust size */
+    width: 40px;
     height: 40px;
   }
   .attribute-option {
@@ -754,13 +715,12 @@ transition: background-color 0.5s ease-in-out;
     max-width: 90%;
     margin: 0 auto;
     padding: 10px;
-}
+  }
 
-.product-page {
-  padding: 0px;
+  .product-page {
+    padding: 0px;
+  }
 }
-}
-
 
 @media (max-width: 550px) {
   .product-container {
@@ -787,18 +747,17 @@ transition: background-color 0.5s ease-in-out;
     position: absolute;
     top: -2px;
     right: -2px;
-    background-color: transparent; /* Semi-transparent background */
+    background-color: transparent;
     border: #222 solid;
     border-radius: 0%;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     width: 50px;
     min-height: 104%;
-
   }
-  
+
   .delete-icon {
-    width: 30px; /* Adjust the size of the icon */
+    width: 30px;
     height: 30px;
   }
 
