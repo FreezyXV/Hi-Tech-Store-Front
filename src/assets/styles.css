@@ -1,101 +1,91 @@
 @import url("https://use.typekit.net/csk6jjx.css");
-@import url('https://fonts.cdnfonts.com/css/formula-condensed');
-@import url('https://fonts.cdnfonts.com/css/freemono');
+@import url("https://fonts.cdnfonts.com/css/formula-condensed");
+@import url("https://fonts.cdnfonts.com/css/freemono");
 @import url(https://db.onlinewebfonts.com/c/6e7d86fe1dd94be502d31a6743ffc3d1?family=Formula+Condensed+Light);
 
 .body {
   display: flex;
   flex-direction: column;
-    margin: 0;
-    padding: 0;
-    color: #003a77;
-    background-color: #fff;
-    min-height: 100vh;
-  }
-
-  /* html, body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-} */
-
-
-/* Main content should fill the available space */
-.main-content {
-    flex: 1; 
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  padding: 0;
+  color: #003a77;
+  background-color: #fff;
+  min-height: 100vh;
 }
-  
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-    font-family: "muli", sans-serif;
-font-weight: 400;
-font-style: normal;
-  }
-  
-  
 
-  
-  .header {
-    text-align: center;
-    padding: 4rem 0;
-    background-color: #fff;
-  }
-  
-  .header h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-family: "Formula Condensed", sans-serif;
-font-style: normal;
-color: #ffc300;
-  }
-  
-  .product-list, .brand-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    text-decoration: none;
-  }
-  
-  .product-card, .brand-card {
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    text-decoration: none;
-  }
-  
-  .product-card:hover, .brand-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .product-card img, .brand-card img {
-    max-width: 100%;
-    border-radius: 8px;
-  }
-  
-  .button {
-    background-color: #0070c9;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .button:hover {
-    background-color: #005bb5;
-  }
-  
-/* Brand Grid */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: "muli", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header {
+  text-align: center;
+  padding: 4rem 0;
+  background-color: #fff;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-family: "Formula Condensed", sans-serif;
+  font-style: normal;
+  color: #ffc300;
+}
+
+.product-list,
+.brand-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.product-card,
+.brand-card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  text-decoration: none;
+}
+
+.product-card:hover,
+.brand-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img,
+.brand-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.button {
+  background-color: #0070c9;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #005bb5;
+}
+
 .brand-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -106,7 +96,6 @@ color: #ffc300;
   margin: 0 auto;
 }
 
-/* Brand Card */
 .brand-card {
   text-align: center;
   padding: 30px;
@@ -122,11 +111,10 @@ color: #ffc300;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Brand Image */
 .brand-image {
   width: 100%;
   height: 0;
-  padding-bottom: 100%; /* Ensure square shape */
+  padding-bottom: 100%;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -145,19 +133,16 @@ color: #ffc300;
   margin: 42px;
   color: #ffc300;
   font-family: "Formula Condensed", sans-serif;
-font-weight: 300;
-
+  font-weight: 300;
 }
 
-/* Brand Title */
 .page-title {
   text-align: center;
   font-size: 52px;
   margin: 20px;
   color: #ffc300;
   font-family: "Formula Condensed", sans-serif;
-font-weight: 600;
-
+  font-weight: 600;
 }
 
 .brand-card h2 {
@@ -170,7 +155,6 @@ font-weight: 600;
   text-transform: uppercase;
 }
 
-/* Button Styling */
 .button {
   background-color: #0070c9;
   color: #fff;
@@ -185,8 +169,6 @@ font-weight: 600;
   background-color: #005bb5;
 }
 
-
-  /* Model Card */
 .model-card-link {
   text-decoration: none;
   color: inherit;
@@ -206,10 +188,8 @@ font-weight: 600;
 
 .model-card:hover {
   transform: scale(1.01);
-
 }
 
-/* Model Image */
 .model-image {
   width: 350px;
   height: auto;
@@ -222,7 +202,6 @@ font-weight: 600;
   transform: scale(1.02);
 }
 
-/* Model Details */
 .model-details {
   flex: 1;
 }
@@ -232,14 +211,13 @@ font-weight: 600;
   font-size: 30px;
   color: #ffc300;
   font-family: "Formula Condensed Light", sans-serif;
-
 }
 
 .model-details p {
   margin: 5px 0;
   color: #666;
   font-size: 16px;
-  font-family: 'FreeMono', sans-serif;
+  font-family: "FreeMono", sans-serif;
 }
 
 p.model-price {
@@ -256,16 +234,15 @@ p.model-price {
 @media (max-width: 768px) {
   .model-card {
     display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  
+
   .model-card:hover {
     transform: scale(1.01);
   }
-  
-  /* Model Image */
+
   .model-image {
     width: 100%;
     border-radius: 10px;
@@ -273,7 +250,7 @@ justify-content: center;
     margin-bottom: 5px;
     margin-right: 0px;
   }
-  
+
   .model-image:hover {
     transform: scale(1.01);
   }

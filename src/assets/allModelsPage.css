@@ -1,16 +1,16 @@
 @import url("https://use.typekit.net/csk6jjx.css");
-@import url('https://fonts.cdnfonts.com/css/formula-condensed');
-@import url('https://fonts.cdnfonts.com/css/freemono');
+@import url("https://fonts.cdnfonts.com/css/formula-condensed");
+@import url("https://fonts.cdnfonts.com/css/freemono");
 @import url(https://db.onlinewebfonts.com/c/6e7d86fe1dd94be502d31a6743ffc3d1?family=Formula+Condensed+Light);
 
 .main-allproducts {
-display: flex;
-flex-direction: column;
-min-height: 100vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vw;
 }
 
 .all-models-page {
-margin-bottom: 50px;
+  margin-bottom: 50px;
   background-color: #fff;
 }
 
@@ -33,7 +33,7 @@ margin-bottom: 50px;
 .model-card-link {
   text-decoration: none;
   color: inherit;
-  width: 80%; /* Make the cards narrower, like in the search results page */
+  width: 80%;
 }
 
 .model-card {
