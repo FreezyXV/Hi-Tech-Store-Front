@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Helper functions for localStorage
+
 const loadCartFromLocalStorage = () => {
   try {
     const savedCart = localStorage.getItem("cart");
     const items = savedCart ? JSON.parse(savedCart) : [];
-    // Filter out any items where item.variant or item.variant._id is missing
+
     return items.filter((item) => item && item.variant && item.variant._id);
   } catch (error) {
     console.error("Failed to load cart from localStorage:", error);

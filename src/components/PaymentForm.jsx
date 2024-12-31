@@ -17,7 +17,6 @@ const PaymentForm = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [paymentError, setPaymentError] = useState(null);
 
-  // Custom styling for the Stripe CardElement
   const cardStyle = {
     base: {
       color: "#222",
@@ -54,18 +53,16 @@ const PaymentForm = ({
       setIsSubmitting(true);
       setPaymentError(null);
 
-      // Prepare the payload for fetching the payment intent
       const paymentIntentPayload = {
         items: cartItems.map((item) => ({
           id: item.variant._id,
           quantity: item.quantity,
         })),
         totalAmount: adjustedTotalAmount,
-        deliveryMethod, // Ensure deliveryMethod is included
-        shippingAddress, // Include if backend requires it for calculations
+        deliveryMethod,
+        shippingAddress,
       };
 
-      // Fetch the client secret from the backend
       const { clientSecret } = await fetchPaymentIntent(paymentIntentPayload);
 
       if (!clientSecret) {
@@ -74,7 +71,6 @@ const PaymentForm = ({
         );
       }
 
-      // Confirm the payment with Stripe
       const { error, paymentIntent } = await stripe.confirmCardPayment(
         clientSecret,
         {
@@ -99,7 +95,6 @@ const PaymentForm = ({
         return;
       }
 
-      // Prepare the order payload with the confirmed payment intent ID
       const orderPayload = {
         items: cartItems.map((item) => ({
           variant: item.variant._id,
@@ -112,14 +107,12 @@ const PaymentForm = ({
         paymentIntentId: paymentIntent.id,
       };
 
-      // Place the order
       const response = await placeOrder(orderPayload);
 
       if (!response?.order?._id) {
         throw new Error("Failed to place the order. Please try again.");
       }
 
-      // Clear the cart and trigger the success callback
       onSuccess(response.order._id);
     } catch (error) {
       console.error("Order Placement Error:", error.message);

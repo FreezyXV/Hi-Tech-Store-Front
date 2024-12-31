@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchModels } from '../services/api';
 
-// Async thunk to fetch models
+
 export const fetchModelsAsync = createAsyncThunk(
   'models/fetchModels',
   async (brandId, { rejectWithValue }) => {
@@ -14,7 +14,6 @@ export const fetchModelsAsync = createAsyncThunk(
   }
 );
 
-// Slice for models
 const modelsSlice = createSlice({
   name: 'models',
   initialState: {
