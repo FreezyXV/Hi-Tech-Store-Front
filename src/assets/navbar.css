@@ -489,6 +489,9 @@
     justify-content: center;
     border-radius: 10px;
   }
+  .navbar-icon-text {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 590px) {
