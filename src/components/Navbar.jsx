@@ -5,6 +5,7 @@ import { fetchCategoriesAsync } from "../features/categoriesSlice";
 import { fetchModelsByCategory } from "../services/api";
 import DropdownMenu from "../components/DropdownMenu";
 import SearchBar from "../components/SearchBar";
+import Loader from "../components/Loader";
 import "../assets/navbar.css";
 
 // Logo Imports
@@ -140,13 +141,15 @@ const Navbar = () => {
   );
 
   if (status === "loading") {
-    return <nav className="navbar">Loading categories...</nav>;
+    return <Loader />;
   }
 
   if (status === "failed") {
     return (
       <nav className="navbar">
-        Error loading categories: {error?.message || "Unknown error."}
+        <div className="navbar-error">
+          Error loading categories: {error?.message || "Unknown error."}
+        </div>
       </nav>
     );
   }

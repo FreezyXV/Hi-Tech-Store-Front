@@ -241,7 +241,7 @@ h1 {
   width: 200px;
   border-radius: 5px;
   border-color: transparent;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transition: all 0.3s ease;
   border: rebeccapurple solid;
 }
 
@@ -251,11 +251,19 @@ h1 {
   color: #ffffff;
 }
 
+.checkoutButton:active {
+  transform: scale(0.98);
+}
+
 .remove-button:hover {
   transform: scale(1.03);
   background-color: #ffffff;
   color: rgb(255, 0, 0);
   border-color: rgb(255, 0, 0);
+}
+
+.remove-button:active {
+  transform: scale(0.95);
 }
 
 /* Base Styles for Responsive Design */

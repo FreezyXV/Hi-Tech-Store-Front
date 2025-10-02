@@ -72,18 +72,17 @@
   background-color: #fff;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   position: relative;
-
   text-decoration: none;
   width: 90%;
 }
 
 .category-card:hover {
-  transform: scale(1.05) rotate(1deg);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 10px 24px rgba(102, 51, 153, 0.3);
 }
 
 .category-card h3 {
@@ -203,6 +202,12 @@
 .explore-button:hover {
   background-color: #ffffff;
   color: #121212;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.explore-button:active {
+  transform: translateY(0);
 }
 
 .banner-image {
