@@ -11,9 +11,13 @@ console.log(`API_URL: ${API_URL}`);
 // Function to retrieve the token from localStorage
 const getToken = () => localStorage.getItem("authToken");
 
-// Create an axios instance with the base URL
+// Create an axios instance with the base URL and timeout
 const axiosInstance = axios.create({
   baseURL: `${API_URL}/api`,
+  timeout: 15000, // 15 seconds timeout
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
 // Interceptor to attach Authorization token to every request
@@ -28,8 +32,13 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Function to handle API errors
+// Function to handle API errors with retry logic
 const handleApiError = (error) => {
+  if (error.code === 'ECONNABORTED') {
+    console.error("Request timeout:", error.message);
+    throw new Error("Request timed out. Please try again.");
+  }
+
   if (error.response) {
     const status = error.response.status;
     const message =
@@ -45,25 +54,58 @@ const handleApiError = (error) => {
       console.error("Server error:", error.response.data);
       throw new Error("Server error occurred. Please try again later.");
     }
-  } else {
-    // Network errors
+  } else if (error.request) {
+    // Network errors (no response received)
     console.error("Network error:", error.message);
     throw new Error("Network error occurred. Please check your connection.");
+  } else {
+    // Something else happened
+    console.error("Unexpected error:", error.message);
+    throw new Error("An unexpected error occurred.");
   }
 };
 
-export { axiosInstance, handleApiError };
+// Retry utility function
+const retryRequest = async (requestFn, maxRetries = 2, delay = 1000) => {
+  for (let attempt = 1; attempt <= maxRetries + 1; attempt++) {
+    try {
+      return await requestFn();
+    } catch (error) {
+      if (attempt === maxRetries + 1) {
+        throw error; // Final attempt failed
+      }
+
+      // Only retry on network errors or 5xx errors
+      const shouldRetry =
+        !error.response ||
+        error.response.status >= 500 ||
+        error.code === 'ECONNABORTED';
+
+      if (!shouldRetry) {
+        throw error; // Don't retry client errors
+      }
+
+      console.log(`Request failed (attempt ${attempt}/${maxRetries + 1}), retrying in ${delay}ms...`);
+      await new Promise(resolve => setTimeout(resolve, delay));
+      delay *= 1.5; // Exponential backoff
+    }
+  }
+};
+
+export { axiosInstance, handleApiError, retryRequest };
 
 // Fetch categories
 export const fetchCategories = async () => {
-  try {
-    const response = await axiosInstance.get("/categories");
-    console.log("Categories fetched:", response.data);
-    return response.data.data || [];
-  } catch (error) {
-    console.error("Error fetching categories:", error);
-    handleApiError(error);
-  }
+  return retryRequest(async () => {
+    try {
+      const response = await axiosInstance.get("/categories");
+      console.log("Categories fetched:", response.data);
+      return response.data.data || [];
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+      handleApiError(error);
+    }
+  });
 };
 
 export const fetchPaymentIntent = async (orderPayload) => {
