@@ -12,6 +12,7 @@ import { addItemToCart } from "../features/cartSlice";
 import { addToWishlist, removeFromWishlist } from "../features/wishlistSlice";
 import Footer from "../components/Footer";
 import VariantSelector from "../components/VariantSelector";
+import Loader from "../components/Loader";
 import "../assets/productPage.css";
 import { toast } from "react-toastify";
 import "../assets/ReactToastify.css";
@@ -188,7 +189,13 @@ const ProductPage = () => {
     }
   };
 
-  const handleDeleteReview = async (reviewId) => {
+  const handleDeleteReview = async (reviewId, reviewUsername) => {
+    // Only allow deletion if user is the review author
+    if (reviewUsername !== username) {
+      toast.error("You can only delete your own reviews.");
+      return;
+    }
+
     try {
       await deleteReview(reviewId);
       setReviews((prev) => prev.filter((review) => review._id !== reviewId));
@@ -227,10 +234,17 @@ const ProductPage = () => {
   };
 
   if (isLoading) {
-    return <div className="loading">Loading product details...</div>;
+    return <Loader />;
   }
   if (error) {
-    return <div className="error-message">{error}</div>;
+    return (
+      <div className="body">
+        <div className="error-message-container">
+          <p className="error-message">{error}</p>
+        </div>
+        <Footer />
+      </div>
+    );
   }
 
   return (
@@ -250,6 +264,7 @@ const ProductPage = () => {
                     alt={model?.name || "Product"}
                     className="product-image-slide"
                     onClick={() => handleImageClick(currentImageIndex)}
+                    loading="lazy"
                   />
 
                   <button
@@ -377,17 +392,23 @@ const ProductPage = () => {
                       </h3>
                       <p>Rating: {review.rating} / 5</p>
                       <p>{review.comment}</p>
-                      {/* Delete button with image */}
-                      <button
-                        onClick={() => handleDeleteReview(review._id)}
-                        className="delete-review-btn"
-                      >
-                        <img src={croix} alt="Delete" className="delete-icon" />
-                      </button>
+                      {/* Delete button - only show if user is review author */}
+                      {username && review.user?.username === username && (
+                        <button
+                          onClick={() => handleDeleteReview(review._id, review.user?.username)}
+                          className="delete-review-btn"
+                          aria-label="Delete your review"
+                        >
+                          <img src={croix} alt="Delete" className="delete-icon" />
+                        </button>
+                      )}
                     </div>
                   ))
                 ) : (
-                  <p>No reviews available for this product.</p>
+                  <div className="no-reviews">
+                    <p>No reviews available for this product yet.</p>
+                    <p className="no-reviews-subtext">Be the first to review!</p>
+                  </div>
                 )}
 
                 <div className="review-form">

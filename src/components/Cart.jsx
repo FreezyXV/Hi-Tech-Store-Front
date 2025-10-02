@@ -65,6 +65,7 @@ const Cart = () => {
                         src={item.variant?.imageUrls || "placeholder.jpg"}
                         alt={item.variant?.name || "Unknown Product"}
                         className="cart-item-image"
+                        loading="lazy"
                       />
                       <div className="cart-item-details">
                         <h2>{item.variant?.name || "Unknown Product"}</h2>

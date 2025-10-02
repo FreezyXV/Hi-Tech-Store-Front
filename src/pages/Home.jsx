@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "../assets/home.css";
 import Footer from "../components/Footer";
+import Loader from "../components/Loader";
 
 import SmartphoneBanner from "../assets/logos/SmartphoneBanner.jpg";
 import TabletBanner from "../assets/logos/TabletBanner1.jpeg";
@@ -78,15 +79,20 @@ const Home = () => {
   };
 
   if (categoriesStatus === "loading") {
-    return <p className="loading-message">Loading categories...</p>;
+    return <Loader />;
   }
 
   if (categoriesStatus === "failed") {
     return (
-      <p className="error-message">
-        Error loading categories:{" "}
-        {categoriesError || "An unexpected error occurred."}
-      </p>
+      <div className="body">
+        <div className="error-message-container">
+          <p className="error-message">
+            Error loading categories:{" "}
+            {categoriesError || "An unexpected error occurred."}
+          </p>
+        </div>
+        <Footer />
+      </div>
     );
   }
 
@@ -142,6 +148,7 @@ const Home = () => {
                         "https://via.placeholder.com/150"
                       }
                       alt={category.name}
+                      loading="lazy"
                     />
                   </div>
                   <h3>{category.name}</h3>

@@ -142,7 +142,6 @@ h3 {
   font-family: "Formula Condensed", sans-serif;
   font-weight: 400;
   font-style: normal;
-  /* border: #222 solid; */
   border-radius: 10px;
   padding: 20px;
   background-color: transparent;
@@ -209,9 +208,9 @@ h3 {
 
 .attribute-option:hover:not(.unavailable) {
   border-color: rebeccapurple;
-  background-color: #fff;
+  background-color: #f8f4ff;
   color: #1f2937;
-  transform: scale(1);
+  transform: translateX(2px);
 }
 
 .attribute-option.selected {
@@ -255,10 +254,15 @@ h3 {
 }
 
 .add-to-cart-btn:hover {
-  transform: scale(1.002);
-  transition: 600ms;
+  transform: scale(1.02);
+  transition: 0.3s;
   background-color: #ffc300;
   color: white;
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.98);
+  transition: 0.1s;
 }
 
 .product-stock {
@@ -286,6 +290,19 @@ h3 {
 
 .reviews-section h3 {
   font-size: 14px;
+}
+
+.no-reviews {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.no-reviews-subtext {
+  margin-top: 10px;
+  font-size: 14px;
+  color: rebeccapurple;
+  font-weight: 600;
 }
 
 textarea {
@@ -337,10 +354,15 @@ textarea {
 }
 
 .review-btn:hover {
-  transition: 500ms;
+  transition: 0.3s;
   color: white;
   background-color: #001d3d;
   border: #ffc300 3px solid;
+}
+
+.review-btn:active {
+  transform: scale(0.98);
+  transition: 0.1s;
 }
 
 .wishlist-btn {
@@ -683,21 +705,27 @@ textarea {
   }
 
   .prev-modal-image-btn {
-    left: 10px;
-    height: 70px;
-    width: 70px;
-    top: 40%;
+    left: 5px;
+    height: 50px;
+    width: 50px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .next-modal-image-btn {
-    right: 10px;
-    height: 70px;
-    width: 70px;
-    top: 40%;
+    right: 5px;
+    height: 50px;
+    width: 50px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .arrow-image {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .modal-image {
+    max-width: 95%;
   }
   .attribute-option {
     padding: 20px;

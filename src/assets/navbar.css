@@ -44,7 +44,7 @@
 }
 
 .home-logo:hover {
-  transform: scale(1.03);
+  transform: scale(1.05) rotate(5deg);
 }
 
 .navbar-section {
@@ -238,6 +238,12 @@
 .nav-categories-button:hover {
   color: #fff;
   background-color: rebeccapurple;
+}
+
+.navbar-error {
+  color: #d32f2f;
+  padding: 10px;
+  font-family: "FreeMono", sans-serif;
 }
 
 .icon-wrapper {
@@ -523,6 +529,20 @@
 
 @media screen and (max-width: 455px) {
   .search-bar {
-    display: none;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    background-color: white;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: calc(100% - 20px);
+    max-width: 350px;
+  }
+
+  .search-bar-input {
+    width: 100%;
   }
 }

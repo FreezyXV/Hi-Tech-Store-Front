@@ -8,9 +8,44 @@
   flex-direction: column;
   margin: 0;
   padding: 0;
-  color: #003a77;
+  color: #222;
   background-color: #fff;
   min-height: 100vh;
+}
+
+.error-message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  padding: 20px;
+}
+
+.error-message {
+  font-family: "FreeMono", sans-serif;
+  font-size: 18px;
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 20px 30px;
+  border-radius: 10px;
+  border-left: 4px solid #d32f2f;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid rebeccapurple;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rebeccapurple;
+  outline-offset: 2px;
 }
 
 .main-content {
@@ -57,7 +92,7 @@ a {
   border-radius: 8px;
   text-align: center;
   transition: transform 0.3s;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   text-decoration: none;
 }
 
@@ -100,14 +135,14 @@ a {
   text-align: center;
   padding: 30px;
   border-radius: 15px;
-  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .brand-card:hover {
   transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(102, 51, 153, 0.3);
 }
 
 .brand-image {
@@ -128,20 +163,22 @@ a {
 
 .PageTile {
   text-align: center;
-  font-size: 38px;
-  margin: 42px;
+  font-size: 48px;
+  margin: 40px 20px;
   color: #ffc300;
   font-family: "Formula Condensed", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .page-title {
   text-align: center;
   font-size: 52px;
-  margin: 20px;
+  margin: 30px 20px;
   color: #ffc300;
   font-family: "Formula Condensed", sans-serif;
   font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .brand-card h2 {
@@ -179,14 +216,14 @@ a {
   background-color: #fff;
   padding: 20px;
   border-radius: 15px;
-
-  margin: 20px 70px 20px 70px;
-  transition: transform 0.3s ease;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 20px 70px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .model-card:hover {
-  transform: scale(1.01);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 51, 153, 0.25);
 }
 
 .model-image {

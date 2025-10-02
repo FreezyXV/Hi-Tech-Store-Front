@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchBrands } from "../services/api";
 import { Link, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
+import Loader from "../components/Loader";
 import "../assets/styles.css";
 
 const Category = () => {
@@ -43,11 +44,18 @@ const Category = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return (
+      <div className="body">
+        <div className="error-message-container">
+          <p className="error-message">{error}</p>
+        </div>
+        <Footer />
+      </div>
+    );
   }
 
   return (
@@ -64,6 +72,8 @@ const Category = () => {
                     style={{
                       backgroundImage: `url(${brandImages[brand.name] || ""})`,
                     }}
+                    role="img"
+                    aria-label={`${brand.name} logo`}
                   ></div>
                   <h2>{brand.name}</h2>
                 </Link>
