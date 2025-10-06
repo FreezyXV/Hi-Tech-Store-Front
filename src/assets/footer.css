@@ -128,9 +128,11 @@ footer {
     width: 100%;
   }
   .footer-content {
+    text-align: justify;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin: 0px 0px 0px 0px;
   }
 
   .footer-section {
@@ -152,6 +154,10 @@ footer {
 
   .footer-section h3 {
     margin-bottom: 10px;
+  }
+  .footer-section  {
+    margin-bottom: 10px;
+    text-align: justify;
   }
 }
 

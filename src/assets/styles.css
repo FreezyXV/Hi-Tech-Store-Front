@@ -273,6 +273,7 @@ p.model-price {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 10px 30px;
   }
 
   .model-card:hover {
@@ -293,5 +294,11 @@ p.model-price {
 
   .page-title {
     font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .model-card {
+    margin: 5px 5px;
   }
 }
