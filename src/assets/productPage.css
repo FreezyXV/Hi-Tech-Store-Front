@@ -753,6 +753,9 @@ textarea {
 }
 
 @media (max-width: 550px) {
+  .attribute-section {
+padding: 5px;
+  }
   .product-container {
     display: grid;
     width: 100%;
