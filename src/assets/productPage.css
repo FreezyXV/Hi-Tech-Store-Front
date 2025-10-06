@@ -740,9 +740,9 @@ textarea {
 
 @media (max-width: 550px) {
   .product-page-wrapper {
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 5px;
   }
 
   .product-page {
@@ -767,9 +767,7 @@ textarea {
     position: relative;
   }
 
-  textarea {
-    height: 50px;
-  }
+
 
   .delete-review-btn {
     position: absolute;
@@ -794,4 +792,27 @@ textarea {
     margin-bottom: 15px;
     font-size: 17px;
   }
+
+  .product-specs,
+.variant-selector {
+  background-color: #fff;
+  padding: 0px;
+  border-radius: 10px;
+}
+
+.reviews-section {
+
+  padding: 0px;
+
+}
+
+.review-btn {
+  max-width: none;
+}
+
+.variant-selector-main {
+
+  padding: 0px;
+
+}
 }
