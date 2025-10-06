@@ -34,7 +34,7 @@ h1 {
   text-align: center;
   font-family: "Formula Condensed";
   color: #ffc300;
-  font-size: 3rem;
+  font-size: 4rem;
   letter-spacing: 1px;
   margin-top: 30px;
 }
@@ -75,7 +75,7 @@ h1 {
 .cart-item-details h2 {
   font-family: "Formula Condensed";
   color: #ffc300;
-  font-size: 26px;
+  font-size: 3rem;
   margin: 0;
 
   font-weight: 200;
@@ -85,7 +85,7 @@ h1 {
   font-family: "FreeMono", sans-serif;
   margin: 5px 0;
   color: #666;
-  font-size: 0.95em;
+  font-size: 1.5em;
 }
 
 .price,
@@ -93,7 +93,7 @@ h1 {
   font-family: "FreeMono", sans-serif;
   font-weight: bold;
   color: #555;
-  font-size: 1.1em;
+  font-size: 1.7em;
 }
 
 .quantity-control {
@@ -141,14 +141,14 @@ h1 {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  gap: 3rem;
   flex-direction: column;
 }
 
 .cart-summary h2 {
   font-family: "Formula Condensed";
   color: #ffc300;
-  font-size: 40px;
+  font-size: 4rem;
   margin-bottom: 15px;
 }
 
@@ -332,6 +332,13 @@ h1 {
 
   .cart-item-details {
     margin-top: 15px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0px;
+  }
+
+  .cart-item-details h2 {
+    font-size: 3rem;
   }
 
   .quantity-control {
@@ -339,9 +346,19 @@ h1 {
   }
 
   .cart-summary {
-    padding: 15px;
-    width: 90%;
+
+    width: 100%;
     margin-bottom: 20px;
+  }
+
+  .item-total {
+    margin-top: 1rem;
+  }
+
+  .cart-summary h2 {
+
+    font-size: 4rem;
+
   }
 }
 
@@ -358,7 +375,7 @@ h1 {
 
   .cart-container {
     padding: 15px;
-    width: 90%;
+    width: 100%;
   }
 
   .cart-item {
@@ -370,7 +387,7 @@ h1 {
 
   .cart-summary {
     font-size: 0.9em;
-    width: 90%;
+    width: 100%;
   }
 
   .checkoutButton {
@@ -392,11 +409,11 @@ h1 {
 
 @media (max-width: 550px) {
   .cart-container {
-    padding: 10px;
+    padding: 0px;
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 4rem;
   }
 
   .cart-item {
@@ -409,11 +426,13 @@ h1 {
   }
 
   .cart-item-details {
+    width: 100%;
     margin-top: 10px;
+    padding: 0px;
   }
 
   .cart-item-details h2 {
-    font-size: 1.2em;
+    font-size: 2.5rem;
   }
 
   .cart-item-details p {

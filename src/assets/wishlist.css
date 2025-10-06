@@ -33,7 +33,7 @@
 .wishlist-title {
   font-family: "Formula Condensed";
   color: #ffc300;
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 20px;
 
   font-weight: 600;
@@ -101,9 +101,9 @@
   color: #003a77;
   font-family: "Formula Condensed Light";
   color: #ffc300;
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   justify-content: center;
   align-items: center;
 }
@@ -245,8 +245,8 @@
 }
 
 .wishlist-actions {
-  display: flex;
-  flex-direction: column;
+
+
   align-items: flex-start;
 }
 
@@ -287,15 +287,17 @@
     margin-right: 0px;
   }
   .wishlist-title {
-    font-size: 2rem;
+    font-size: 4rem;
   }
   .wishlist-details h2 {
-    font-size: 24px;
+    font-size: 3rem;
     margin-left: 0px;
     margin-top: 10px;
+    text-align: left;
   }
   .wishlist-details {
     margin-left: 0px;
+    text-align: left;
   }
   .wishlist-specs {
     text-align: start;
@@ -311,7 +313,7 @@
     font-weight: bold;
   }
   .wishlist-specs ul li {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: normal;
   }
 }
@@ -321,6 +323,7 @@
   .wishlist-card {
     flex-direction: column;
     align-items: center;
+    padding: 5px;
   }
 
   .wishlist-image {
@@ -331,6 +334,7 @@
   .wishlist-actions {
     flex-direction: column;
     gap: 10px;
+    margin-top: 1rem;
   }
 }
 
@@ -340,7 +344,7 @@
   }
 
   .wishlist-title {
-    font-size: 1.8rem;
+    font-size: 4rem;
   }
 
   .wishlist-image {
@@ -353,8 +357,24 @@
   }
 
   .wishlist-actions button {
-    width: 90%;
+    margin: 0px;
+    width: 100%;
     font-size: 16px;
-    padding: 8px;
+
+  }
+  .wishlist-page {
+    padding: 0px;
+
+  }
+  .wishlist-details {
+    width: 100%;
+}
+
+.wishlist-specs {
+margin-top: 1rem;
+}
+
+.wishlist-specs ul {
+  gap: 0px;
   }
 }

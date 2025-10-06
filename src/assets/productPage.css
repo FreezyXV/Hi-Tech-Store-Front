@@ -109,7 +109,7 @@ h3 {
 .product-specs h2,
 .variant-selector h2 {
   margin-bottom: 10px;
-  font-size: 24px;
+  font-size: 2.5rem;
   font-family: "Formula Condensed";
   font-weight: 400;
   font-style: normal;
@@ -126,7 +126,7 @@ h3 {
 
 .product-specs ul li {
   padding: 5px 0;
-  font-size: 12px;
+  font-size: 1.2rem;
   border-bottom: 1px solid #ddd;
   font-family: "FreeMono", sans-serif;
   font-weight: 400;
@@ -149,8 +149,8 @@ h3 {
 
 .variant-selector-main h2 {
   font-family: "Formula Condensed", sans-serif;
-  font-size: 40px;
-  font-weight: 400;
+  font-size: 3rem;
+  font-weight: 600;
   color: #ffc300;
 }
 
@@ -168,7 +168,7 @@ h3 {
 }
 
 .product-price {
-  font-size: 24px;
+  font-size: 2rem;
   font-weight: 500;
   margin-bottom: 20px;
   color: #222;
@@ -195,6 +195,7 @@ h3 {
   transition: border-color 0.3s, background-color 0.3s, color 0.3s;
   font-family: "FreeMono", sans-serif;
   font-weight: 400;
+  font-size: 1.2rem;
 }
 
 .attribute-option {
@@ -236,6 +237,7 @@ h3 {
 
 .attribute-section h3 {
   color: #222;
+  font-size: 1.5rem;
 }
 
 .add-to-cart-btn {
@@ -327,7 +329,7 @@ textarea {
 }
 
 .review-title {
-  font-size: 24px;
+  font-size: 2.5rem;
   font-family: "Formula Condensed Light";
   font-weight: 400;
   font-style: normal;
@@ -350,7 +352,7 @@ textarea {
   color: #001d3d;
   border: rebeccapurple 3px solid;
   font-family: "Formula Condensed";
-  max-width: 300px;
+
 }
 
 .review-btn:hover {
@@ -797,7 +799,7 @@ textarea {
 .variant-selector {
   background-color: #fff;
   padding: 0px;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 .reviews-section {
@@ -811,8 +813,11 @@ textarea {
 }
 
 .variant-selector-main {
-
+  border-radius: 0px;
   padding: 0px;
 
+  .attribute-title {
+    font-size: 1.5rem;
+  }
 }
 }
