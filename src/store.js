@@ -6,6 +6,7 @@ import brandsReducer from "./features/brandsSlice";
 import modelsReducer from "./features/modelsSlice";
 import variantsReducer from "./features/variantsSlice";
 import wishlistReducer from "./features/wishlistSlice";
+import localStorageMiddleware from "./features/localStorageMiddleware";
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,8 @@ export const store = configureStore({
     variants: variantsReducer,
     wishlist: wishlistReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(localStorageMiddleware),
 });
 
 export default store;
