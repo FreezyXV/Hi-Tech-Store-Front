@@ -2,6 +2,7 @@
 
 This is the frontend for the Hi-Tech Store, a full-stack e-commerce application. The frontend is built with React and Vite, and it provides a modern, responsive, and user-friendly interface for shopping for electronic products.
 
+
 ## Table of Contents
 
 *   [About The Project](#about-the-project)
