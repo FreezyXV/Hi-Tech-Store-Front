@@ -17,7 +17,10 @@ const OrderSummaryAndPayment = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { cartItems, totalAmount } = location.state || { cartItems: [], totalAmount: 0 };
+  const { cartItems, totalAmount } = location.state || {
+    cartItems: [],
+    totalAmount: 0,
+  };
 
   const [shippingAddress, setShippingAddress] = useState({
     fullName: "",
@@ -29,6 +32,28 @@ const OrderSummaryAndPayment = () => {
 
   const [deliveryMethod, setDeliveryMethod] = useState("standard");
   const [formErrors, setFormErrors] = useState({});
+
+  const deliveryOptions = [
+    {
+      id: "standard",
+      label: "Standard",
+      price: 5,
+      eta: "3-5 jours ouvrés",
+      description: "Suivi inclus, livraison planifiée et sécurisée.",
+      badge: "Recommandé",
+    },
+    {
+      id: "express",
+      label: "Express",
+      price: 15,
+      eta: "24-48h",
+      description: "Priorité de traitement et assurance renforcée.",
+      badge: "Rapide",
+    },
+  ];
+
+  const deliveryCost = deliveryMethod === "express" ? 15 : 5;
+  const grandTotal = totalAmount + deliveryCost;
 
   // Validate the shipping form
   const validateForm = () => {
@@ -51,94 +76,174 @@ const OrderSummaryAndPayment = () => {
   };
 
   return (
-    <div className="body">
+    <div className="body app-gradient">
       <Elements stripe={stripePromise}>
-        <div className="order-summary-page">
-          <div className="order-summary-container">
-            <h1>Order Summary</h1>
-            <div className="order-summary">
-              {cartItems.map((item) => (
-                <div key={item.variant._id} className="order-summary-item">
-                  <img
-                    src={item.variant.imageUrls[0] || "placeholder.jpg"}
-                    alt={item.variant.name}
-                    className="order-item-image"
-                  />
-                  <div className="order-item-details">
-                    <p className="item-name">{item.variant.name}</p>
-                    <p className="item-price">
-                      {item.quantity} x €{item.variant.price.toFixed(2)}
-                    </p>
+        <section className="order-summary-page page-shell stack-lg">
+          <div className="section-panel section-panel--subtle stack-md order-summary-hero">
+            <p className="eyebrow">Finalisation</p>
+            <h1 className="page-title">Commande &amp; paiement sécurisé</h1>
+            <p className="page-lede">
+              Vérifiez vos articles, renseignez l&apos;adresse puis choisissez le
+              mode de livraison qui vous convient avant de confirmer.
+            </p>
+          </div>
+
+          <div className="order-summary-layout">
+            <div className="order-primary stack-lg">
+              <div className="section-panel order-card">
+                <div className="order-card__header">
+                  <div>
+                    <p className="eyebrow">Votre panier</p>
+                    <h2>Articles sélectionnés</h2>
+                  </div>
+                  <span className="order-count">
+                    {cartItems.length} {cartItems.length > 1 ? "articles" : "article"}
+                  </span>
+                </div>
+                {cartItems.length > 0 ? (
+                  <>
+                    <div className="order-items">
+                      {cartItems.map((item) => (
+                        <article
+                          key={item?.variant?._id || item?.variantId}
+                          className="order-summary-item"
+                        >
+                          <img
+                            src={
+                              item?.variant?.imageUrls?.[0] || "https://via.placeholder.com/120"
+                            }
+                            alt={item?.variant?.name || "Article"}
+                            className="order-item-image"
+                            loading="lazy"
+                          />
+                          <div className="order-item-details">
+                            <p className="item-name">{item?.variant?.name || "Produit"}</p>
+                            <p className="item-meta">
+                              Quantité&nbsp;: {item?.quantity || 1}
+                            </p>
+                            <p className="item-price">
+                              €{(item?.variant?.price || 0).toFixed(2)} pièce
+                            </p>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                    <div className="order-totals">
+                      <div className="order-total-row">
+                        <span>Sous-total</span>
+                        <span>€ {totalAmount.toFixed(2)}</span>
+                      </div>
+                      <div className="order-total-row">
+                        <span>Livraison</span>
+                        <span>
+                          {deliveryCost === 0 ? "Offerte" : `€ ${deliveryCost.toFixed(2)}`}
+                        </span>
+                      </div>
+                      <div className="order-total-row order-total-row--grand">
+                        <span>Total estimé</span>
+                        <span>€ {grandTotal.toFixed(2)}</span>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <p className="order-empty">
+                    Votre panier est vide. Ajoutez quelques produits avant de poursuivre.
+                  </p>
+                )}
+              </div>
+
+              <div className="section-panel order-card">
+                <div className="order-card__header">
+                  <div>
+                    <p className="eyebrow">Coordonnées</p>
+                    <h2>Adresse de livraison</h2>
+                  </div>
+                  <span className="order-count order-count--muted">Obligatoire</span>
+                </div>
+                <form className="shipping-form" noValidate>
+                  {["fullName", "address", "city", "postalCode", "country"].map((field) => (
+                    <div
+                      key={field}
+                      className={`form-group ${
+                        ["city", "postalCode"].includes(field) ? "form-group--half" : ""
+                      }`}
+                    >
+                      <label htmlFor={field}>
+                        {field.charAt(0).toUpperCase() + field.slice(1)}
+                      </label>
+                      <input
+                        type="text"
+                        id={field}
+                        name={field}
+                        autoComplete="on"
+                        value={shippingAddress[field]}
+                        onChange={(e) =>
+                          setShippingAddress({
+                            ...shippingAddress,
+                            [field]: e.target.value,
+                          })
+                        }
+                        className={formErrors[field] ? "input-error" : ""}
+                      />
+                      {formErrors[field] && (
+                        <span className="error-message">{formErrors[field]}</span>
+                      )}
+                    </div>
+                  ))}
+                </form>
+              </div>
+
+              <div className="section-panel order-card">
+                <div className="order-card__header">
+                  <div>
+                    <p className="eyebrow">Livraison</p>
+                    <h2>Mode préféré</h2>
                   </div>
                 </div>
-              ))}
-              <h2 className="total-amount">Total: €{totalAmount.toFixed(2)}</h2>
-            </div>
-
-            <div className="delivery-details">
-              <h2>Shipping Address</h2>
-              <form>
-                {["fullName", "address", "city", "postalCode", "country"].map((field) => (
-                  <div key={field} className="form-group">
-                    <label htmlFor={field}>
-                      {field.charAt(0).toUpperCase() + field.slice(1)}
+                <div className="delivery-options">
+                  {deliveryOptions.map((option) => (
+                    <label
+                      key={option.id}
+                      className={`delivery-option ${
+                        deliveryMethod === option.id ? "delivery-option--selected" : ""
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="deliveryMethod"
+                        value={option.id}
+                        checked={deliveryMethod === option.id}
+                        onChange={(e) => setDeliveryMethod(e.target.value)}
+                      />
+                      <div className="delivery-option__meta">
+                        <div className="delivery-option__heading">
+                          <h3>{option.label}</h3>
+                          <span className="delivery-badge">{option.badge}</span>
+                        </div>
+                        <p className="delivery-option__eta">{option.eta}</p>
+                        <p className="delivery-option__description">{option.description}</p>
+                      </div>
+                      <div className="delivery-option__price">
+                        {option.price === 0 ? "Offert" : `€ ${option.price.toFixed(2)}`}
+                      </div>
                     </label>
-                    <input
-                      type="text"
-                      id={field}
-                      name={field}
-                      value={shippingAddress[field]}
-                      onChange={(e) =>
-                        setShippingAddress({ ...shippingAddress, [field]: e.target.value })
-                      }
-                      className={formErrors[field] ? "input-error" : ""}
-                    />
-                    {formErrors[field] && (
-                      <span className="error-message">{formErrors[field]}</span>
-                    )}
-                  </div>
-                ))}
-              </form>
-            </div>
-
-            <div className="delivery-method">
-              <h2>Delivery Method</h2>
-              <div className="radioLabel">
-                <label>
-                  <input
-                    type="radio"
-                    name="deliveryMethod"
-                    value="standard"
-                    checked={deliveryMethod === "standard"}
-                    onChange={(e) => setDeliveryMethod(e.target.value)}
-                    className="radio"
-                  />
-                  Standard (€5.00)
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    name="deliveryMethod"
-                    value="express"
-                    checked={deliveryMethod === "express"}
-                    onChange={(e) => setDeliveryMethod(e.target.value)}
-                    className="radio"
-                  />
-                  Express (€15.00)
-                </label>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <PaymentForm
-              cartItems={cartItems}
-              totalAmount={totalAmount}
-              shippingAddress={shippingAddress}
-              deliveryMethod={deliveryMethod}
-              validateForm={validateForm}
-              onSuccess={handleSuccess}
-            />
+            <div className="section-panel order-payment-card sticky-summary">
+              <PaymentForm
+                cartItems={cartItems}
+                totalAmount={totalAmount}
+                shippingAddress={shippingAddress}
+                deliveryMethod={deliveryMethod}
+                validateForm={validateForm}
+                onSuccess={handleSuccess}
+              />
+            </div>
           </div>
-        </div>
+        </section>
       </Elements>
       <Footer />
     </div>

@@ -19,7 +19,20 @@
 .home-page {
   font-family: "Formula Condensed", sans-serif;
   font-style: normal;
-  background-color: #fff;
+  background-color: transparent;
+}
+
+.home-hero {
+  margin-top: 60px;
+}
+
+.hero-panel {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  border-radius: var(--card-radius-lg);
+  overflow: hidden;
 }
 
 .hero-section {

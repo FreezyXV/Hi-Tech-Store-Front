@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Loader from "./components/Loader";
+import "./assets/theme.css";
 
 const Home = lazy(() => import("./pages/Home"));
 const Category = lazy(() => import("./pages/Category"));
@@ -14,6 +15,7 @@ const Account = lazy(() => import("./pages/Account"));
 const Cart = lazy(() => import("./components/Cart"));
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
+const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 const SearchBarResults = lazy(() => import("./pages/SearchBarResults"));
 const AllModelsPage = lazy(() => import("./components/AllModelsPage"));
 const OrderSummaryAndPayment = lazy(() =>
@@ -56,6 +58,7 @@ const App = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route
               path="/search"
               element={<SearchBarResults keyword={keyword} />}

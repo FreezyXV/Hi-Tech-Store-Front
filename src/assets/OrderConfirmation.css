@@ -1,118 +1,165 @@
+@import url("https://use.typekit.net/csk6jjx.css");
 @import url("https://fonts.cdnfonts.com/css/formula-condensed");
 @import url("https://fonts.cdnfonts.com/css/freemono");
-@import url(https://db.onlinewebfonts.com/c/6e7d86fe1dd94be502d31a6743ffc3d1?family=Formula+Condensed+Light);
 
-.body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.order-confirmation {
+  width: 100%;
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
 }
 
-.order-confirmation-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  min-height: 100vh;
-  width: 100%;
+.confirmation-hero .page-title {
+  margin: 0;
+}
+
+.confirmation-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: clamp(1.25rem, 4vw, 2.5rem);
 }
 
 .confirmation-card {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 10px;
-  font-family: "Muli", sans-serif;
-  text-align: center;
-  animation: fadeIn 0.5s ease-in-out;
-  width: 100%;
-  border: solid #222;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-.confirmation-title {
-  font-family: "Formula Condensed Light";
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #222;
+.confirmation-card h2 {
+  margin: 0;
+  font-family: "Formula Condensed", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: var(--text-strong, #0f172a);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-family: "FreeMono", sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: rgba(91, 33, 182, 0.15);
+  color: #5b21b6;
 }
 
 .confirmation-text {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
+  margin: 0;
   font-family: "FreeMono", sans-serif;
-}
-
-.order-details {
-  margin: 20px 0;
-  font-size: 1.1rem;
-  font-family: "FreeMono", sans-serif;
-}
-
-.order-id {
-  color: black;
-  font-family: "FreeMono", sans-serif;
-}
-
-.notification-text {
-  margin: 15px 0;
   font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(15, 23, 42, 0.75);
+}
+
+.confirmation-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
   font-family: "FreeMono", sans-serif;
+  color: rgba(15, 23, 42, 0.7);
+}
+
+.confirmation-checklist li {
+  display: flex;
+  gap: 0.4rem;
+  align-items: flex-start;
+}
+
+.confirmation-checklist li::before {
+  content: "•";
+  margin-right: 0.5rem;
+  color: var(--accent-primary, #ffc300);
 }
 
 .continue-shopping-btn {
-  background: rgb(255, 255, 255);
-  color: rebeccapurple;
-  padding: 10px 20px;
-  border: solid rebeccapurple;
-  border-radius: 10px;
-  cursor: pointer;
+  align-self: flex-start;
+  background: #ffffff;
+  color: var(--text-strong, #0f172a);
+  padding: 0.85rem 1.75rem;
+  border-radius: 14px;
+  font-family: "Formula Condensed", sans-serif;
   font-size: 1rem;
-  transition: background 0.3s ease;
-  font-family: "Formula Condensed Light";
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .continue-shopping-btn:hover {
-  background: #ffc300;
-  color: rebeccapurple;
+  transform: translateY(-1px);
+  border-color: var(--accent-primary, #ffc300);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
 }
 
-.additional-info {
-  margin-top: 30px;
-  text-align: center;
+.confirmation-support {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   font-family: "FreeMono", sans-serif;
+  color: rgba(15, 23, 42, 0.75);
 }
 
-.additional-info h2 {
-  margin-bottom: 10px;
-  color: rebeccapurple;
-  font-family: "Formula Condensed Light";
+.confirmation-support h3 {
+  margin: 0;
+  font-family: "Formula Condensed", sans-serif;
+  font-size: 1.5rem;
+  color: var(--text-strong, #0f172a);
 }
 
-.additional-info p {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  font-family: "FreeMono", sans-serif;
+.support-card {
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
-.help-links a {
-  color: black;
+.support-link {
+  font-family: "Formula Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #5b21b6;
   text-decoration: none;
-  margin: 0 5px;
-  font-family: "FreeMono", sans-serif;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
-.help-links a:hover {
-  text-decoration: underline;
+.support-link::after {
+  content: "→";
+  font-size: 1.2rem;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
+.support-link:hover {
+  color: var(--text-strong, #0f172a);
+}
+
+@media (max-width: 960px) {
+  .confirmation-grid {
+    grid-template-columns: 1fr;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .continue-shopping-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .confirmation-card,
+  .confirmation-support {
+    padding: 1.25rem;
+  }
+
+  .status-pill {
+    width: 100%;
+    justify-content: center;
   }
 }

@@ -18,6 +18,16 @@ const Account = () => {
   const [expandedOrders, setExpandedOrders] = useState({});
   const navigate = useNavigate();
 
+  const normalizeWishlist = (items = []) =>
+    items.map((item) => ({
+      id: item._id || item.id,
+      name: item.name,
+      price: item.price,
+      imageUrl: Array.isArray(item.imageUrls)
+        ? item.imageUrls[0]
+        : item.imageUrls || "https://via.placeholder.com/150",
+    }));
+
   useEffect(() => {
     const getUserProfileData = async () => {
       try {
@@ -26,9 +36,10 @@ const Account = () => {
           navigate("/login");
           return;
         }
-        const response = await fetchUserProfile(token);
+        const response = await fetchUserProfile();
         if (response) {
           setUser(response);
+          setWishlist(normalizeWishlist(response.wishlist || []));
         } else {
           setError("User data is unavailable");
         }
@@ -39,17 +50,7 @@ const Account = () => {
       }
     };
 
-    const fetchWishlistFromLocalStorage = () => {
-      try {
-        const storedWishlist = localStorage.getItem("wishlist");
-        setWishlist(storedWishlist ? JSON.parse(storedWishlist) : []);
-      } catch (err) {
-        console.error("Error loading wishlist from localStorage:", err);
-      }
-    };
-
     getUserProfileData();
-    fetchWishlistFromLocalStorage();
   }, [navigate]);
 
   const handleChangePassword = async (e) => {
@@ -68,9 +69,7 @@ const Account = () => {
     }
 
     try {
-      const token = localStorage.getItem("authToken");
-      if (!token) throw new Error("No token found");
-      await changeUserPassword(token, { currentPassword, newPassword });
+      await changeUserPassword({ currentPassword, newPassword });
       setChangePasswordSuccess("Password changed successfully");
       setCurrentPassword("");
       setNewPassword("");
@@ -238,7 +237,7 @@ const Account = () => {
               {wishlist.map((item) => (
                 <li key={item.id} className="wishlist-item">
                   <img
-                    src={item.imageUrls || "https://via.placeholder.com/150"}
+                    src={item.imageUrl}
                     alt={item.name || "Wishlist Item"}
                   />
                   <h2 className="wishlist-item-name">{item.name || "Wishlist Item"}</h2>

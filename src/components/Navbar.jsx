@@ -157,140 +157,144 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        {/* Logo Section */}
-        <div
-          className="navbar-section"
-          onClick={() => navigate("/")}
-          role="button"
-          tabIndex="0"
-          onKeyDown={(e) => e.key === "Enter" && navigate("/")}
-        >
-          <img
-            src={isMobile ? AccueilBlanc : logoHome}
-            alt="Home"
-            className="home-logo"
-          />
+          {/* Logo Section */}
+          <div
+            className="navbar-section"
+            onClick={() => navigate("/")}
+            role="button"
+            tabIndex="0"
+            onKeyDown={(e) => e.key === "Enter" && navigate("/")}
+          >
+            <img
+              src={isMobile ? AccueilBlanc : logoHome}
+              alt="Home"
+              className="home-logo"
+            />
 
-          {/* Burger Menu */}
-          {isMobile && (
+            {/* Burger Menu */}
+            {isMobile && (
+              <div
+                className="burger-menu"
+                onClick={handleBurgerMenuClick}
+                role="button"
+                tabIndex="0"
+                aria-label="Toggle Categories Menu"
+                aria-haspopup="true"
+                aria-expanded={isCategoriesVisible}
+              >
+                <img className="burger-menuImg" src={BurgerMenu} alt="Menu" />
+              </div>
+            )}
+          </div>
+          {/* Dropdown Categories */}
+          {(!isMobile || isCategoriesVisible) && (
             <div
-              className="burger-menu"
-              onClick={handleBurgerMenuClick}
-              role="button"
-              tabIndex="0"
-              aria-label="Toggle Categories Menu"
-              aria-haspopup="true"
-              aria-expanded={isCategoriesVisible}
+              className={`navbar-categories ${
+                isCategoriesVisible ? "visible" : ""
+              }`}
+              ref={dropdownRef}
             >
-              <img className="burger-menuImg" src={BurgerMenu} alt="Menu" />
+              {/* Home Button */}
+              <div className="nav-home-button">
+                <button
+                  onClick={() => navigate("/")}
+                  className="nav-categories-button-accueil"
+                >
+                  <div className="icon-wrapper-accueil">
+                    <img
+                      src={AccueilNoir}
+                      alt="Home"
+                      className="accueilLogoNoir"
+                    />
+                    <img
+                      src={AccueilBlanc}
+                      alt="Home"
+                      className="accueilLogoBlanc"
+                    />
+                  </div>
+                  <p className="navbar-home-text">Home</p>
+                </button>
+              </div>
+
+              {/* Category Buttons */}
+              {categories && Object.keys(categories).length > 0 ? (
+                Object.values(categories).map((category) => (
+                  <div
+                    key={category._id}
+                    className={`dropdown-container ${
+                      clickedCategory === category._id ? "active" : ""
+                    }`}
+                  >
+                    <button
+                      className="nav-categories-button"
+                      onClick={() => handleCategoryClick(category._id)}
+                    >
+                      {category.name || "Category"}
+                    </button>
+                    <DropdownMenu
+                      models={models}
+                      categoryId={category._id}
+                      visible={clickedCategory === category._id}
+                      loadingModels={loadingModels}
+                      onModelClick={closeMenu}
+                    />
+                  </div>
+                ))
+              ) : (
+                <p className="no-categories">No categories available</p>
+              )}
             </div>
           )}
-        </div>
 
-        {/* Dropdown Categories */}
-        {(!isMobile || isCategoriesVisible) && (
-          <div
-            className={`navbar-categories ${
-              isCategoriesVisible ? "visible" : ""
-            }`}
-            ref={dropdownRef}
-          >
-            {/* Home Button */}
-            <div className="nav-home-button">
-              <button
-                onClick={() => navigate("/")}
-                className="nav-categories-button-accueil"
-              >
-                <div className="icon-wrapper-accueil">
-                  <img
-                    src={AccueilNoir}
-                    alt="Home"
-                    className="accueilLogoNoir"
-                  />
-                  <img
-                    src={AccueilBlanc}
-                    alt="Home"
-                    className="accueilLogoBlanc"
-                  />
-                </div>
-                <p className="navbar-home-text">Home</p>
-              </button>
+          {/* Search Bar */}
+          <div className="navbar-search">
+            <SearchBar />
+          </div>
+
+          {/* Icons */}
+          <div className="navbar-icons">
+            <div className="icon-container">
+              {isLoggedIn ? (
+                <>
+                  {renderButton(
+                    logoUserNoir,
+                    logoUserBlanc,
+                    "Account",
+                    "/account"
+                  )}
+                  {renderButton(
+                    logoLogoutNoir,
+                    logoLogoutBlanc,
+                    "Logout",
+                    "/",
+                    handleLogout
+                  )}
+                </>
+              ) : (
+                <>
+                  {renderButton(
+                    logoLoginNoir,
+                    logoLoginBlanc,
+                    "Login",
+                    "/login"
+                  )}
+                  {renderButton(
+                    logoSignUpNoir,
+                    logoSignUpBlanc,
+                    "Sign Up",
+                    "/register"
+                  )}
+                </>
+              )}
+              {renderButton(logoPanierNoir, logoPanierBlanc, "Cart", "/cart")}
+              {renderButton(
+                logoWishlistBlanc,
+                logoWishlistRouge,
+                "Wishlist",
+                "/wishlist"
+              )}
             </div>
-
-            {/* Category Buttons */}
-            {categories && Object.keys(categories).length > 0 ? (
-              Object.values(categories).map((category) => (
-                <div
-                  key={category._id}
-                  className={`dropdown-container ${
-                    clickedCategory === category._id ? "active" : ""
-                  }`}
-                >
-                  <button
-                    className="nav-categories-button"
-                    onClick={() => handleCategoryClick(category._id)}
-                  >
-                    {category.name || "Category"}
-                  </button>
-                  <DropdownMenu
-                    models={models}
-                    categoryId={category._id}
-                    visible={clickedCategory === category._id}
-                    loadingModels={loadingModels}
-                    onModelClick={closeMenu}
-                  />
-                </div>
-              ))
-            ) : (
-              <p className="no-categories">No categories available</p>
-            )}
           </div>
-        )}
-
-        {/* Search Bar */}
-        <div className="navbar-search">
-          <SearchBar />
-        </div>
-
-        {/* Icons */}
-        <div className="navbar-icons">
-          <div className="icon-container">
-            {isLoggedIn ? (
-              <>
-                {renderButton(
-                  logoUserNoir,
-                  logoUserBlanc,
-                  "Account",
-                  "/account"
-                )}
-                {renderButton(
-                  logoLogoutNoir,
-                  logoLogoutBlanc,
-                  "Logout",
-                  "/",
-                  handleLogout
-                )}
-              </>
-            ) : (
-              <>
-                {renderButton(logoLoginNoir, logoLoginBlanc, "Login", "/login")}
-                {renderButton(
-                  logoSignUpNoir,
-                  logoSignUpBlanc,
-                  "Sign Up",
-                  "/register"
-                )}
-              </>
-            )}
-            {renderButton(logoPanierNoir, logoPanierBlanc, "Cart", "/cart")}
-            {renderButton(
-              logoWishlistBlanc,
-              logoWishlistRouge,
-              "Wishlist",
-              "/wishlist"
-            )}
-          </div>
-        </div>
       </nav>
 
       {/* Global Overlay */}

@@ -36,13 +36,13 @@ const PaymentForm = ({
 
   const handlePlaceOrder = async () => {
     if (!validateForm()) {
-      alert("Please fill all required fields.");
+      setPaymentError("Please fill all required fields.");
       return;
     }
 
     const cardElement = elements.getElement(CardElement);
     if (!cardElement) {
-      alert("Please enter your card details.");
+      setPaymentError("Please enter your card details.");
       return;
     }
 
@@ -107,13 +107,13 @@ const PaymentForm = ({
         paymentIntentId: paymentIntent.id,
       };
 
-      const response = await placeOrder(orderPayload);
+      const order = await placeOrder(orderPayload);
 
-      if (!response?.order?._id) {
+      if (!order?._id) {
         throw new Error("Failed to place the order. Please try again.");
       }
 
-      onSuccess(response.order._id);
+      onSuccess(order._id);
     } catch (error) {
       console.error("Order Placement Error:", error.message);
       setPaymentError(error.message || "Order placement failed.");

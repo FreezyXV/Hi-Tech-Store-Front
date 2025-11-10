@@ -115,7 +115,7 @@ export const fetchPaymentIntent = async (orderPayload) => {
       "/orders/create-payment-intent",
       orderPayload
     );
-    return response.data;
+    return response.data.data;
   } catch (error) {
     handleApiError(error);
   }
@@ -253,7 +253,7 @@ export const fetchVariants = async (categoryId, brandId, modelId) => {
 export const fetchCart = async () => {
   try {
     const response = await axiosInstance.get("/cart");
-    return response.data.data || [];
+    return response.data.items || [];
   } catch (error) {
     handleApiError(error);
   }
@@ -262,8 +262,8 @@ export const fetchCart = async () => {
 // Add an item to the cart
 export const addToCartAsync = async (item) => {
   try {
-    const response = await axiosInstance.post("/cart", item);
-    return response.data.data || {};
+    const response = await axiosInstance.post("/cart/add", item);
+    return response.data.cart || {};
   } catch (error) {
     handleApiError(error);
   }
@@ -272,7 +272,7 @@ export const addToCartAsync = async (item) => {
 export const placeOrder = async (orderPayload) => {
   try {
     const response = await axiosInstance.post("/orders", orderPayload);
-    return response.data;
+    return response.data.data;
   } catch (error) {
     handleApiError(error);
   }
@@ -302,28 +302,21 @@ export const registerUser = async (userData) => {
   }
 };
 
-export const fetchUserProfile = async (token) => {
+export const fetchUserProfile = async () => {
   try {
-    const response = await axiosInstance.get("/auth/me", {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-    return response.data;
+    const response = await axiosInstance.get("/auth/me");
+    return response.data.data;
   } catch (err) {
     throw new Error("Error fetching user profile");
   }
 };
 
 // changeUserPassword
-export const changeUserPassword = async (token, passwords) => {
+export const changeUserPassword = async (passwords) => {
   try {
     const response = await axiosInstance.put(
       "/auth/change-password",
-      passwords,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
+      passwords
     );
     return response.data;
   } catch (err) {
@@ -335,7 +328,7 @@ export const changeUserPassword = async (token, passwords) => {
 export const fetchSearchResults = async (query) => {
   try {
     const response = await axiosInstance.get(`/search?q=${query}`);
-    return response.data; // Return the search results
+    return response.data.data || [];
   } catch (error) {
     console.error("Error fetching search results:", error);
     handleApiError(error); // Handle errors using the centralized error handler
@@ -394,26 +387,31 @@ export const deleteReview = async (reviewId) => {
   }
 };
 
-export const fetchWishlist = () => async (dispatch) => {
+export const fetchWishlistFromServer = async () => {
   try {
-    const token = getToken();
-    if (!token) {
-      console.warn("No token found. Cannot fetch server-side wishlist.");
-      return;
-    }
-
-    const response = await axiosInstance.get("/users/wishlist");
-    dispatch(wishlistSlice.actions.setWishlist(response.data));
+    const response = await axiosInstance.get("/auth/wishlist");
+    return response.data.data || [];
   } catch (error) {
-    console.error(
-      "Error fetching wishlist from server:",
-      error.response?.data || error.message
-    );
-    dispatch(
-      wishlistSlice.actions.setWishlistError(
-        error.response?.data?.error || error.message
-      )
-    );
+    console.error("Error fetching wishlist from server:", error);
+    handleApiError(error);
+  }
+};
+
+export const addWishlistItem = async (variantId) => {
+  try {
+    await axiosInstance.post("/auth/wishlist", { variantId });
+  } catch (error) {
+    console.error("Error adding wishlist item:", error);
+    handleApiError(error);
+  }
+};
+
+export const removeWishlistItem = async (variantId) => {
+  try {
+    await axiosInstance.delete(`/auth/wishlist/${variantId}`);
+  } catch (error) {
+    console.error("Error removing wishlist item:", error);
+    handleApiError(error);
   }
 };
 

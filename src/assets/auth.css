@@ -11,33 +11,54 @@
   align-items: center;
 }
 
-.login {
-  box-sizing: border-box;
-  margin-top: 50px;
-  padding: 0;
+.body.auth-page {
   min-height: 100vh;
+  width: 100%;
+  align-items: stretch;
+}
+
+.body.auth-page > :first-child {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.body.auth-page > footer,
+.body.auth-page > .footer,
+.body.auth-page > :last-child {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.register-backdrop {
+  background: radial-gradient(circle at 20% 20%, rgba(91, 33, 182, 0.08), transparent),
+    radial-gradient(circle at 80% 0%, rgba(255, 195, 0, 0.25), transparent),
+    #f7f8fc;
 }
 
 .register {
-  box-sizing: border-box;
-  margin-top: 50px;
-  padding: 0;
-  min-height: 100vh;
+  padding-bottom: 3rem;
+}
+
+.login {
+  padding-bottom: 3rem;
+}
+
+.forgot-password {
+  padding-bottom: 3rem;
+}
+
+.auth-layout {
+  margin-top: 60px;
+  align-items: stretch;
 }
 
 .auth-container {
-  margin-top: 50px;
-
-  padding: 2rem;
-
-  border-radius: 10px;
-  background-color: #ffffff;
   font-family: "Muli", sans-serif;
   animation: fadeIn 0.6s ease-in-out;
-
   align-items: center;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
 .auth-title,
@@ -52,7 +73,8 @@
 
 .auth-form .form-group,
 .account-container .form-group {
-  margin-bottom: 1.2rem;
+  width: 100%;
+
 }
 
 .auth-form .form-group label,
@@ -67,7 +89,7 @@
 
 .auth-form .form-group input,
 .account-container .form-group input {
-  width: 400px;
+  width: 100%;
   padding: 0.8rem;
   font-size: 1rem;
   border: 1px solid #ddd;
@@ -113,6 +135,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  gap: 1rem;
 }
 
 .error {
@@ -190,6 +214,108 @@
   color: black;
 }
 
+.auth-highlight {
+  color: #222;
+}
+
+.auth-lede {
+  font-family: "FreeMono", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.auth-perks {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: "FreeMono", sans-serif;
+  color: #333;
+}
+
+.auth-perks li {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.auth-perks li::before {
+  content: "•";
+  color: #5b21b6;
+}
+
+.auth-footer {
+  font-family: "FreeMono", sans-serif;
+  color: #555;
+}
+
+.auth-inline-link {
+  color: rebeccapurple;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.auth-inline-link:hover {
+  color: #ffc300;
+}
+
+.auth-support-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  font-family: "FreeMono", sans-serif;
+  color: #555;
+}
+
+.auth-message {
+  width: 100%;
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  font-family: "FreeMono", sans-serif;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+}
+
+.auth-message--success {
+  background-color: #ecfdf3;
+  color: #027a48;
+  border-color: rgba(2, 122, 72, 0.2);
+}
+
+.auth-message--error {
+  background-color: #fef3f2;
+  color: #b42318;
+  border-color: rgba(180, 35, 24, 0.2);
+}
+
+.login-link {
+  color: rebeccapurple;
+  text-decoration: underline;
+}
+
+.password-strength {
+  font-family: "FreeMono", sans-serif;
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  color: #5b21b6;
+}
+
+.password-strength.weak {
+  color: #d9534f;
+}
+
+.password-strength.moderate {
+  color: #ffc300;
+}
+
+.password-strength.strong {
+  color: #2e7d32;
+}
+
 .account-title {
   text-align: center;
   margin-bottom: 20px;
@@ -198,6 +324,56 @@
   margin-top: 30px;
   font-family: "Formula Condensed";
   color: #ffc300;
+}
+
+@media (max-width: 1024px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .auth-highlight,
+  .auth-container {
+    width: min(520px, 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .auth-layout {
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .auth-highlight.stack-lg,
+  .auth-container {
+    align-items: center;
+    text-align: center;
+  }
+
+  .auth-highlight .auth-perks {
+    align-items: center;
+    text-align: left;
+  }
+
+  .auth-highlight .auth-perks li {
+    justify-content: center;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .auth-container {
+    padding: clamp(1.25rem, 6vw, 2rem);
+  }
+
+  .auth-footer,
+  .auth-support-links {
+    align-items: center;
+    text-align: center;
+  }
+
+  .auth-form {
+    width: 100%;
+  }
 }
 
 .account-options {
@@ -455,16 +631,10 @@ h2 {
 
 @media (max-width: 1300px) {
   .account-container {
-    margin: 20px 20px;
+    
     width: 90%;
   }
-  .register {
-    margin: 20px 20px;
-  }
 
-  .login {
-    margin: 20px 20px;
-  }
 }
 
 @media (max-width: 600px) {

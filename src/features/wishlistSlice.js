@@ -23,6 +23,7 @@ const wishlistSlice = createSlice({
   name: "wishlist",
   initialState: {
     items: loadWishlistFromLocalStorage(),
+    error: null,
   },
   reducers: {
     addToWishlist: (state, action) => {
@@ -37,9 +38,20 @@ const wishlistSlice = createSlice({
       state.items = state.items.filter((item) => item.id !== action.payload);
       saveWishlistToLocalStorage(state.items); // Save to localStorage
     },
+    setWishlist: (state, action) => {
+      state.items = action.payload;
+      saveWishlistToLocalStorage(state.items);
+    },
+    setWishlistError: (state, action) => {
+      state.error = action.payload;
+    },
   },
 });
 
-export const { addToWishlist, removeFromWishlist } = wishlistSlice.actions;
+export const {
+  addToWishlist,
+  removeFromWishlist,
+  setWishlist,
+  setWishlistError,
+} = wishlistSlice.actions;
 export default wishlistSlice.reducer;
-

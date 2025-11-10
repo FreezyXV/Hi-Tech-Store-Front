@@ -1,6 +1,6 @@
 // Login.jsx
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../services/api";
 import "../assets/auth.css";
 import Footer from "../components/Footer";
@@ -70,79 +70,93 @@ const Login = () => {
   };
 
   return (
-    <div className="body">
-      <div className="login">
-        <div className="auth-container">
-          <h1 className="auth-title">Login</h1>
-          {error && <div className="error">{error}</div>}
-          <form className="auth-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="email">Email:</label>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={handleEmailChange}
-                required
-                aria-invalid={emailError ? "true" : "false"}
-                aria-describedby={emailError ? "email-error" : undefined}
-              />
-              {emailError && (
-                <span id="email-error" className="field-error">
-                  {emailError}
-                </span>
-              )}
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">Password:</label>
-              <div className="password-input-wrapper">
+    <div className="body app-gradient auth-page">
+      <section className="login page-shell">
+        <div className="auth-layout dual-panel">
+          <div className="auth-highlight section-panel section-panel--subtle stack-lg">
+            <p className="eyebrow">Welcome Back</p>
+            <h1 className="auth-title">Login</h1>
+            <p className="auth-lede">
+              Reprenez vos recherches là où vous les avez laissées et accédez à
+              l&apos;intégralité de vos commandes.
+            </p>
+            <ul className="auth-perks">
+              <li>Tracking temps-réel des expéditions.</li>
+              <li>Historique complet des achats et factures.</li>
+              <li>Wishlist synchronisée entre mobile et desktop.</li>
+            </ul>
+          </div>
+          <div className="auth-container section-panel">
+            {error && <div className="error">{error}</div>}
+            <form className="auth-form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="email">Email:</label>
                 <input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  value={password}
-                  onChange={handlePasswordChange}
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={handleEmailChange}
                   required
-                  aria-invalid={passwordError ? "true" : "false"}
-                  aria-describedby={passwordError ? "password-error" : undefined}
+                  aria-invalid={emailError ? "true" : "false"}
+                  aria-describedby={emailError ? "email-error" : undefined}
                 />
-                <button
-                  type="button"
-                  className="password-toggle"
-                  onClick={() => setShowPassword(!showPassword)}
-                  aria-label={showPassword ? "Hide password" : "Show password"}
-                >
-                  {showPassword ? "👁️" : "👁️‍🗨️"}
-                </button>
+                {emailError && (
+                  <span id="email-error" className="field-error">
+                    {emailError}
+                  </span>
+                )}
               </div>
-              {passwordError && (
-                <span id="password-error" className="field-error">
-                  {passwordError}
-                </span>
-              )}
-            </div>
-            <button
-              className="auth-button"
-              type="submit"
-              disabled={isLoading || emailError || passwordError}
-            >
-              {isLoading ? "Logging in..." : "Login"}
-            </button>
-          </form>
-          <div>
-            <p>
-              <a href="/forgot-password" className="forgot-password-link">
+              <div className="form-group">
+                <label htmlFor="password">Password:</label>
+                <div className="password-input-wrapper">
+                  <input
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    value={password}
+                    onChange={handlePasswordChange}
+                    required
+                    aria-invalid={passwordError ? "true" : "false"}
+                    aria-describedby={
+                      passwordError ? "password-error" : undefined
+                    }
+                  />
+                  <button
+                    type="button"
+                    className="password-toggle"
+                    onClick={() => setShowPassword(!showPassword)}
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                  >
+                    {showPassword ? "👁️" : "👁️‍🗨️"}
+                  </button>
+                </div>
+                {passwordError && (
+                  <span id="password-error" className="field-error">
+                    {passwordError}
+                  </span>
+                )}
+              </div>
+              <button
+                className="auth-button"
+                type="submit"
+                disabled={isLoading || emailError || passwordError}
+              >
+                {isLoading ? "Logging in..." : "Login"}
+              </button>
+            </form>
+            <div className="auth-footer stack-md">
+              <Link to="/forgot-password" className="auth-inline-link">
                 Forgot your password?
-              </a>
-            </p>
-            <p>
-              New on Hi Tech Store?{" "}
-              <a href="/register" className="register-link">
-                Register
-              </a>
-            </p>
+              </Link>
+              <p>
+                New on Hi Tech Store?{" "}
+                <Link to="/register" className="auth-inline-link">
+                  Register
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
       <Footer />
     </div>
   );

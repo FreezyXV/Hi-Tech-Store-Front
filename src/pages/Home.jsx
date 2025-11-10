@@ -97,41 +97,45 @@ const Home = () => {
   }
 
   return (
-    <div className="body">
+    <div className="body app-gradient">
       <div className="home-page">
         {/* Banner Slider */}
-        <Slider {...sliderSettings} className="luxury-banner-slider">
-          {banners.map((banner, index) => {
-            const matchedCategory = Object.values(categories).find(
-              (category) => category.name === banner.categoryName
-            );
+        <div className="home-hero page-shell">
+          <div className="section-panel hero-panel">
+            <Slider {...sliderSettings} className="luxury-banner-slider">
+              {banners.map((banner, index) => {
+                const matchedCategory = Object.values(categories).find(
+                  (category) => category.name === banner.categoryName
+                );
 
-            const categoryId = matchedCategory?._id;
+                const categoryId = matchedCategory?._id;
 
-            return (
-              <div key={index} className="luxury-banner">
-                <div className="banner-content">
-                  <h1>{banner.title}</h1>
-                  <h2>{banner.subtitle}</h2>
-                  {categoryId && (
-                    <Link
-                      to={`/products/${categoryId}`}
-                      className="explore-button"
-                    >
-                      Explore More
-                    </Link>
-                  )}
-                </div>
-                <div className="banner-image">
-                  <img src={banner.imageUrls} alt={banner.subtitle} />
-                </div>
-              </div>
-            );
-          })}
-        </Slider>
+                return (
+                  <div key={index} className="luxury-banner">
+                    <div className="banner-content">
+                      <h1>{banner.title}</h1>
+                      <h2>{banner.subtitle}</h2>
+                      {categoryId && (
+                        <Link
+                          to={`/products/${categoryId}`}
+                          className="explore-button"
+                        >
+                          Explore More
+                        </Link>
+                      )}
+                    </div>
+                    <div className="banner-image">
+                      <img src={banner.imageUrls} alt={banner.subtitle} />
+                    </div>
+                  </div>
+                );
+              })}
+            </Slider>
+          </div>
+        </div>
 
         {/* Categories Section */}
-        <section className="categories-section">
+        <section className="categories-section page-shell">
           <h2>Explore Our Categories</h2>
           <div className="categories-grid">
             {Object.values(categories).length > 0 ? (

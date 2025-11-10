@@ -1,6 +1,6 @@
 // Register.jsx
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../services/api";
 import "../assets/auth.css";
 import Footer from "../components/Footer";
@@ -33,59 +33,73 @@ const Register = () => {
   };
 
   return (
-    <div className="body">
-      <div className="register">
-        <div className="auth-container">
-          <h1 className="auth-title">Register</h1>
-          {error && <div className="error">{error}</div>}
-          <form className="auth-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label>Username:</label>
-              <input
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label>Email:</label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label>Password:</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                  setPasswordStrength(checkPasswordStrength(e.target.value));
-                }}
-                required
-              />
-              <div
-                className={`password-strength ${passwordStrength.toLowerCase()}`}
-              >
-                {passwordStrength && `Strength: ${passwordStrength}`}
+    <div className="body register-backdrop auth-page">
+      <section className="register page-shell">
+        <div className="auth-layout dual-panel">
+          <div className="auth-highlight section-panel section-panel--subtle stack-lg">
+            <p className="eyebrow">Member Advantage</p>
+            <h1 className="auth-title">Register</h1>
+            <p className="auth-lede">
+              Créez votre espace personnel pour sauvegarder vos sélections,
+              suivre vos commandes et recevoir des alertes exclusives.
+            </p>
+            <ul className="auth-perks">
+              <li>Wishlist et panier synchronisés entre vos appareils.</li>
+              <li>Notifications instantanées lors des drops limités.</li>
+              <li>Historique d&apos;achats et reçus centralisés.</li>
+            </ul>
+          </div>
+          <div className="auth-container section-panel">
+            {error && <div className="error">{error}</div>}
+            <form className="auth-form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label>Username:</label>
+                <input
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                />
               </div>
-            </div>
-            <button className="auth-button" type="submit">
-              Register
-            </button>
-          </form>
-          <p>
-            Already have an account?{" "}
-            <a href="/login" className="login-link">
-              Log In
-            </a>
-          </p>
+              <div className="form-group">
+                <label>Email:</label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Password:</label>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    setPasswordStrength(checkPasswordStrength(e.target.value));
+                  }}
+                  required
+                />
+                <div
+                  className={`password-strength ${passwordStrength.toLowerCase()}`}
+                >
+                  {passwordStrength && `Strength: ${passwordStrength}`}
+                </div>
+              </div>
+              <button className="auth-button" type="submit">
+                Register
+              </button>
+            </form>
+            <p className="auth-footer">
+              Already have an account?{" "}
+              <Link to="/login" className="auth-inline-link">
+                Log In
+              </Link>
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
       <Footer />
     </div>
   );

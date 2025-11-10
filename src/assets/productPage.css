@@ -9,37 +9,29 @@ h3 {
   font-weight: 600;
 }
 
-.product-page-wrapper {
-  max-width: 90%;
-  margin: 0 auto;
-  padding: 30px;
-}
-
 .product-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #ffffff;
-
-  margin-top: 0px;
-  position: relative;
+  width: 100%;
 }
 
-.product-container {
-  display: flex;
+.product-hero {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.product-layout {
   width: 100%;
-  gap: 40px;
-  padding: 30px;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .product-main {
-  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .product-image {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
@@ -56,6 +48,10 @@ h3 {
 
 .image-container {
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .prev-image-btn,
@@ -78,10 +74,14 @@ h3 {
 
 .prev-image-btn {
   left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .next-image-btn {
   right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .prev-image-btn:hover,
@@ -95,24 +95,18 @@ h3 {
   outline-offset: 4px;
 }
 
-.product-specs,
-.variant-selector {
+.product-specs {
   background-color: #fff;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
+ 
 }
 
-.product-specs {
-  margin-top: 20px;
-}
-
-.product-specs h2,
-.variant-selector h2 {
+.product-specs h2 {
   margin-bottom: 10px;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: "Formula Condensed";
   font-weight: 400;
-  font-style: normal;
   color: rebeccapurple;
 }
 
@@ -135,36 +129,27 @@ h3 {
 }
 
 .variant-selector-main {
-  flex: 1;
-  position: sticky;
-
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   font-family: "Formula Condensed", sans-serif;
   font-weight: 400;
-  font-style: normal;
-  border-radius: 10px;
-  padding: 20px;
-  background-color: transparent;
+  border-radius: 24px;
 }
 
 .variant-selector-main h2 {
-  font-family: "Formula Condensed", sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 600;
   color: #ffc300;
 }
 
 .variant-selector {
-  flex: 1;
-  position: sticky;
-  max-height: 100vh;
-  overflow-y: auto;
+
+
   font-family: "Formula Condensed Light";
-  font-weight: 400;
-  font-style: normal;
   border: none;
   box-shadow: none;
-  padding: 10px;
+  padding: 0;
 }
 
 .product-price {
@@ -172,30 +157,6 @@ h3 {
   font-weight: 500;
   margin-bottom: 20px;
   color: #222;
-}
-
-.variant-options {
-  margin-bottom: 50px;
-}
-
-.product-stock {
-  margin-bottom: 10px;
-}
-
-/* Button Styles */
-.attribute-option {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 20px;
-  background-color: #ffffff;
-  border: 2px solid #003a7721;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
-  font-family: "FreeMono", sans-serif;
-  font-weight: 400;
-  font-size: 1.2rem;
 }
 
 .attribute-option {
@@ -233,6 +194,13 @@ h3 {
 .attribute-option.unavailable:hover {
   border-color: #ccc;
   background-color: #f0f0f0;
+}
+
+.attribute-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  width: 100%;
 }
 
 .attribute-section h3 {
@@ -275,13 +243,25 @@ h3 {
   color: green;
 }
 
+.attribute-option {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 2px solid #003a7721;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+  font-family: "FreeMono", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
 .reviews-section {
   font-family: "muli", sans-serif;
   margin-top: 20px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-
+  padding: 0;
   position: relative;
   color: #222;
 }
@@ -311,12 +291,13 @@ textarea {
   border: #2222224f solid;
   border-radius: 10px;
   width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-  padding-top: 15px;
+  margin: 10px 0;
+  padding: 12px 14px;
+  text-align: left;
+  min-height: 120px;
   font-family: "FreeMono", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 .review {
@@ -652,175 +633,239 @@ textarea {
   content: url("../assets/logos/flecheDroiteNoire1.png");
 }
 
-@media (max-width: 1000px) {
-  .product-container {
-    display: grid;
-    width: 100%;
-    gap: 20px;
-    padding: 5px;
+@media (max-width: 1024px) {
+  .product-layout {
+    gap: 1.25rem;
   }
-  .wishlist-btn {
-    width: 40px;
-    height: 40px;
+
+  .product-main.section-panel,
+  .variant-selector-main.section-panel {
+    padding: clamp(1.15rem, 3.5vw, 1.75rem);
   }
 
   .review {
-    padding: 10px;
-    position: relative;
+    padding: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-main {
+    gap: 1rem;
+  }
+
+  .product-image {
+    margin-bottom: 1rem;
+  }
+
+  .product-specs {
+    padding: 1.25rem;
+  }
+
+  .product-specs h2 {
+    font-size: 1.6rem;
+  }
+
+  .product-specs ul li {
+    font-size: 1rem;
+  }
+
+  .variant-selector-main {
+    gap: 0.75rem;
+  }
+
+  .variant-selector-main h2 {
+    font-size: 1.9rem;
+  }
+
+  .product-price {
+    font-size: 1.35rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .product-stock {
+    font-size: 0.95rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .attribute-section h3 {
+    font-size: 1.25rem;
+  }
+
+  .attribute-option {
+    padding: 0.85rem;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .attribute-options {
+    gap: 0.6rem;
+  }
+
+  .wishlist-btn {
+    width: 36px;
+    height: 36px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .prev-image-btn,
+  .next-image-btn {
+    width: 42px;
+    height: 42px;
+    bottom: 12px;
+    top: auto;
+    padding: 0;
+    transform: none;
+    background-color: rgba(15, 23, 42, 0.85);
+  }
+
+  .prev-image-btn {
+    left: 16px;
+  }
+
+  .next-image-btn {
+    right: 16px;
+  }
+
+  .prev-image-btn img,
+  .next-image-btn img {
+    width: 18px;
+    height: 18px;
   }
 
   textarea {
-    height: 70px;
-    font-size: 20px;
-    padding-top: 30px;
+    min-height: 100px;
+    font-size: 0.95rem;
   }
 
-  .delete-review-btn {
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    background-color: transparent;
-    border: #222 solid;
-    border-radius: 0%;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    width: 50px;
-    min-height: 104%;
-    transition: transform 0.5s ease-in-out;
+  .review-title {
+    font-size: 1.9rem;
   }
 
-  .delete-review-btn:hover {
-    border-color: rgba(255, 0, 0, 0.9);
-    transform: scale(1);
-    transition: transform 0.5s background-color 0.5s ease-in-out;
+  .review-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .product-layout {
+    gap: 1rem;
   }
 
-  .delete-icon {
-    width: 35px;
-    height: 35px;
-  }
-  .close-modal {
-    height: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .product-main.section-panel,
+  .variant-selector-main.section-panel,
+  .section-panel.reviews-panel {
+    padding: 1rem;
   }
 
-  .prev-modal-image-btn {
-    left: 5px;
-    height: 50px;
-    width: 50px;
-    top: 50%;
-    transform: translateY(-50%);
+  .image-container {
+    padding: 0.5rem 0;
   }
 
-  .next-modal-image-btn {
-    right: 5px;
-    height: 50px;
-    width: 50px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .arrow-image {
-    width: 30px;
-    height: 30px;
+  .product-specs {
+    padding: 1rem;
+    border-radius: 16px;
   }
 
-  .modal-image {
-    max-width: 95%;
+  .variant-selector-main {
+    border-radius: 16px;
   }
+
+  .variant-selector .attribute-title {
+    font-size: 1.15rem;
+  }
+
+  .attribute-options {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .product-price {
+    font-size: 1.2rem;
+  }
+
+  .product-stock {
+    font-size: 0.9rem;
+  }
+
   .attribute-option {
-    padding: 20px;
-    margin-bottom: 17px;
-    font-size: 17px;
-  }
-  .add-to-cart-btn {
-    padding: 15px 15px;
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 550px) {
-  .product-page-wrapper {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 5px;
+    padding: 0.75rem;
+    font-size: 0.95rem;
   }
 
-  .product-page {
-    padding: 0px;
-  }
-}
-
-@media (max-width: 550px) {
-  .attribute-section {
-padding: 5px;
-  }
-  .product-container {
-    display: grid;
-    width: 100%;
-    gap: 20px;
-    padding: 5px;
-  }
-  .wishlist-btn {
-    width: 40px;
-    height: 40px;
+  .reviews-section {
+    padding: 0;
   }
 
   .review {
-    padding: 10px;
-    position: relative;
+    padding: 0.65rem;
   }
 
-
-
   .delete-review-btn {
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    background-color: transparent;
-    border: #222 solid;
-    border-radius: 0%;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    width: 50px;
-    min-height: 104%;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    min-height: auto;
+    margin-top: 0.5rem;
+    border-radius: 10px;
   }
 
   .delete-icon {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
   }
 
-  .attribute-option {
-    padding: 15px;
-    margin-bottom: 15px;
-    font-size: 17px;
+  .review-form {
+    align-items: stretch;
   }
 
-  .product-specs,
-.variant-selector {
-  background-color: #fff;
-  padding: 0px;
-  border-radius: 0px;
+  .star-rating {
+    gap: 0.4rem;
+  }
+
+  .star-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .review-btn {
+    width: 100%;
+  }
 }
 
-.reviews-section {
-
-  padding: 0px;
-
-}
-
-.review-btn {
-  max-width: none;
-}
-
-.variant-selector-main {
-  border-radius: 0px;
-  padding: 0px;
-
-  .attribute-title {
+@media (max-width: 420px) {
+  .product-specs h2,
+  .variant-selector-main h2,
+  .review-title {
     font-size: 1.5rem;
   }
+
+  .attribute-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .wishlist-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .prev-image-btn,
+  .next-image-btn {
+    width: 36px;
+    height: 36px;
+    bottom: 8px;
+  }
+
+  textarea {
+    min-height: 110px;
+  }
 }
+.reviews-panel {
+  margin-bottom: 2rem;
+}
+
+.reviews-panel .reviews-section {
+  margin-top: 0;
+  padding: 0;
 }

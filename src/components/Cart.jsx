@@ -49,107 +49,118 @@ const Cart = () => {
   };
 
   return (
-    <div className="body">
-      <h1 className="cartTitle">Your Cart</h1>
-      <div className="wrapper-productPage">
-        <div className="cart-container">
-          {cartItems.length === 0 ? (
-            <p>Your cart is empty. Add items to start shopping!</p>
-          ) : (
-            <>
-              {cartItems.map(
+    <div className="body cart-backdrop">
+      <section className="page-shell stack-lg">
+        <div className="section-panel section-panel--subtle cart-hero stack-md">
+          <p className="eyebrow">Order Preview</p>
+          <h1 className="cartTitle">Your Cart</h1>
+          <p className="page-lede">
+            Ajustez vos quantités, comparez vos coups de cœur puis finalisez en
+            toute sérénité.
+          </p>
+        </div>
+        <div className="cart-grid">
+          <div className="cart-container section-panel stack-lg">
+            {cartItems.length === 0 ? (
+              <p>Your cart is empty. Add items to start shopping!</p>
+            ) : (
+              cartItems.map(
                 (item, index) =>
                   item.variant && (
                     <div key={item.variant?._id || index} className="cart-item">
-                      <img
-                        src={item.variant?.imageUrls || "placeholder.jpg"}
-                        alt={item.variant?.name || "Unknown Product"}
-                        className="cart-item-image"
-                        loading="lazy"
-                      />
-                      <div className="cart-item-details">
-                        <h2>{item.variant?.name || "Unknown Product"}</h2>
-                        <p>
-                          Price: € {item.variant?.price?.toFixed(2) || "N/A"}
-                        </p>
-                        <div className="quantity-control">
-                          <label>Quantity:</label>
-                          <input
-                            type="number"
-                            value={item.quantity || 1}
-                            onChange={(e) =>
-                              handleQuantityChange(
-                                item.variant?._id,
-                                parseInt(e.target.value, 10)
-                              )
-                            }
-                            min="1"
-                          />
-                        </div>
-                        <button
-                          className="remove-button"
-                          onClick={() => handleRemoveItem(item.variant?._id)}
-                        >
-                          Remove
-                        </button>
+                      <div className="cart-media">
+                        <img
+                          src={item.variant?.imageUrls || "placeholder.jpg"}
+                          alt={item.variant?.name || "Unknown Product"}
+                          className="cart-item-image"
+                          loading="lazy"
+                        />
                       </div>
-                      <p className="item-total">
-                        Total: €
-                        {(item.variant?.price * (item.quantity || 1)).toFixed(
-                          2
-                        ) || "N/A"}
-                      </p>
+                      <div className="cart-item-details">
+                        <div className="cart-item-header">
+                          <h2>{item.variant?.name || "Unknown Product"}</h2>
+                          <span className="chip">En stock</span>
+                        </div>
+                        <div className="cart-item-meta">
+                          <p className="price">
+                            € {item.variant?.price?.toFixed(2) || "N/A"}
+                          </p>
+                          <p className="item-total">
+                            €
+                            {(
+                              (item.variant?.price || 0) *
+                              (item.quantity || 1)
+                            ).toFixed(2)}
+                          </p>
+                        </div>
+                        <div className="cart-controls">
+                          <div className="quantity-control">
+                            <label>Quantity</label>
+                            <input
+                              type="number"
+                              value={item.quantity || 1}
+                              onChange={(e) =>
+                                handleQuantityChange(
+                                  item.variant?._id,
+                                  parseInt(e.target.value, 10)
+                                )
+                              }
+                              min="1"
+                            />
+                          </div>
+                          <button
+                            className="remove-button"
+                            onClick={() => handleRemoveItem(item.variant?._id)}
+                          >
+                            Remove
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   )
-              )}
-            </>
-          )}
-        </div>
-        <div className="cart-summary">
-          <div className="cart-summaryMain">
-            <h2>Order Summary</h2>
-            <p>Total Amount: € {totalAmount.toFixed(2)}</p>
-            <button
-              className="checkoutButton"
-              onClick={handleProceedToCheckout}
-              disabled={cartItems.length === 0}
-            >
-              Proceed to Checkout
-            </button>
+              )
+            )}
           </div>
-          {/* Additional Information Section */}
-          <div className="additional-info">
-            <div className="info-section">
-              <h3>Delivery Information</h3>
-              <p>
-                Delivery typically takes 3-5 business days. Express delivery
-                options are available at checkout.
-              </p>
+          <aside className="cart-summary section-panel sticky-summary">
+            <div className="cart-summaryMain stack-md">
+              <h2>Order Summary</h2>
+              <div className="summary-row">
+                <span>Sous-total</span>
+                <span>€ {totalAmount.toFixed(2)}</span>
+              </div>
+              <div className="summary-row">
+                <span>Livraison estimée</span>
+                <span>Offerte</span>
+              </div>
+              <div className="summary-row total">
+                <span>Total</span>
+                <span>€ {totalAmount.toFixed(2)}</span>
+              </div>
+              <button
+                className="checkoutButton"
+                onClick={handleProceedToCheckout}
+                disabled={cartItems.length === 0}
+              >
+                Proceed to Checkout
+              </button>
             </div>
-            <div className="info-section">
-              <h3>Payment Options</h3>
-              <p>
-                We accept Visa, MasterCard, PayPal, and other major payment
-                methods. Secure checkout guaranteed.
-              </p>
+            <div className="additional-info stack-md">
+              <div className="info-section">
+                <h3>Delivery</h3>
+                <p>Expédition en 24h, livraison 3-5 jours ouvrés.</p>
+              </div>
+              <div className="info-section">
+                <h3>Payment</h3>
+                <p>Visa, Mastercard, PayPal &amp; paiement en 3x sécurisé.</p>
+              </div>
+              <div className="info-section">
+                <h3>Support</h3>
+                <p>support@hitechstore.com · +33 1 71 90 00 00</p>
+              </div>
             </div>
-            <div className="info-section">
-              <h3>Return Policy</h3>
-              <p>
-                Enjoy a hassle-free return policy. Items can be returned within
-                30 days of purchase. See our return policy for more details.
-              </p>
-            </div>
-            <div className="info-section">
-              <h3>Need Help?</h3>
-              <p>
-                Contact our customer support team at support@hitechstore.com or
-                call 01 71 90 00 00.
-              </p>
-            </div>
-          </div>
+          </aside>
         </div>
-      </div>
+      </section>
 
       <Footer />
     </div>

@@ -59,10 +59,17 @@ const Category = () => {
   }
 
   return (
-    <div className="body">
-      <div className="categoryPage">
-        <h1 className="page-title">Choisissez une marque</h1>
-        <div className="brand-grid">
+    <div className="body app-gradient">
+      <div className="categoryPage page-shell stack-lg">
+        <div className="section-panel section-panel--subtle brand-hero stack-md">
+          <p className="eyebrow">Curated Brands</p>
+          <h1 className="page-title">Choisissez une marque</h1>
+          <p className="page-lede">
+            Explorez les identités fortes de chaque constructeur et trouvez
+            l&apos;écosystème qui correspond à votre style.
+          </p>
+        </div>
+        <div className="brand-grid elevated-grid">
           {brands.length > 0 ? (
             brands.map((brand) => (
               <div key={brand._id} className="brand-card">
