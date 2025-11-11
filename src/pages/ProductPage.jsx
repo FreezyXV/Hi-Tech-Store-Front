@@ -430,7 +430,7 @@ const ProductPage = () => {
           </div>
 
           <div className="variant-selector-main section-panel sticky-summary">
-            <h2>{model ? model.name : "Unknown Model"}</h2>
+            
             <p className="product-price">Price: {price} €</p>
             <p className="product-stock">Stock: {stock}</p>
 

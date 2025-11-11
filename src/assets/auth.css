@@ -376,6 +376,38 @@
   }
 }
 
+@media (max-width: 640px) {
+  .auth-layout {
+    margin-top: 60px;
+  }
+
+  .auth-highlight {
+    padding: clamp(1rem, 5vw, 1.5rem);
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .auth-highlight .eyebrow,
+  .auth-highlight .auth-lede,
+  .auth-highlight .auth-perks {
+    display: none;
+  }
+
+  .auth-highlight .auth-title {
+    font-size: clamp(2rem, 8vw, 2.4rem);
+    margin-bottom: 0;
+  }
+
+  .auth-container {
+    width: 100%;
+    padding: clamp(1rem, 6vw, 1.75rem);
+  }
+
+  .auth-footer.stack-md {
+    gap: 0.5rem;
+  }
+}
+
 .account-options {
   margin-top: 20px;
   display: flex;
