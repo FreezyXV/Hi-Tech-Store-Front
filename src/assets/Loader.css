@@ -1,67 +1,188 @@
 /* src/assets/Loader.css */
-@import url("https://fonts.cdnfonts.com/css/formula-condensed");
-@import url("https://fonts.cdnfonts.com/css/freemono");
-@import url("https://db.onlinewebfonts.com/c/6e7d86fe1dd94be502d31a6743ffc3d1?family=Formula+Condensed+Light");
 
 .loader-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   background-color: #fff;
+  animation: loader-fade-in 0.35s ease-out;
 }
+
+.loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 24px;
+}
+
+/* ── Entrance keyframes ─────────────────────────────────── */
+
+@keyframes loader-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes loader-pop-in {
+  from { opacity: 0; transform: scale(0.88) translateY(10px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);    }
+}
+
+@keyframes loader-slide-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ── Logo ───────────────────────────────────────────────── */
 
 .loader-logo {
   width: 180px;
   margin-bottom: 20px;
+  animation: loader-pop-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
 }
 
-/* Text styling */
+/* ── Brand name ─────────────────────────────────────────── */
+
 .loader-text {
   font-family: "Formula Condensed", sans-serif;
   font-size: 10rem;
   color: #ffc300;
-  margin-bottom: 20px;
+  margin-bottom: 36px;
   text-align: center;
+  line-height: 1;
+  animation: loader-slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+/* ── Progress track ─────────────────────────────────────── */
+
+.progress-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  animation: loader-slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
 }
 
 .progress-bar {
-  width: 50%;
-  max-width: 400px;
-  height: 10px;
-  background-color: #222;
+  position: relative;
+  width: 55%;
+  max-width: 440px;
+  min-width: 260px;
+  height: 4px;
+  background: rgba(102, 51, 153, 0.12);
+  border-radius: 100px;
   overflow: hidden;
-  border-radius: 5px;
+  margin-bottom: 12px;
 }
 
+/* Sweeping gradient — purple → gold → purple — GPU-accelerated */
 .progress-fill {
-  width: 0%;
-  height: 100%;
-  background-color: #ffc300;
-  animation: fillProgress 1s linear forwards;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent  0%,
+    #663399     28%,
+    #ffc300     52%,
+    #663399     76%,
+    transparent 100%
+  );
+  animation: loader-sweep 2s ease-in-out infinite;
 }
 
-@keyframes fillProgress {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
+@keyframes loader-sweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%);  }
 }
+
+/* ── Animated dots ──────────────────────────────────────── */
+
+.loader-status {
+  font-size: 0.76rem;
+  color: #aaa;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: "Formula Condensed", sans-serif;
+}
+
+.loader-dots span {
+  display: inline-block;
+  opacity: 0;
+  animation: loader-dot-blink 1.4s ease-in-out infinite both;
+}
+
+.loader-dots span:nth-child(1) { animation-delay: 0.0s; }
+.loader-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loader-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes loader-dot-blink {
+  0%, 80%, 100% { opacity: 0; }
+  40%           { opacity: 1; }
+}
+
+/* ── Free-tier notice (fades in after 3 s) ──────────────── */
+
+.loader-notice {
+  margin-top: 40px;
+  opacity: 0;
+  animation: loader-notice-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) 3s forwards;
+}
+
+@keyframes loader-notice-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.notice-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: rgba(34, 34, 34, 0.03);
+  border: 1px solid rgba(34, 34, 34, 0.09);
+  border-left: 3px solid #ffc300;
+  border-radius: 10px;
+  padding: 14px 20px;
+  max-width: 390px;
+  text-align: left;
+}
+
+.notice-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.notice-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #222;
+  margin-bottom: 6px;
+  font-family: "Formula Condensed", sans-serif;
+}
+
+.notice-body {
+  font-size: 0.78rem;
+  color: #666;
+  line-height: 1.6;
+  font-family: "FreeMono", monospace;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
 
 @media (max-width: 768px) {
   .loader-text {
     font-size: 6rem;
   }
-
   .loader-logo {
     width: 140px;
   }
-
   .progress-bar {
     width: 80%;
+  }
+  .notice-card {
+    max-width: 88vw;
   }
 }
 
@@ -69,12 +190,10 @@
   .loader-text {
     font-size: 4rem;
   }
-
   .loader-logo {
     width: 100px;
   }
-
   .progress-bar {
-    width: 85%;
+    width: 86%;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategoriesAsync } from "../features/categoriesSlice";
 import { Link } from "react-router-dom";
@@ -67,6 +67,8 @@ const Home = () => {
     }
   }, [categoriesStatus, dispatch]);
 
+  const categoryList = useMemo(() => Object.values(categories), [categories]);
+
   // Slider settings for react-slick
   const sliderSettings = {
     dots: true,
@@ -104,7 +106,7 @@ const Home = () => {
           <div className="section-panel hero-panel">
             <Slider {...sliderSettings} className="luxury-banner-slider">
               {banners.map((banner, index) => {
-                const matchedCategory = Object.values(categories).find(
+                const matchedCategory = categoryList.find(
                   (category) => category.name === banner.categoryName
                 );
 
@@ -138,8 +140,8 @@ const Home = () => {
         <section className="categories-section page-shell">
           <h2>Explore Our Categories</h2>
           <div className="categories-grid">
-            {Object.values(categories).length > 0 ? (
-              Object.values(categories).map((category) => (
+            {categoryList.length > 0 ? (
+              categoryList.map((category) => (
                 <Link
                   key={category._id}
                   to={`/products/${category._id}`}

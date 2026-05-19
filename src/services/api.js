@@ -6,7 +6,7 @@ const API_URL =
   import.meta.env.VITE_API_URL_LOCAL ??
   import.meta.env.VITE_API_URL ??
   "http://localhost:5002";
-console.log(`API_URL: ${API_URL}`);
+if (import.meta.env.DEV) console.log(`API_URL: ${API_URL}`);
 
 // Function to retrieve the token from localStorage
 const getToken = () => localStorage.getItem("authToken");
