@@ -711,11 +711,11 @@ h2 {
     width: 100%;
     padding: 0.8rem;
     font-size: 1rem;
-    border: 1px solid #ddd;
+
     border-radius: 5px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     outline: none;
     background-color: #fafafa;
-    border: #003566 solid;
+    border: 0.5px #003566 solid;
   }
 }
