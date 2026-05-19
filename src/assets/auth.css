@@ -92,13 +92,13 @@
   width: 100%;
   padding: 0.8rem;
   font-size: 1rem;
-  border: 1px solid #ddd;
+ 
   font-family: "FreeMono", sans-serif;
   border-radius: 5px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   outline: none;
   background-color: #fafafa;
-  border: rebeccapurple solid;
+  border: 0.5px rebeccapurple solid;
 }
 
 .auth-form .form-group input:focus {
